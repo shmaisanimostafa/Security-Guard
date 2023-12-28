@@ -1,0 +1,30 @@
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\appsettings.json
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Security Guard.staticwebassets.runtime.json
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Security Guard.exe
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Security Guard.deps.json
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Security Guard.runtimeconfig.json
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Security Guard.dll
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Security Guard.pdb
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.AssemblyInfoInputs.cache
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.AssemblyInfo.cs
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.csproj.CoreCompileInputs.cache
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.RazorAssemblyInfo.cache
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.RazorAssemblyInfo.cs
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets\msbuild.Security Guard.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets\msbuild.build.Security Guard.props
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Security Guard.props
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Security Guard.props
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\scopedcss\bundle\Security Guard.styles.css
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\scopedcss\projectbundle\Security Guard.bundle.scp.css
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.dll
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\refint\Security Guard.dll
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.pdb
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\Security Guard.genruntimeconfig.cache
+C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\ref\Security Guard.dll
