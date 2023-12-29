@@ -4,13 +4,12 @@ namespace Security_Guard.Models
 {
     public class File
     {
-        [Required]
         public int? Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please enter user name")]
         public string UserName { get; set; } = string.Empty;
         [Required]
         public string FileName { get; set; } = string.Empty;
-        [Required]
+        [Required(ErrorMessage = "The date must be filled")]
         public DateTime DateTime { get; set;} = DateTime.Now;
         [Required]
         public bool Status = false;
