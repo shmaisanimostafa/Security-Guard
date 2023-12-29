@@ -1,35 +1,84 @@
 ﻿@{
     ViewData["Title"] = "Scan Page";
 }
+<p class="p-3 text-center">Analyse suspicious files, URLs to detect malware and other breaches, automatically share them with the security community. Don't forget to Contact Us!' </p>
 <div class="card text-center">
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link text-warning active" aria-current="true" href="#linkTab" data-toggle="tab">Link</a>
+                <a class="nav-link tablinks text-warning" id="defaultOpen" onclick="openCity(event, 'Link')" aria-current="true" href="#linkTab" data-toggle="tab">Link</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-warning" href="#defaultTab" data-toggle="tab">Default</a>
+                <a class="nav-link tablinks text-warning" onclick="openCity(event, 'Contact Us')" href="#defaultTab" data-toggle="tab">Contact Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-warning" href="#fileTab" data-toggle="tab">File</a>
+                <a class="nav-link tablinks text-warning" onclick="openCity(event, 'File')" href="#fileTab" data-toggle="tab">File</a>
             </li>
         </ul>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+    <div class="card-body" id="card-body">
+
+    <div id="Link" class="tabcontent">
         <lord-icon src="https://cdn.lordicon.com/kkqzqltd.json"
                    trigger="hover"
                    stroke="bold"
                    colors="primary:#121331,secondary:#ffffff,tertiary:#e8e230"
-                   style="width:100px;height:100px">
+                   style="width:150px;height:150px">
         </lord-icon>
+        <div class="w-50 mx-auto my-2">
+            <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+
+            <p class="card-text">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
+        <a href="#" class="btn btn-info mb-3">Scan Link</a>
+        <br />
+    </div>
+
+    <div id="Contact Us" class="tabcontent">
+        <lord-icon src="https://cdn.lordicon.com/kiynvdns.json"
+                   trigger="hover"
+                   colors="primary:#121331,secondary:#b4b4b4,tertiary:#ffc738,quaternary:#e8e230,quinary:#ebe6ef"
+                   style="width:200px;height:200px">
+        </lord-icon>
+        <p class="card-text">Ask us a security question</p>
+        <a  href="mailto:Shmaisanimostafa@gmail.com" class="btn btn-info mb-3">Contact Us</a>
+    </div>
+
+    <div id="File" class="tabcontent">
         <lord-icon src="https://cdn.lordicon.com/ujxzdfjx.json"
                    trigger="hover"
                    stroke="bold"
-                   style="width:100px;height:100px">
+                   style="width:150px;height:150px">
         </lord-icon>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-warning">Scan Link</a>
-    </div>
 
+        <div class="input-group w-50 mx-auto my-3">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <button class="btn btn-outline-info" type="submit" id="inputGroupFileAddon04">Scan File</button>
+            </div>
+            <p class="card-text mb-3">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
+    </div>
+    </div>
 </div>
+<script>
+    function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+    document.getElementById("defaultOpen").click();
+</script>

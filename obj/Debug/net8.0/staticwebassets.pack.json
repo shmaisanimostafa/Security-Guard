@@ -9,6 +9,30 @@
       "PackagePath": "staticwebassets\\Logo.png"
     },
     {
+      "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\Neighbors\\Bitdefender.png",
+      "PackagePath": "staticwebassets\\Neighbors\\Bitdefender.png"
+    },
+    {
+      "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\Neighbors\\Dr.Web.png",
+      "PackagePath": "staticwebassets\\Neighbors\\Dr.Web.png"
+    },
+    {
+      "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\Neighbors\\Kaspersky.png",
+      "PackagePath": "staticwebassets\\Neighbors\\Kaspersky.png"
+    },
+    {
+      "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\Neighbors\\PhishTank.png",
+      "PackagePath": "staticwebassets\\Neighbors\\PhishTank.png"
+    },
+    {
+      "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\Neighbors\\VirusTotal.png",
+      "PackagePath": "staticwebassets\\Neighbors\\VirusTotal.png"
+    },
+    {
+      "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\Neighbors\\eset.png",
+      "PackagePath": "staticwebassets\\Neighbors\\eset.png"
+    },
+    {
       "Id": "C:\\Users\\shmai\\source\\repos\\Security Guard\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
