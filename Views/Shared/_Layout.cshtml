@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,8 +14,8 @@
 </head>
 <body>
 
-  <header >
-        <nav class="navbar navbar-expand-md border-bottom" >
+    <header >
+        <nav class="navbar navbar-expand-md border-bottom ">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
                     <img id="logo" src="~/Logo.png" width="40" class="me-2" alt="Logo" />
@@ -35,13 +36,14 @@
                         <a class="nav-link text-info" asp-area="" asp-controller="Scan" asp-action="Index">Scan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Dashboard</a>
+                        <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Neighbors" asp-action="Index">Neighbors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Neighbors" asp-action="Index">Neighbors</a>
                     </li>
                 </ul>
 

@@ -10,7 +10,7 @@ using Security_Guard.Models;
 
 namespace Security_Guard.Migrations
 {
-    [DbContext(typeof(dbContext))]
+    [DbContext(typeof(DBContext))]
     partial class dbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

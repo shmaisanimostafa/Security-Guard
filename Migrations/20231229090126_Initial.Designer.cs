@@ -11,7 +11,7 @@ using Security_Guard.Models;
 
 namespace Security_Guard.Migrations
 {
-    [DbContext(typeof(dbContext))]
+    [DbContext(typeof(DBContext))]
     [Migration("20231229090126_Initial")]
     partial class Initial
     {

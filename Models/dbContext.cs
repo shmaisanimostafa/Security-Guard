@@ -2,11 +2,8 @@
 
 namespace Security_Guard.Models
 {
-    public class dbContext : DbContext
+    public class DBContext(DbContextOptions<DBContext> options) : DbContext(options)
     {
-        public dbContext(DbContextOptions<dbContext> options) : base(options)
-        {
-        }
         public DbSet<User> Users { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<Link> Links { get; set; }
