@@ -10,12 +10,10 @@ namespace Security_Guard.Models
         [Required]
         public string FileName { get; set; } = string.Empty;
         [Required(ErrorMessage = "The date must be filled")]
-        public DateTime DateTime { get; set;} = DateTime.Now;
-        [Required]
+        public DateTime DateTime { get; set;} 
+
         public bool Status = false;
-        [Required]
         public string StatusMessage { get; set; } = string.Empty;
-        [Required]
         public string URL { get; set; } = string.Empty;
 
 
