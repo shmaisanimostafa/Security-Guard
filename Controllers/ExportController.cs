@@ -15,7 +15,7 @@ public class ExportController : Controller
     }
     public IActionResult ExportToExcel()
     {
-        // Get your data (replace this with your actual data retrieval logic)
+        // Get data
         List<File> data = GetData();
 
         // Create Excel package
@@ -39,7 +39,7 @@ public class ExportController : Controller
         IQueryable<File> queryFiles = Context.Files.OrderBy(f => f.Id);
         List<File> Files = queryFiles.ToList();
 
-        return Files; // Add this line to return the list of files
+        return Files;
     }
 
 }

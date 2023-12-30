@@ -8,5 +8,10 @@ namespace Security_Guard.Controllers
         {
             return View();
         }
+        public IActionResult Result()
+        {
+            return View();
+        }
+
     }
 }
