@@ -1,15 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using Security_Guard.Models;
+using OfficeOpenXml; // Make sure to include this
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<DBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));
-
+builder.Services.AddDbContext<DBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));
 
 var app = builder.Build();
+
+// Configure EPPlus license context for non-commercial use
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Add this line here
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

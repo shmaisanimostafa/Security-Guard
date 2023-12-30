@@ -38,6 +38,33 @@ namespace Security_Guard.Models
                 }
                 
             );
+            modelBuilder.Entity<Link>().HasData(
+                new Link
+                {
+                    Id = 0,
+                    UserName = "Mostafa",
+                    Status = false,
+                    DateTime = DateTime.Now,
+                    URL = "www.pdf.com.lb.mu.edu"
+                },
+                new Link
+                {
+                    Id = 1,
+                    UserName = "Mostafa",
+                    Status = true,
+                    DateTime = DateTime.Now,
+                    URL = "www.trojans.ar"
+                },
+                new Link
+                {
+                    Id = 2,
+                    UserName = "Mostafa",
+                    Status = false,
+                    DateTime = DateTime.Now,
+                    URL = "www.malosd.me"
+                }
+
+            );
 
         }
 

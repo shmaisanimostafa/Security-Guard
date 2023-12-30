@@ -14,10 +14,16 @@ namespace Security_Guard.Controllers
 
         public IActionResult Index()
         {
-            IQueryable<File> query = Context.Files.OrderBy(f => f.Id);
+            IQueryable<File> queryFiles = Context.Files.OrderBy(f => f.Id);
 
-            List<File> Files = query.ToList();
-            
+            List<File> Files = queryFiles.ToList();
+
+            IQueryable<Link> queryLinks = Context.Links.OrderBy(f => f.Id);
+
+            List<Link> Links = queryLinks.ToList();
+
+            ViewBag.Links = Links;
+
             return View(Files);
         }
     }
