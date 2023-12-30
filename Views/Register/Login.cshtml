@@ -1,37 +1,38 @@
 ﻿
 
-<div class=" align-items-center py-4 bg-warning rounded">
+<div class=" align-items-center py-4 bg-warning-subtle rounded">
     <div class="text-center">
     <img class="mx-auto img-fluid " src="~/Logo.png" width="80" />
     </div>
-<h1 class=" text-center">Security Guard Registration Form</h1>
+<h1 class=" text-center text-warning">Security Guard Registration Form</h1>
+    <div id="emailHelp" class="form-text text-center text-danger my-3">Validation Text</div>
 
 <form class="w-100 m-auto">
     <div class="row">
         <div class="col m-3 mt-0">
-            <label for="FirstName" class="form-label">First Name</label>
+                <label for="FirstName" class="form-label text-warning">First Name</label>
             <input type="text" class="form-control" id="FirstName" placeholder="First name" aria-label="First name">
         </div>
         <div class="col m-3 mt-0">
-            <label for="LastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="LastName" placeholder="First name" aria-label="First name">
+                <label for="LastName" class="form-label text-warning">Last Name</label>
+            <input type="text" class="form-control" id="LastName" placeholder="Last name" aria-label="First name">
         </div>
     </div>
     <div class="m-3 mt-0">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <label for="exampleInputEmail1" class="form-label text-warning">Email address</label>
             <input type="email" class="form-control" placeholder="10120082@mu.edu.lb" id="exampleInputEmail1" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
         <div class="m-3 mt-0">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="exampleInputPassword1" class="form-label text-warning">Password</label>
             <input type="password" placeholder="lkj1087432ASD#" class="form-control" id="exampleInputPassword1">
     </div>
         <div class="m-3 mt-0 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Remember Password</label>
+            <label class="form-check-labe text-warningl" for="exampleCheck1">Remember Password</label>
     </div>
         <div class="m-3 mt-0 d-grid gap-2">
-        <button type="submit" class="btn btn-dark   py-2">Submit</button>
+        <button type="submit" class="btn btn-warning   py-2">Submit</button>
         </div>
 </form>
 </div>
