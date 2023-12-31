@@ -12,10 +12,11 @@
 </lord-icon>
 
 <div class="input-group w-50 mx-auto my-3">
-
         <input asp-for="FileName" value="filenames" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
         <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="UserName" value="Guest" />
         <input type="hidden" asp-for="DateTime" value="@DateTime.Now" />
         <button class="btn btn-info" type="submit">Scan File</button>
+    </div>
     </form>
+

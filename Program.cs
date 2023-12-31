@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Security_Guard.Models;
-using OfficeOpenXml; // Make sure to include this
+using OfficeOpenXml;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,19 +8,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));
+	options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));
 
 var app = builder.Build();
 
 // Configure EPPlus license context for non-commercial use
-ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Add this line here
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+	app.UseExceptionHandler("/Home/Error");
+	app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -30,8 +29,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Area Routing
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+	name: "areas",
+	pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+// Default Routing
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
