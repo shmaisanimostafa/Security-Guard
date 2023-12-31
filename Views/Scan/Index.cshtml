@@ -20,20 +20,8 @@
     <div class="card-body" id="card-body">
 
     <div id="Link" class="tabcontent">
-        <lord-icon src="https://cdn.lordicon.com/kkqzqltd.json"
-                   trigger="hover"
-                   stroke="bold"
-                   colors="primary:#121331,secondary:#ffffff,tertiary:#e8e230"
-                   style="width:150px;height:150px">
-        </lord-icon>
-        <div class="w-50 mx-auto my-2">
-                <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" >
+            @await Html.PartialAsync("_NavLink", new Link())
         </div>
-
-            <p class="card-text">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
-        <a class="btn btn-info mb-3" asp-controller="Scan" asp-action="Result">Scan Link</a>
-        <br />
-    </div>
 
     <div id="Contact Us" class="tabcontent">
         <lord-icon src="https://cdn.lordicon.com/kiynvdns.json"
@@ -46,20 +34,8 @@
     </div>
 
     <div id="File" class="tabcontent">
-        <lord-icon src="https://cdn.lordicon.com/ujxzdfjx.json"
-                   trigger="hover"
-                   stroke="bold"
-                   style="width:150px;height:150px">
-        </lord-icon>
 
-        <div class="input-group w-50 mx-auto my-3">
-                <form asp-action="Add" method="post">
-                    <input asp-for="FileName" value="filenames" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                    <input type="hidden" asp-for="Id" />
-                    <input type="hidden" asp-for="UserName" value="Guest" />
-                    <input type="hidden" asp-for="DateTime" value="@DateTime.Now" />
-                    <button class="btn btn-outline-info" type="submit" >Scan File</button>
-                </form>
+                @await Html.PartialAsync("_NavFile", new File())
         </div>
             <p class="card-text mb-3">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
     </div>

@@ -1,0 +1,21 @@
+﻿@model Link
+@*
+*@
+@{
+}
+<form asp-action="Add" method="post">
+<lord-icon src="https://cdn.lordicon.com/kkqzqltd.json"
+           trigger="hover"
+           stroke="bold"
+           colors="primary:#121331,secondary:#ffffff,tertiary:#e8e230"
+           style="width:150px;height:150px">
+</lord-icon>
+
+<div class="w-50 mx-auto my-2">
+    <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+
+<p class="card-text">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
+<a class="btn btn-info mb-3" asp-controller="Scan" asp-action="Result">Scan Link</a>
+<br />
+</form>

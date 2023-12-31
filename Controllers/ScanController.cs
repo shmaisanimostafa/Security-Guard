@@ -16,6 +16,11 @@ namespace Security_Guard.Controllers
         {
             return View();
         }
+        //public IActionResult Index(bool Completed) // to share alerts for success and failed scanning
+        //{
+        //    ViewBag.Completed = Completed;
+        //    return View();
+        //}
         public IActionResult Result()
         {
             return View();
@@ -31,7 +36,20 @@ namespace Security_Guard.Controllers
                 Context.Files.Add(file);
                 Context.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Result");
+
+        }
+        public IActionResult Add(Link link)
+        {
+            if (ModelState.IsValid)
+            {
+                List<Link> Links = Context.Links.ToList();
+                link.URL = "www.virus.pfd";
+                link.Status = false;
+                Context.Links.Add(link);
+                Context.SaveChanges();
+            }
+            return RedirectToAction("Result");
 
         }
     }

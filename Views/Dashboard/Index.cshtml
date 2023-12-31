@@ -145,13 +145,13 @@
                 <h1 class="h2">Dashboard</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <a class="btn btn-outline-info btn-sm" asp-controller="Scan" asp-action="Index">Scan</a>
                         <a class="btn btn-sm btn-outline-success" asp-controller="Export" asp-action="ExportToExcel" method="post">Export</a>
                     </div>
                     <div class="dropdown">
                         <button type="button" class="btn btn-sm btn-outline-warning dropdown-toggle d-flex align-items-center gap-1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-filter"></i>
-                        Safe
+                        Filter
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Ambigious</a></li>

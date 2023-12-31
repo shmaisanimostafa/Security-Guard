@@ -1,0 +1,21 @@
+﻿@model File
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-action="Add" method="post">
+<lord-icon src="https://cdn.lordicon.com/ujxzdfjx.json"
+           trigger="hover"
+           stroke="bold"
+           style="width:150px;height:150px">
+</lord-icon>
+
+<div class="input-group w-50 mx-auto my-3">
+
+        <input asp-for="FileName" value="filenames" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserName" value="Guest" />
+        <input type="hidden" asp-for="DateTime" value="@DateTime.Now" />
+        <button class="btn btn-info" type="submit">Scan File</button>
+    </form>
