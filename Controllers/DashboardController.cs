@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
 using File = Security_Guard.Models.File;
 
 namespace Security_Guard.Controllers
 {
+    [Authorize]
     public class DashboardController : Controller
     {
         private DBContext Context { get; set; }
@@ -12,19 +14,25 @@ namespace Security_Guard.Controllers
             Context = ctx;
         }
 
+
         public IActionResult Index()
         {
             IQueryable<File> queryFiles = Context.Files.OrderBy(f => f.Id);
 
-            List<File> Files = queryFiles.ToList();
+            List<File> Files = [.. queryFiles];
 
-            IQueryable<Link> queryLinks = Context.Links.OrderBy(f => f.Id);
+            IQueryable<Link> queryLinks = Context.Links.OrderBy(l => l.Id);
 
-            List<Link> Links = queryLinks.ToList();
+            List<Link> Links = [.. queryLinks];
 
-            ViewBag.Links = Links;
 
-            return View(Files);
+            FileLink fileLink = new FileLink
+            {
+                files = Files,
+                links = Links
+            };
+
+            return View(fileLink);
         }
     }
 }

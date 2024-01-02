@@ -12,7 +12,7 @@ namespace Security_Guard.Models
         [Required(ErrorMessage = "The date must be filled")]
         public DateTime DateTime { get; set;} 
 
-        public bool Status = false;
+        public string Status = "danger";
         public string StatusMessage { get; set; } = string.Empty;
         public string URL { get; set; } = string.Empty;
 

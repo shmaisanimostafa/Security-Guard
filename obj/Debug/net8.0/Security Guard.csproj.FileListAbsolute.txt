@@ -139,3 +139,4 @@ C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Microsoft.IO.Recycla
 C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\shmai\source\repos\Security Guard\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\shmai\source\repos\Security Guard\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

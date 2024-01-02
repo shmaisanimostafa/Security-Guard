@@ -1,6 +1,7 @@
-﻿@model List<File>
+﻿@model FileLink
 @{
-  
+    var Files = Model.files;
+    var Links = Model.links;
 }
 <link href="dashboard.css" rel="stylesheet" />
 <style>
@@ -167,91 +168,116 @@
                 <table class="table table-striped table-hover table-sm">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Id</th>
-                            <th scope="col">File / Link</th>
                             <th scope="col">UserName</th>
-                            <th scope="col">URL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            @{foreach (var File in Model)
-                            {
-                                <tr>
-                                    <td>#</td>
-                                    <td>@File.Id</td>
-                                    <td>@File.FileName</td>
-                                    <td>@File.UserName</td>
-                                    <td>@File.URL</td>
-                                </tr>
-                              }
-
-                            foreach (var File in Model)
-                            {
-                                <tr>
-                                    <td>#</td>
-                                    <td>@File.Id</td>
-                                    <td>@File.FileName</td>
-                                    <td>@File.UserName</td>
-                                    <td>@File.URL</td>
-                                </tr>
-                              }
-                            }
-                        
-                    </tbody>
-                </table>
-            </div>
-            <div id="Links" class="table-responsive small tabcontent">
-                <table class="table table-striped table-hover table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Id</th>
-                            <th scope="col">Link</th>
-                            <th scope="col">UserName</th>
+                            <th scope="col">FileName</th>
+                            <th scope="col">DateTime</th>
+                            <th scope="col">Status</th>
                             <th scope="col">URL</th>
                         </tr>
                     </thead>
                     <tbody>
                         @{
-                            foreach (var File in Model)
+                            foreach (var File in Files)
                             {
                                 <tr>
-                                    <td>#</td>
                                     <td>@File.Id</td>
-                                    <td>@File.FileName</td>
                                     <td>@File.UserName</td>
+                                    <td>@File.FileName</td>
+                                    <td>@File.DateTime</td>
+                                    <td>@File.Status</td>
                                     <td>@File.URL</td>
-
                                 </tr>
                             }
                         }
                     </tbody>
                 </table>
-            </div>
-            <div id="Files" class="table-responsive small tabcontent">
+                @{
+                    if (Links != null && Links.Any()){
                 <table class="table table-striped table-hover table-sm">
+
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Id</th>
-                            <th scope="col">FileName</th>
                             <th scope="col">UserName</th>
+                            <th scope="col">DateTime</th>
+                            <th scope="col">Status</th>
                             <th scope="col">URL</th>
                         </tr>
                     </thead>
                     <tbody>
                         @{
-                            foreach (var File in Model)
+                            foreach (var link in Links) 
                             {
                                 <tr>
-                                    <td>#</td>
-                                    <td>@File.Id</td>
-                                    <td>@File.FileName</td>
-                                    <td>@File.UserName</td>
-                                    <td>@File.URL</td>
+                                    <td>@link.Id</td>
+                                    <td>@link.UserName</td>
+                                    <td>@link.DateTime</td>
+                                    <td>@link.Status</td>
+                                    <td>@link.URL</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p>No links available.</p>
+                    }
+                }
+            </div>
+ <div id="Links" class="table-responsive small tabcontent">
+    <table class="table table-striped table-hover table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">UserName</th>
+                <th scope="col">DateTime</th>
+                <th scope="col">Status</th>
+                <th scope="col">URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var link in Links) 
+                {
+                    <tr>
+                        <td>@link.Id</td>
+                        <td>@link.UserName</td>
+                        <td>@link.DateTime</td>
+                        <td>@link.Status</td>
+                        <td>@link.URL</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
 
+            <div id="Files" class="table-responsive small tabcontent">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">UserName</th>
+                            <th scope="col">FileName</th>
+                            <th scope="col">DateTime</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var File in Files)
+                            {
+                                <tr>
+                                    <td>@File.Id</td>
+                                    <td>@File.UserName</td>
+                                    <td>@File.FileName</td>
+                                    <td>@File.DateTime</td>
+                                    <td>@File.Status</td>
+                                    <td>@File.URL</td>
                                 </tr>
                             }
                         }

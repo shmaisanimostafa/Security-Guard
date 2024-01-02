@@ -1,11 +1,23 @@
 using Microsoft.EntityFrameworkCore;
 using Security_Guard.Models;
 using OfficeOpenXml;
+using Microsoft.AspNetCore.Identity;
+using Security_Guard.Areas.Admin.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+	options.Password.RequiredLength = 8;
+	options.Password.RequireUppercase = true;
+	options.Password.RequireLowercase = true;
+	options.Password.RequireDigit = true;
+})
+	.AddEntityFrameworkStores<DBContext>()
+	.AddDefaultTokenProviders();
 
 builder.Services.AddDbContext<DBContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));
@@ -27,7 +39,15 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+var scopeFactory = app.Services
+.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    await ConfigureIdentity.CreateAdminUserAsync(
+    scope.ServiceProvider);
+}
 
 // Area Routing
 app.MapControllerRoute(
