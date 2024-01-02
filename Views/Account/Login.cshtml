@@ -1,91 +1,55 @@
 ﻿@using Security_Guard.Models.AccountManagement
 @model LoginViewModel
 @{
-    ViewBag.Title = "Login";
+	ViewBag.Title = "Login";
 }
-
 <h2>Login</h2>
-
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
-    <div class="form-group row">
-        <div class="col-sm-2"><label>Username:</label></div>
-        <div class="col-sm-4">
-            <input type="text" asp-for="Username"
-                   class="form-control" />
-        </div>
-        <div class="col">
-            <span asp-validation-for="Username"
-                  class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-2"><label>Password:</label></div>
-        <div class="col-sm-4">
-            <input type="password" asp-for="Password"
-                   class="form-control" />
-        </div>
-        <div class="col">
-            <span asp-validation-for="Password"
-                  class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="offset-sm-2 col-sm-4">
-            <input type="checkbox" title="Remember Me" asp-for="RememberMe"
-                   class="form-check-inline" />
-            <label asp-for="RememberMe">Remember Me</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2 col-sm-4">
-            <button type="submit" class="btn btn-primary">Log In</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2 col-sm-4">
-            Not registered? <a asp-action="Register">Register as a new user</a>
-        </div>
-    </div>
+<form method="post" asp-action="LogIn"
+	  asp-route-returnUrl="@Model.ReturnUrl">
+	<div class="row mb-2">
+		<label class="col-form-label col-md-2">UserName:</label>
+		<div class="col-md-4">
+			<input asp-for="Username" class="form-control" />
+		</div>
+		<div class="col">
+			<span asp-validation-for="Username"
+				  class="text-danger"></span>
+		</div>
+	</div>
+	<div class="row mb-2">
+		<label class="col-form-label col-md-2">Password:</label>
+		<div class="col-md-4">
+			<input type="password" asp-for="Password"
+				   class="form-control" />
+		</div>
+		<div class="col">
+			<span asp-validation-for="Password"
+				  class="text-danger"></span>
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col offset-md-2">
+			<input type="checkbox" title="Remember Me"
+				   asp-for="RememberMe"
+				   class="form-check-inline" />
+			<label>Remember Me</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col offset-md-2">
+			<button type="submit" class="btn btn-warning">
+				Log In
+			</button>
+			<a asp-action="Index" asp-controller="Home"
+			   class="btn btn-outline-warning">Cancel</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col offset-md-2">
+			Not registered?
+			<a class="text-warning" asp-action="Register">Register as a new user</a>
+		</div>
+	</div>
 </form>
 
-
-
-@* 
-
-<div class=" align-items-center py-4 bg-warning-subtle rounded">
-    <div class="text-center">
-    <img class="mx-auto img-fluid " src="~/Logo.png" width="80" />
-    </div>
-<h1 class=" text-center text-warning">Security Guard Registration Form</h1>
-    <div asp-validation-summary="All" class="form-text text-center text-danger my-3">Validation Text</div>
-
-<form class="w-100 m-auto">
-    <div class="row">
-        <div class="col m-3 mt-0">
-                <label for="FirstName" class="form-label text-warning">First Name</label>
-            <input type="text" class="form-control" id="FirstName" placeholder="First name" aria-label="First name">
-        </div>
-        <div class="col m-3 mt-0">
-                <label for="LastName" class="form-label text-warning">Last Name</label>
-            <input type="text" class="form-control" id="LastName" placeholder="Last name" aria-label="First name">
-        </div>
-    </div>
-    <div class="m-3 mt-0">
-            <label for="exampleInputEmail1" class="form-label text-warning">Email address</label>
-            <input type="email" class="form-control" placeholder="10120082@mu.edu.lb" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-        <div class="m-3 mt-0">
-            <label for="exampleInputPassword1" class="form-label text-warning">Password</label>
-            <input type="password" placeholder="lkj1087432ASD#" class="form-control" id="exampleInputPassword1">
-    </div>
-        <div class="m-3 mt-0 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-labe text-warningl" for="exampleCheck1">Remember Password</label>
-    </div>
-        <div class="m-3 mt-0 d-grid gap-2">
-        <button type="submit" class="btn btn-warning   py-2">Submit</button>
-        </div>
-</form>
-</div> *@

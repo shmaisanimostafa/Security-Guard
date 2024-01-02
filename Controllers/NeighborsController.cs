@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
 
 namespace Security_Guard.Controllers
@@ -20,22 +21,25 @@ namespace Security_Guard.Controllers
             ViewBag.Neighbors = Neighbors;
             return View();
         }
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult AddNeighbor()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var hotelToDelete = Context.Neighbors.OrderBy(f => f.Id).First(h => h.Id == id);
+            var neighborToDelete = Context.Neighbors.OrderBy(f => f.Id).First(h => h.Id == id);
 
-            if (hotelToDelete != null)
+            if (neighborToDelete != null)
             {
-                Context.Neighbors.Remove(hotelToDelete);
+                Context.Neighbors.Remove(neighborToDelete);
             }
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult AddNeighbor(Neighbor newNeighbor)
         {
@@ -44,6 +48,7 @@ namespace Security_Guard.Controllers
             Context.Neighbors.Add(newNeighbor);
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult ViewNeighbor(int id)
         {

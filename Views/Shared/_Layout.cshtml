@@ -2,9 +2,6 @@
 @inject SignInManager<User> signInManager
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,11 +72,16 @@
 
                         @if (signInManager.IsSignedIn(User))
                         {
-                                <form method="post" asp-area="" asp-controller="Account" asp-action="Logout">
-                                    <input type="submit" value="Log Out" class="btn btn-outline-warning me-2" />
-                                <span class="text-warning">@User.Identity.Name</span>
+                            <li class="nav-item d-inline">
+                                <form method="post" asp-action="Logout"
+                                      asp-controller="Account" class="d-inline" asp-area="">
+                                    <input type="submit" value="Log Out"
+                                           class="btn  btn-outline-warning" />
+                                    <span class="text-warning mx-2 ">@User.Identity.Name</span>
                                 </form>
-                                
+                            </li>
+
+
                         } else {
 
                             <a class="btn btn-outline-warning me-2" asp-area="" asp-controller="Account" asp-action="Login">Sign in</a>

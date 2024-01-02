@@ -8,8 +8,8 @@ using Security_Guard.Areas.Admin.Models;
 
 namespace Security_Guard.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
+    //[Authorize(Roles = "Admin")]
+    //[Area("Admin")]
     public class UserController(UserManager<User> userMngr,
         RoleManager<IdentityRole> roleMngr) : Controller
     {
