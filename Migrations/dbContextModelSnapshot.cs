@@ -190,7 +190,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 2, 8, 28, 30, 486, DateTimeKind.Local).AddTicks(350),
+                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(7667),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -199,7 +199,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 2, 8, 28, 30, 486, DateTimeKind.Local).AddTicks(412),
+                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(7720),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -208,7 +208,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 2, 8, 28, 30, 486, DateTimeKind.Local).AddTicks(420),
+                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(7724),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -252,7 +252,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 2, 8, 28, 30, 486, DateTimeKind.Local).AddTicks(1074),
+                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(8099),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.pdf.com.lb.mu.edu",
@@ -261,7 +261,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 2, 8, 28, 30, 486, DateTimeKind.Local).AddTicks(1084),
+                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(8104),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.trojans.ar",
@@ -270,7 +270,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 2, 8, 28, 30, 486, DateTimeKind.Local).AddTicks(1093),
+                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(8109),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.malosd.me",
