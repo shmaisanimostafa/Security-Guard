@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> signInManager
-
-
+@inject UserManager<User> userManager
+@{
+    var currentUser = await userManager.GetUserAsync(User);
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +50,12 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
                     </li>
+                        @if (currentUser != null && await userManager.IsInRoleAsync(currentUser, "Admin"))
+                        {
+                    <li class="nav-item">
+                            <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">Administration</a>
+                    </li>
+                        }
                 </ul>
 
                 <div class="ms-md-auto">

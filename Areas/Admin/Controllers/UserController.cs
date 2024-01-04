@@ -1,22 +1,25 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+using Security_Guard.Areas.Admin.Models;
 using Security_Guard.Models.AccountManagement;
 using Security_Guard.Models;
-using Security_Guard.Areas.Admin.Models;
-
 
 namespace Security_Guard.Areas.Admin.Controllers
-{
-    [Authorize]
+{ 
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
-    public class UserController(UserManager<User> userMngr,
-        RoleManager<IdentityRole> roleMngr) : Controller
+    public class UserController : Controller
+{
+    private UserManager<User> userManager;
+    private RoleManager<IdentityRole> roleManager;
+    public UserController(UserManager<User> userMngr,
+    RoleManager<IdentityRole> roleMngr)
     {
-        private readonly UserManager<User> userManager = userMngr;
-        private readonly RoleManager<IdentityRole> roleManager = roleMngr;
-
-        public async Task<IActionResult> Index()
+        userManager = userMngr;
+        roleManager = roleMngr;
+    }
+    public async Task<IActionResult> Index()
         {
             List<User> users = new List<User>();
             foreach (User user in userManager.Users)
