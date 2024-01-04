@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> signInManager
 @inject UserManager<User> userManager
+
 @{
     var currentUser = await userManager.GetUserAsync(User);
 }
@@ -59,8 +60,9 @@
                                 <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">User\Role</a>
                             </li>
                         }
+                        
                 </ul>
-
+                    
                 <div class="ms-md-auto">
                         <div class="btn dropdown">
                             <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
@@ -83,15 +85,23 @@
 
                         @if (signInManager.IsSignedIn(User))
                         {
-                            <li class="nav-item d-inline">
-                                <form method="post" asp-action="Logout"
-                                      asp-controller="Account" class="d-inline" asp-area="">
-                                    <input type="submit" value="Log Out"
-                                           class="btn  btn-outline-warning" />
-                                    <span class="text-warning mx-2 ">@User.Identity.Name</span>
-                                </form>
-                            </li>
-
+                            <div class="nav-item d-inline">
+                                <button class="btn btn-outline-warning rounded-circle" width="30" data-bs-toggle="dropdown">
+                                    <img src="@currentUser.ImgURL" alt="User Image" width="30" class="rounded-circle user-image" />
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right text-center">
+                                    <div class="dropdown-header text-center">
+                                        <p class="dropdown-user-name">@currentUser.Email</p>
+                                        <img src="@currentUser.ImgURL" alt="User Image" width="70" class="rounded-circle user-image-dropdown" />
+                                        
+                                    </div>
+                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="UpdateProfile">Manage Account</a>
+                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="ChangePassword">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="LogOut">Sign Out</a>
+                                </div>
+                            </div>
+                        
 
                         } else {
 

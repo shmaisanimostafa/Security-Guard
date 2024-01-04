@@ -1,12 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> signInManager
 @inject UserManager<User> userManager
-@model User
+
 @{
     ViewData["Title"] = "Welcome Page";
     var user = await userManager.GetUserAsync(User);
 }
-<img src="@user.ImgURL" />
+
 
     <div class="px-4 pt-5 my-5 text-center border-bottom">
     @if (signInManager.IsSignedIn(User))
