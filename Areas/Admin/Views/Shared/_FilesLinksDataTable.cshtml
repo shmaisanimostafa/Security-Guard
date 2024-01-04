@@ -1,19 +1,19 @@
-﻿<!-- Main content -->
-<section class="content">
+﻿<section class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-
+                <!-- /.card-header -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Table of Files and Links</h3>
+                        <h3 class="card-title">DataTable with default features</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-striped table-sm">
+                        <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Type</th>
                                     <th>UserName</th>
                                     <th>FileName</th>
                                     <th>DateTime</th>
@@ -22,14 +22,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td colspan="6" class="table-header">Files</td>
-                                </tr>
+
                                 @{
                                     foreach (var file in Model.Files)
                                     {
                                         <tr>
                                             <td>@file.Id</td>
+                                            <td>File</td>
                                             <td>@file.UserName</td>
                                             <td>@file.FileName</td>
                                             <td>@file.DateTime</td>
@@ -37,17 +36,14 @@
                                             <td>@file.URL</td>
                                         </tr>
                                     }
-                                }
-                                <tr>
-                                    <td colspan="6" class="table-header">Links</td>
-                                </tr>
-                                @{
+
                                     foreach (var link in Model.Links)
                                     {
                                         <tr>
                                             <td>@link.Id</td>
+                                            <td>Link</td>
                                             <td>@link.UserName</td>
-                                            <td></td> <!-- No FileName for Links -->
+                                            <td></td>
                                             <td>@link.DateTime</td>
                                             <td>@link.Status</td>
                                             <td>@link.URL</td>
@@ -55,6 +51,17 @@
                                     }
                                 }
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Type</th>
+                                    <th>UserName</th>
+                                    <th>FileName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -67,5 +74,3 @@
     </div>
     <!-- /.container-fluid -->
 </section>
-
-

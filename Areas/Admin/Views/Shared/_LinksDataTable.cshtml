@@ -3,13 +3,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <!-- /.card-header -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Table of Links</h3>
+                        <h3 class="card-title">DataTable with default features</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-striped table-sm">
+                        <table id="example2" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -20,15 +21,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @{
-                                    foreach (var Link in Model.Links)
+                                    foreach (var link in Model.Links)
                                     {
                                         <tr>
-                                            <td>@Link.Id</td>
-                                            <td>@Link.UserName</td>
-                                            <td>@Link.DateTime</td>
-                                            <td>@Link.Status</td>
-                                            <td>@Link.URL</td>
+                                            <td>@link.Id</td>
+                                            <td>@link.UserName</td>
+                                            <td>@link.DateTime</td>
+                                            <td>@link.Status</td>
+                                            <td>@link.URL</td>
                                         </tr>
                                     }
                                 }
@@ -43,7 +45,6 @@
                                 </tr>
                             </tfoot>
                         </table>
-
                     </div>
                     <!-- /.card-body -->
                 </div>

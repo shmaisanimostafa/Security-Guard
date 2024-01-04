@@ -54,10 +54,10 @@
                         @if (currentUser != null && await userManager.IsInRoleAsync(currentUser, "Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="Admin" asp-controller="AdminDashboard" asp-action="Index">Administration</a>
+                                <a class="nav-link" asp-area="Admin" asp-controller="AdminDashboard" asp-action="Index">Manage Data</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">User\Role</a>
+                                <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">Manage Users</a>
                             </li>
                         }
                         
@@ -86,28 +86,33 @@
                         @if (signInManager.IsSignedIn(User))
                         {
                             <div class="nav-item d-inline">
-                                <button class="btn btn-outline-warning rounded-circle" width="30" data-bs-toggle="dropdown">
-                                    <img src="@currentUser.ImgURL" alt="User Image" width="30" class="rounded-circle user-image" />
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right text-center">
+                                <a class="btn" style="border-radius: 50%" data-bs-toggle="dropdown">
+                                    <img src="@currentUser.ImgURL" style="" alt="User Image" width="30" class="rounded-circle user-image" />
+                                </a>
+                                
+                                    <div style="margin-left: 83%;" class=" dropdown-menu dropdown-menu-right text-center">
                                     <div class="dropdown-header text-center">
                                         <p class="dropdown-user-name">@currentUser.Email</p>
                                         <img src="@currentUser.ImgURL" alt="User Image" width="70" class="rounded-circle user-image-dropdown" />
-                                        
                                     </div>
+                                    <h5 class="text-warning">Hi, @User.Identity.Name !</h5>
                                     <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="UpdateProfile">Manage Account</a>
                                     <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="ChangePassword">Change Password</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="LogOut">Sign Out</a>
+                                    <form method="post" asp-action="Logout" asp-controller="Account" asp-area="">
+                                        <input type="submit" value="Sign Out" class="btn btn-outline-warning" />
+                                    </form>
+                                
                                 </div>
                             </div>
+
+
                         
 
                         } else {
 
                             <a class="btn btn-outline-warning me-2" asp-area="" asp-controller="Account" asp-action="Login">Sign in</a>
-                            <a class="btn btn-warning me-2" asp-area="" asp-controller="Account" asp-action="Register">
-                                <span class="fas fa-edit"></span> Sign Up</a>
+                            <a class="btn btn-warning me-2" asp-area="" asp-controller="Account" asp-action="Register"> Sign Up</a>
                         }
 
 

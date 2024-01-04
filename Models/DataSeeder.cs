@@ -24,7 +24,8 @@ namespace Security_Guard.Data
                 UserName = "Mostafa",
                 FileName = "Virus.pdf",
                 DateTime = DateTime.Now,
-                URL = "www.virus.com"
+                URL = "www.virus.com",
+                Status = "danger"
             },
             new File
             {
@@ -32,7 +33,8 @@ namespace Security_Guard.Data
                     UserName = "Mostafa",
                     FileName = "Malware.pdf",
                     DateTime = DateTime.Now,
-                    URL = "www.malware.ar"
+                    URL = "www.malware.ar",
+                Status = "danger"
             },
             new File
             {
@@ -40,7 +42,35 @@ namespace Security_Guard.Data
                     UserName = "Mostafa",
                     FileName = "potato.pdf",
                     DateTime = DateTime.Now,
-                    URL = "www.potato.me"
+                    URL = "www.potato.me",
+                Status = "danger"
+            },
+            new File
+            {
+                Id = 3,
+                UserName = "Mostafa",
+                FileName = "Virus.pdf",
+                DateTime = DateTime.Now,
+                URL = "www.virus.com",
+                Status = "safe"
+            },
+            new File
+            {
+                Id = 4,
+                UserName = "Mostafa",
+                FileName = "Malware.pdf",
+                DateTime = DateTime.Now,
+                URL = "www.malware.ar",
+                Status = "safe"
+            },
+            new File
+            {
+                Id = 5,
+                UserName = "Mostafa",
+                FileName = "potato.pdf",
+                DateTime = DateTime.Now,
+                URL = "www.potato.me",
+                Status = "ambigious"
             }
             );
         }
@@ -53,21 +83,24 @@ namespace Security_Guard.Data
                 Id = 0,
                 UserName = "Mostafa",
                 DateTime = DateTime.Now,
-                URL = "www.pdf.com.lb.mu.edu"
+                URL = "www.pdf.com.lb.mu.edu",
+                Status = "danger"
             },
             new Link
             {
                 Id = 1,
                 UserName = "Mostafa",
                 DateTime = DateTime.Now,
-                URL = "www.trojans.ar"
+                URL = "www.trojans.ar",
+                Status = "safe"
             },
             new Link
             {
                 Id = 2,
                 UserName = "Mostafa",
                 DateTime = DateTime.Now,
-                URL = "www.malosd.me"
+                URL = "www.malosd.me",
+                Status = "ambigious"
             }       
             );
         }
