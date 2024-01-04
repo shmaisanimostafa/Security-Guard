@@ -113,6 +113,16 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="mailto:Shmaisanimostafa@gmail.com" class="btn  nav-link"><strong>Email CEO</strong></a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link text-info" asp-action="AddFile" asp-controller="AdminDashboard" asp-area="Admin">
+                        Add File
+                    </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link text-info" asp-action="AddLink" asp-controller="AdminDashboard" asp-area="Admin">
+                        Add Link
+                    </a>
+                </li>
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -184,22 +194,25 @@
                         </li>
                         <li class="nav-header">Filters</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <div class="row">
                                 <i class="nav-icon bi bi-shield-check text-success"></i>
-                                <p class="text">Safe</p>
-                            </a>
+                                <p class="text-success">Safe</p>
+                            </div>
+                            <p class="text-light">Type safe in the search bar!</p>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            
                                 <i class="nav-icon text-danger bi bi-shield-x"></i>
-                                <p>Danger</p>
-                            </a>
+                            <p class="text-danger">Danger</p>
+                            
+                            <p class="text-light">Type danger in the search bar!</p>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            
                                 <i class="nav-icon text-warning bi bi-shield-exclamation"></i>
-                                <p>Ambigious</p>
-                            </a>
+                            <p class="text-warning">Ambigious</p>
+                            
+                            <p class="text-light">Type ambigious in the search bar!</p>
                         </li>
                     </ul>
                 </nav>
@@ -292,16 +305,8 @@
                         </div>
                         <!-- ./col -->
                     </div>
-                    <div class="text-center row">
-                        <a class="m-3 col btn btn-info" asp-action="AddFile" asp-controller="AdminDashboard" asp-area="Admin">
-                            Add File
-                        </a>
-                        
-                        <a class="m-3 col btn btn-info" asp-action="AddLink" asp-controller="AdminDashboard" asp-area="Admin">
-                            Add Link
-                        </a>
-                    </div>
-                    <div class="alert alert-@state alert-dismissible fade show" role="alert">
+
+                    <div class="text-center alert alert-@state alert-dismissible fade show" role="alert">
                         <strong>Response!</strong> @message
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
@@ -425,6 +430,7 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
         });
+
     </script>
 </body>
 </html>
