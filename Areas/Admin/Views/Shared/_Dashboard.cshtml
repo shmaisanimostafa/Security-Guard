@@ -1,8 +1,59 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> signInManager
 @{
+
+    // File Counting
+    int dangerFilesCount = 0;
+    int ambigiousFilesCount = 0;
+    int safeFilesCount = 0;
+    int fileScans = 0;
+
+    foreach (var file in Model.Files)
+    {
+        if (file.Status == "danger")
+        {
+            dangerFilesCount++;
+            fileScans++;
+        }
+        if (file.Status == "safe")
+        {
+            safeFilesCount++;
+            fileScans++;
+        }
+        if (file.Status == "ambigious")
+        {
+            ambigiousFilesCount++;
+            fileScans++;
+        }
+    }
+
+    //Links Counting
+    int dangerLinksCount = 0;
+    int ambigiousLinksCount = 0;
+    int safeLinksCount = 0;
+    int linkScans = 0;
+
+    foreach (var file in Model.Files)
+    {
+        if (file.Status == "danger")
+        {
+            dangerLinksCount++;
+            linkScans++;
+        }
+        if (file.Status == "safe")
+        {
+            safeLinksCount++;
+            linkScans++;
+        }
+        if (file.Status == "ambigious")
+        {
+            ambigiousLinksCount++;
+            linkScans++;
+        }
+    }
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,6 +124,9 @@
             </ul>
         </nav>
         <!-- /.navbar -->
+
+
+
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -89,10 +143,17 @@
                         <img src="~/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Mostafa Shmaisani</a>
+                        <a href="#" class="d-block">@User.Identity.Name</a>
                     </div>
                 </div>
-
+                <ul class="nav nav-pills nav-sidebar flex-column">
+                <li class="nav-item">
+                    <a asp-area="Admin" asp-action="Index" asp-controller="User" class="nav-link">
+                        <i class="nav-icon bi bi-people"></i>
+                        <p>Manage Users</p>
+                    </a>
+                </li>
+                </ul>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -101,20 +162,22 @@
                              with font-awesome or any other icon font library -->
 
                         <li class="nav-header">Database Entities</li>
+
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon bi bi-people"></i>
-                                <p>Users</p>
+                            <a href="#" class="nav-link" onclick="openCity(event, 'All' )" id="defaultOpen">
+                                <i class="nav-icon bi bi-link-45deg"></i>
+                                <p>Files & Links</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" onclick="openCity(event, 'Links' )">
                                 <i class="nav-icon bi bi-link-45deg"></i>
                                 <p>Links</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" onclick="openCity(event, 'Files' )">
                                 <i class="nav-icon bi bi-file-break"></i>
                                 <p>Files</p>
                             </a>
@@ -144,7 +207,100 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-        @RenderBody()
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Dashboard</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6 alert alert-secondary">
+                            <p class="m-0 text-warning">Be perfect while interacting with data</p>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>@fileScans</h3>
+
+                                    <p>Scans</p>
+                                </div>
+                                <div class="icon size-40">
+                                    <i class="bi bi-upc-scan"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+
+
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>@safeFilesCount<sup style="font-size: 20px">%</sup></h3>
+
+                                    <p>Safe Scans</p>
+                                </div>
+                                <div class="icon size-40">
+                                    <i class="bi bi-safe"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+
+
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>@ambigiousFilesCount</h3>
+                                    <p>Ambigious Scans</p>
+                                </div>
+                                <div class="icon size-40">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3>@dangerFilesCount</h3>
+
+                                    <p>Danger Scans</p>
+                                </div>
+                                <div class="icon size-40">
+                                    <i class="bi bi-radioactive"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+
+                    @await Html.PartialAsync("_FilesDataTable");
+
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2022-@DateTime.Now.Year <a class="text-warning" href="https://adminlte.io">Security Guard</a>.</strong>
@@ -193,7 +349,8 @@
     <script src="~/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/dist/js/demo.js"></script>
-    <!-- AdminLTE dashboard demo (Thisis only for demo purposes) -->
+    <!-- AdminLTE dashboard demo (This
+is only for demo purposes) -->
 	<script src="~/dist/js/pages/dashboard.js"></script>is o
   <!-- DataTables  & Plugins -->
     <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -226,6 +383,27 @@
                 "responsive": true,
             });
         });
+                function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("nav-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
     </script>
 
 </body>

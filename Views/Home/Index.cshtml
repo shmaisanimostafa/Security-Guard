@@ -1,10 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> signInManager
-
+@inject UserManager<User> userManager
+@model User
 @{
     ViewData["Title"] = "Welcome Page";
+    var user = await userManager.GetUserAsync(User);
 }
-
+<img src="@user.ImgURL" />
 
     <div class="px-4 pt-5 my-5 text-center border-bottom">
     @if (signInManager.IsSignedIn(User))
@@ -13,7 +15,7 @@
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">The place where you can browse and integrate SAFELY</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <a class="btn btn-outline-info btn-lg px-4 me-sm-3" asp-action="Index" asp-controller="Dashboard">Scan</a>
+                <a class="btn btn-outline-info btn-lg px-4 me-sm-3" asp-action="Index" asp-controller="Scan">Scan</a>
                 <a class="btn btn-warning btn-lg px-4" asp-action="Index" asp-controller="Dashboard">Dashboard</a>
             </div>
         </div>

@@ -4,13 +4,14 @@
     ViewData["Title"] = "Admin | Manage Users";
 }
 
+@* Table of Users *@
 <h1 class="mb-2">Manage Users</h1>
 
-<h5 class="mt-2"><a asp-action="Add">Add a User</a></h5>
+<h5 class="mt-2"><a asp-area="" asp-controller="Account" asp-action="Register">Register a User</a></h5>
 
 <table class="table table-bordered table-striped table-sm">
     <thead>
-        <tr><th>Username</th><th>Roles</th><th></th><th></th><th></th></tr>
+        <tr><th>Username</th><th>Role</th><th>Delete</th><th>Admin</th><th>Remove</th></tr>
     </thead>
     <tbody>
         @if (Model.Users.Count() == 0)
@@ -59,6 +60,7 @@
     </tbody>
 </table>
 
+@* Table of Roles *@
 <h1 class="mb-2">Manage Roles</h1>
 
 @if (Model.Roles.Count() == 0)

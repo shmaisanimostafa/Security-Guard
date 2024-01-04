@@ -1,0 +1,61 @@
+﻿
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Table of Files</h3>
+              </div>
+              <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-striped table-sm">
+                  <thead>
+                  <tr>
+                                    <th>Id</th>
+                                    <th>UserName</th>
+                                    <th>FileName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                                @{
+                                    foreach (var File in Model.Files)
+                                    {
+                                        <tr>
+                                            <td>@File.Id</td>
+                                            <td>@File.UserName</td>
+                                            <td>@File.FileName</td>
+                                            <td>@File.DateTime</td>
+                                            <td>@File.Status</td>
+                                            <td>@File.URL</td>
+                                        </tr>
+                                    }
+                                }
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                                    <th>Id</th>
+                                    <th>UserName</th>
+                                    <th>FileName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>

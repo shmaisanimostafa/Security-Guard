@@ -52,9 +52,12 @@
                     </li>
                         @if (currentUser != null && await userManager.IsInRoleAsync(currentUser, "Admin"))
                         {
-                    <li class="nav-item">
-                            <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">Administration</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Admin" asp-controller="AdminDashboard" asp-action="Index">Administration</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">User\Role</a>
+                            </li>
                         }
                 </ul>
 

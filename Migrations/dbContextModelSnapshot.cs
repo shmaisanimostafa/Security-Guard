@@ -190,7 +190,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(7667),
+                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(1875),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -199,7 +199,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(7720),
+                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(1942),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -208,7 +208,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(7724),
+                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(1948),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -252,7 +252,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(8099),
+                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(2350),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.pdf.com.lb.mu.edu",
@@ -261,7 +261,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(8104),
+                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(2359),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.trojans.ar",
@@ -270,7 +270,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 2, 20, 16, 3, 105, DateTimeKind.Local).AddTicks(8109),
+                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(2369),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.malosd.me",
@@ -407,10 +407,6 @@ namespace Security_Guard.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ConfirmEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ConfirmPassword")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -439,10 +435,6 @@ namespace Security_Guard.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)

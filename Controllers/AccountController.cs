@@ -27,10 +27,17 @@ namespace Security_Guard.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Username };
+                var user = new User
+                {
+                    UserName = model.Username,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    ImgURL = model.ImgURL
+                };
+
                 var result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -49,6 +56,7 @@ namespace Security_Guard.Controllers
             }
             return View(model);
         }
+
 
         //Logout Action
 
@@ -127,6 +135,62 @@ namespace Security_Guard.Controllers
                     }
                 }
             }
+            return View(model);
+        }
+
+        [HttpGet]
+public async Task<IActionResult> UpdateProfile()
+        {
+            // Get the current user
+            var user = await userManager.GetUserAsync(User);
+
+            // Map the user properties to the UserProfileViewModel
+            var model = new UserProfileViewModel
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Username = user.UserName,
+                ImgURL = user.ImgURL,
+                Email = user.Email,
+                // Map other properties as needed
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProfile(UserProfileViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Get the current user
+                var user = await userManager.GetUserAsync(User);
+
+                // Update user properties with values from the model
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.UserName = model.Username;
+                user.ImgURL = model.ImgURL;
+                user.Email = model.Email;
+
+                // Update the user in the database
+                var result = await userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    TempData["message"] = "Profile updated successfully";
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+            }
+
+            // If the model is not valid, return to the view with the model
             return View(model);
         }
 
