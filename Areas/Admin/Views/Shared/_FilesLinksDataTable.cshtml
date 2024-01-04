@@ -5,7 +5,7 @@
                 <!-- /.card-header -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <h3 class="card-title">DataTable of Files & Links</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -19,6 +19,7 @@
                                     <th>DateTime</th>
                                     <th>Status</th>
                                     <th>URL</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,6 +35,14 @@
                                             <td>@file.DateTime</td>
                                             <td>@file.Status</td>
                                             <td>@file.URL</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteFile"
+                                                      asp-route-id="@file.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete File
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     }
 
@@ -47,6 +56,14 @@
                                             <td>@link.DateTime</td>
                                             <td>@link.Status</td>
                                             <td>@link.URL</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteLink"
+                                                      asp-route-id="@link.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete Link
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     }
                                 }
@@ -60,6 +77,7 @@
                                     <th>DateTime</th>
                                     <th>Status</th>
                                     <th>URL</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>

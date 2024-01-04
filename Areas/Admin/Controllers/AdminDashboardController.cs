@@ -58,5 +58,48 @@ namespace Security_Guard.Controllers
 
             return View(model);
         }
+        [HttpPost]
+        public async Task<IActionResult> DeleteFile(int fileId)
+        {
+            // Assuming you have a method to get the file by its ID
+            File fileToDelete = await context.Files.FindAsync(fileId);
+
+            if (fileToDelete != null)
+            {
+                // Delete the file from the database
+                context.Files.Remove(fileToDelete);
+                await context.SaveChangesAsync();
+
+                TempData["message"] = "File deleted successfully.";
+            }
+            else
+            {
+                TempData["message"] = "File not found.";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteLink(int linkId)
+        {
+            // Assuming you have a method to get the file by its ID
+            Link linkToDelete = await context.Links.FindAsync(linkId);
+
+            if (linkToDelete != null)
+            {
+                // Delete the file from the database
+                context.Links.Remove(linkToDelete);
+                await context.SaveChangesAsync();
+
+                TempData["message"] = "Link deleted successfully.";
+            }
+            else
+            {
+                TempData["message"] = "Link not found.";
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

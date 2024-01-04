@@ -20,6 +20,7 @@
                                     <th>DateTime</th>
                                     <th>Status</th>
                                     <th>URL</th>
+                                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -33,6 +34,14 @@
                                             <td>@File.DateTime</td>
                                             <td>@File.Status</td>
                                             <td>@File.URL</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteFile"
+                                                      asp-route-id="@File.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete File
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     }
                                 }
@@ -45,6 +54,7 @@
                                     <th>DateTime</th>
                                     <th>Status</th>
                                     <th>URL</th>
+                                    <th>Action</th>
                   </tr>
                   </tfoot>
                 </table>
