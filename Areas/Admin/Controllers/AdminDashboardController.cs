@@ -71,6 +71,7 @@ namespace Security_Guard.Controllers
                 await context.SaveChangesAsync();
 
                 TempData["message"] = "File deleted successfully.";
+                TempData["state"] = "danger";
             }
             else
             {
@@ -93,6 +94,7 @@ namespace Security_Guard.Controllers
                 await context.SaveChangesAsync();
 
                 TempData["message"] = "Link deleted successfully.";
+                TempData["state"] = "danger";
             }
             else
             {
@@ -101,5 +103,83 @@ namespace Security_Guard.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult AddLink()
+        {
+            return View();
+        }
+        public IActionResult AddFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddLink(string url, string status, string statusMessage)
+        {
+            // Get the username of the currently signed-in user
+            string userName = User.Identity.Name;
+
+            // Create a new Link instance
+            Link newLink = new Link
+            {
+                UserName = userName,
+                DateTime = DateTime.Now,
+                Status = status,
+                StatusMessage = statusMessage,
+                URL = url
+            };
+
+            // Validate the model
+            if (ModelState.IsValid)
+            {
+                // Add the new link to the database
+                context.Links.Add(newLink);
+                await context.SaveChangesAsync();
+
+                TempData["message"] = "Link added successfully.";
+                TempData["state"] = "success";
+
+                return RedirectToAction("Index");
+            }
+
+            // If the model state is not valid, return to the form with validation errors
+            return View(newLink);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> AddFile(string fileName, string url, string status, string statusMessage)
+        {
+            // Get the username of the currently signed-in user
+            string userName = User.Identity.Name;
+
+            // Create a new File instance
+            File newFile = new File
+            {
+                UserName = userName,
+                DateTime = DateTime.Now,
+                Status = status,
+                StatusMessage = statusMessage,
+                URL = url,
+                FileName = fileName
+            };
+
+            // Validate the model
+            if (ModelState.IsValid)
+            {
+                // Add the new file to the database
+                context.Files.Add(newFile);
+                await context.SaveChangesAsync();
+
+                TempData["message"] = "File added successfully.";
+                TempData["state"] = "success";
+
+                return RedirectToAction("Index");
+            }
+
+            // If the model state is not valid, return to the form with validation errors
+            return View(newFile);
+        }
+
     }
 }

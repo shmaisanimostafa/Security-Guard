@@ -2,6 +2,8 @@
 @inject SignInManager<User> signInManager
 @inject UserManager<User> userManager
 @{
+    var message = TempData["Message"] as string;
+    var state = TempData["state"] as string;
     var currentUser = await userManager.GetUserAsync(User);
 
     Layout = "";
@@ -290,6 +292,20 @@
                         </div>
                         <!-- ./col -->
                     </div>
+                    <div class="text-center row">
+                        <a class="m-3 col btn btn-info" asp-action="AddFile" asp-controller="AdminDashboard" asp-area="Admin">
+                            Add File
+                        </a>
+                        
+                        <a class="m-3 col btn btn-info" asp-action="AddLink" asp-controller="AdminDashboard" asp-area="Admin">
+                            Add Link
+                        </a>
+                    </div>
+                    <div class="alert alert-@state alert-dismissible fade show" role="alert">
+                        <strong>Response!</strong> @message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
                     <!-- /.row -->
                     <div id="All" class="tabcontent">
                         <!-- Main content -->
