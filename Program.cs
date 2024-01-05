@@ -41,13 +41,13 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-var scopeFactory = app.Services
-.GetRequiredService<IServiceScopeFactory>();
-using (var scope = scopeFactory.CreateScope())
-{
-    await ConfigureIdentity.CreateAdminUserAsync(
-    scope.ServiceProvider);
-}
+//var scopefactory = app.services
+//.getrequiredservice<iservicescopefactory>();
+//using (var scope = scopefactory.createscope())
+//{
+//    await configureidentity.createadminuserasync(
+//    scope.serviceprovider);
+//}
 
 // Area Routing
 app.MapControllerRoute(

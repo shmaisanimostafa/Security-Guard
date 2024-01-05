@@ -18,6 +18,7 @@ namespace Security_Guard.Models.AccountManagement
         [Required(ErrorMessage = "Please enter an email address.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; } = string.Empty;
+        public string ConfirmEmail { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Please enter a password.")]
         [DataType(DataType.Password)]

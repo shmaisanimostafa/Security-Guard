@@ -6,7 +6,7 @@ using Security_Guard.Models.AccountManagement;
 using Security_Guard.Models;
 
 namespace Security_Guard.Areas.Admin.Controllers
-{ 
+{
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class UserController : Controller

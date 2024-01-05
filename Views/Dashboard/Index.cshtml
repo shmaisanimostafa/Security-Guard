@@ -1,7 +1,14 @@
-﻿@model FileLink
+﻿@using Microsoft.AspNetCore.Identity
+@model FileLink
 @{
     var Files = Model.files;
     var Links = Model.links;
+}
+@inject UserManager<User> userManager
+
+@{
+    ViewData["Title"] = "Dashboard";
+    var user = await userManager.GetUserAsync(User);
 }
 <link href="dashboard.css" rel="stylesheet" />
 <style>
@@ -123,19 +130,14 @@
 
                     <hr class="my-3">
 
-                    <ul class="nav flex-column mb-auto">
+                    <ul class="nav flex-column mb-3">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                <i class="bi bi-person-circle"></i>
-                                Profile pic + Name
+                            <a class="nav-link d-flex align-items-center gap-2" asp-action="UpdateProfile" asp-controller="Account">
+                                <img src="@user.ImgURL" style="" alt="User Image" width="30" class="rounded-circle user-image" />
+                                 @User.Identity.Name
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                <i class="bi bi-box-arrow-left"></i>
-                                Sign out
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

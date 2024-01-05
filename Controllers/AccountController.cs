@@ -35,7 +35,9 @@ namespace Security_Guard.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
-                    ImgURL = model.ImgURL
+                    ImgURL = model.ImgURL,
+                    Name = model.FirstName + model.LastName,
+                    ConfirmEmail = model.Email,
                 };
 
                 var result = await userManager.CreateAsync(user, model.Password);

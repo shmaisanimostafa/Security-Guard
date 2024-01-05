@@ -1,18 +1,35 @@
 ﻿@model Link
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> signInManager
+@inject UserManager<User> userManager
 
-<form asp-action="Add" method="post">
-<lord-icon src="https://cdn.lordicon.com/kkqzqltd.json"
-           trigger="hover"
-           stroke="bold"
-           colors="primary:#121331,secondary:#ffffff,tertiary:#e8e230"
-           style="width:150px;height:150px">
-</lord-icon>
-<div asp-validation-summary="All" class="text-danger"></div>
-<div class="w-50 mx-auto my-2">
-    <input type="url" asp-for="URL" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
+@{
+    var user = await userManager.GetUserAsync(User);
+}
 
-<p class="card-text">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
-<a class="btn btn-info mb-3" asp-controller="Scan" asp-action="Result">Scan Link</a>
+<form asp-action="AddLink" method="post">
+        <lord-icon src="https://cdn.lordicon.com/kkqzqltd.json"
+                   trigger="hover"
+                   stroke="bold"
+                   colors="primary:#121331,secondary:#ffffff,tertiary:#e8e230"
+                   style="width:150px;height:150px">
+        </lord-icon>
+    <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="w-50 mx-auto my-2">
+            <input type="url" asp-for="URL" class="form-control"  placeholder="www.Google.com">
+        </div>
 <br />
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Status" value="ambigious" />
+    @if (signInManager.IsSignedIn(User))
+    {
+        <input type="hidden" asp-for="UserName" value="@user.UserName" />
+    }
+    else
+    {
+        <input type="hidden" asp-for="UserName" value="Guest" />
+    }
+    <input type="hidden" asp-for="StatusMessage" value="Nothing to say" />
+    <input type="hidden" asp-for="DateTime" value="@DateTime.Now" />
+    <button class="btn btn-info" type="submit">Scan Link</button>
 </form>

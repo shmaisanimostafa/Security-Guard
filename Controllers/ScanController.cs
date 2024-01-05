@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Components.Routing;
+using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
 using File = Security_Guard.Models.File;
 
@@ -21,40 +22,60 @@ namespace Security_Guard.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(File file)
+        public async Task<IActionResult> AddLink(string userName,string url, string status, string statusMessage)
         {
+            // Create a new Link instance
+            Link newLink = new Link
+            {
+                UserName = userName,
+                DateTime = DateTime.Now,
+                Status = status,
+                StatusMessage = statusMessage,
+                URL = url
+            };
+
+            // Validate the model
             if (ModelState.IsValid)
             {
-                List<File> files = Context.Files.ToList();
-                file.FileName = "virus.pfd";
-                
-                Context.Files.Add(file);
-                Context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
+                // Add the new link to the database
+                Context.Links.Add(newLink);
+                await Context.SaveChangesAsync();
+
                 return RedirectToAction("Result");
             }
 
-
+            // If the model state is not valid, return to the form with validation errors
+            return View("Index");
         }
-        public IActionResult Add(Link link)
+        [HttpPost]
+        public async Task<IActionResult> AddFile(File model)
         {
+
+            // Create a new File instance
+            File newFile = new File
+            {
+                UserName = model.UserName,
+                DateTime = DateTime.Now,
+                Status = model.Status,
+                StatusMessage = model.StatusMessage,
+                URL = model.URL,
+                FileName = model.FileName
+            };
+
+            // Validate the model
             if (ModelState.IsValid)
             {
-                List<Link> Links = Context.Links.ToList();
-                link.URL = "www.virus.pfd";
+                // Add the new file to the database
+                Context.Files.Add(newFile);
+                await Context.SaveChangesAsync();
+
+                return RedirectToAction("Result");
                 
-                Context.Links.Add(link);
-                Context.SaveChanges();
-                return RedirectToAction("Index");
             }
             else
             {
-                return RedirectToAction("Result");
+                return View("Index");
             }
-
         }
     }
 }

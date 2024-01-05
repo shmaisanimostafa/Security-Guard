@@ -8,6 +8,7 @@ namespace Security_Guard.Models
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         [NotMapped]
         public IList<string>? RoleNames { get; set; }
 
@@ -15,6 +16,8 @@ namespace Security_Guard.Models
         public string ConfirmPassword {  get; set; } = string.Empty;
 
         public string Role { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string ConfirmEmail { get; set; } = string.Empty;
 
         public string ImgURL { get; set; } = string.Empty;
 
