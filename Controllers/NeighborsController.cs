@@ -48,7 +48,7 @@ namespace Security_Guard.Controllers
             Context.Neighbors.Add(newNeighbor);
             return RedirectToAction("Index");
         }
-        [Authorize(Roles = "Admin")]
+
         [HttpGet]
         public IActionResult ViewNeighbor(int id)
         {

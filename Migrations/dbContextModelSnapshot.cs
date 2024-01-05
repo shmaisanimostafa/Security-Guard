@@ -178,11 +178,16 @@ namespace Security_Guard.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Files");
 
@@ -190,7 +195,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(1875),
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9473),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -199,7 +204,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(1942),
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9517),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -208,7 +213,34 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(1948),
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9520),
+                            FileName = "potato.pdf",
+                            StatusMessage = "",
+                            URL = "www.potato.me",
+                            UserName = "Mostafa"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9523),
+                            FileName = "Virus.pdf",
+                            StatusMessage = "",
+                            URL = "www.virus.com",
+                            UserName = "Mostafa"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9526),
+                            FileName = "Malware.pdf",
+                            StatusMessage = "",
+                            URL = "www.malware.ar",
+                            UserName = "Mostafa"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9529),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -239,12 +271,17 @@ namespace Security_Guard.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Links");
 
@@ -252,28 +289,31 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(2350),
-                            Status = "safe",
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9775),
+                            Status = "danger",
                             StatusMessage = "",
                             URL = "www.pdf.com.lb.mu.edu",
+                            UserId = "",
                             UserName = "Mostafa"
                         },
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(2359),
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9782),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.trojans.ar",
+                            UserId = "",
                             UserName = "Mostafa"
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 4, 16, 47, 5, 259, DateTimeKind.Local).AddTicks(2369),
-                            Status = "safe",
+                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9787),
+                            Status = "ambigious",
                             StatusMessage = "",
                             URL = "www.malosd.me",
+                            UserId = "",
                             UserName = "Mostafa"
                         });
                 });
@@ -407,11 +447,16 @@ namespace Security_Guard.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ConfirmEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConfirmPassword")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -435,6 +480,10 @@ namespace Security_Guard.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -533,6 +582,29 @@ namespace Security_Guard.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Security_Guard.Models.File", b =>
+                {
+                    b.HasOne("Security_Guard.Models.User", null)
+                        .WithMany("Files")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Security_Guard.Models.Link", b =>
+                {
+                    b.HasOne("Security_Guard.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Security_Guard.Models.User", b =>
+                {
+                    b.Navigation("Files");
                 });
 #pragma warning restore 612, 618
         }

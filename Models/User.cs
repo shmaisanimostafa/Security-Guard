@@ -18,7 +18,6 @@ namespace Security_Guard.Models
         public string Role { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string ConfirmEmail { get; set; } = string.Empty;
-
         public string ImgURL { get; set; } = string.Empty;
 
     }

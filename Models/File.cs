@@ -16,6 +16,5 @@ namespace Security_Guard.Models
         public string StatusMessage { get; set; } = string.Empty;
         public string URL { get; set; } = string.Empty;
 
-
     }
 }

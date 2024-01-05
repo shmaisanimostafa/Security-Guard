@@ -149,7 +149,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group me-2">
                         <a class="btn btn-outline-info btn-sm" asp-controller="Scan" asp-action="Index">Scan</a>
-                        <a class="btn btn-sm btn-outline-success" asp-controller="Export" asp-action="ExportToExcel" method="post">Export</a>
+                        <a class="btn btn-sm btn-outline-success" asp-controller="Export" asp-action="ExportToExcel" method="post">Export Files</a>
                     </div>
                     <div class="dropdown">
                         <button type="button" class="btn btn-sm btn-outline-warning dropdown-toggle d-flex align-items-center gap-1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -181,23 +181,60 @@
                     <tbody>
                         @{
                             foreach (var File in Files)
-                            {
-                                <tr>
-                                    <td>@File.Id</td>
-                                    <td>@File.UserName</td>
-                                    <td>@File.FileName</td>
-                                    <td>@File.DateTime</td>
-                                    <td>@File.Status</td>
-                                    <td>@File.URL</td>
-                                </tr>
-                            }
+                                {if (File.UserName == user.UserName) {
+                                    
+                                        <tr>
+                                            <td>@File.Id</td>
+                                            <td>@File.UserName</td>
+                                            <td>@File.FileName</td>
+                                            <td>@File.DateTime</td>
+                                            <td>@File.Status</td>
+                                            <td>@File.URL</td>
+                                        </tr>
+                                    } }
                         }
                     </tbody>
                 </table>
                 @{
                     if (Links != null && Links.Any()){
-                <table class="table table-striped table-hover table-sm">
+                        <table class="table table-striped table-hover table-sm">
 
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">UserName</th>
+                                    <th scope="col">DateTime</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (var link in Links)
+                                    {
+                                        if (link.UserName == user.UserName)
+                                        {
+                                            <tr>
+                                                <td>@link.Id</td>
+                                                <td>@link.UserName</td>
+                                                <td>@link.DateTime</td>
+                                                <td>@link.Status</td>
+                                                <td>@link.URL</td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                    </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p>No links available.</p>
+                    }
+                }
+            </div>
+            <div id="Links" class="table-responsive small tabcontent">
+                <table class="table table-striped table-hover table-sm">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -209,53 +246,23 @@
                     </thead>
                     <tbody>
                         @{
-                            foreach (var link in Links) 
+                            foreach (var link in Links)
                             {
-                                <tr>
-                                    <td>@link.Id</td>
-                                    <td>@link.UserName</td>
-                                    <td>@link.DateTime</td>
-                                    <td>@link.Status</td>
-                                    <td>@link.URL</td>
-                                </tr>
+                                if (link.UserName == user.UserName)
+                                {
+                                    <tr>
+                                        <td>@link.Id</td>
+                                        <td>@link.UserName</td>
+                                        <td>@link.DateTime</td>
+                                        <td>@link.Status</td>
+                                        <td>@link.URL</td>
+                                    </tr>
+                                }
                             }
                         }
                     </tbody>
-                        </table>
-                    }
-                    else
-                    {
-                        <p>No links available.</p>
-                    }
-                }
+                </table>
             </div>
- <div id="Links" class="table-responsive small tabcontent">
-    <table class="table table-striped table-hover table-sm">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">UserName</th>
-                <th scope="col">DateTime</th>
-                <th scope="col">Status</th>
-                <th scope="col">URL</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                foreach (var link in Links) 
-                {
-                    <tr>
-                        <td>@link.Id</td>
-                        <td>@link.UserName</td>
-                        <td>@link.DateTime</td>
-                        <td>@link.Status</td>
-                        <td>@link.URL</td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
-</div>
 
             <div id="Files" class="table-responsive small tabcontent">
                 <table class="table table-striped table-hover table-sm">
@@ -273,14 +280,17 @@
                         @{
                             foreach (var File in Files)
                             {
-                                <tr>
-                                    <td>@File.Id</td>
-                                    <td>@File.UserName</td>
-                                    <td>@File.FileName</td>
-                                    <td>@File.DateTime</td>
-                                    <td>@File.Status</td>
-                                    <td>@File.URL</td>
-                                </tr>
+                                if (File.UserName == user.UserName)
+                                {
+                                    <tr>
+                                        <td>@File.Id</td>
+                                        <td>@File.UserName</td>
+                                        <td>@File.FileName</td>
+                                        <td>@File.DateTime</td>
+                                        <td>@File.Status</td>
+                                        <td>@File.URL</td>
+                                    </tr>
+                                }
                             }
                         }
                     </tbody>
