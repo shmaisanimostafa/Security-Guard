@@ -38,24 +38,28 @@
     int safeLinksCount = 0;
     int linkScans = 0;
 
-    foreach (var file in Model.Files)
+    foreach (var link in Model.Links)
     {
-        if (file.Status == "danger")
+        if (link.Status == "danger")
         {
             dangerLinksCount++;
             linkScans++;
         }
-        if (file.Status == "safe")
+        if (link.Status == "safe")
         {
             safeLinksCount++;
             linkScans++;
         }
-        if (file.Status == "ambigious")
+        if (link.Status == "ambigious")
         {
             ambigiousLinksCount++;
             linkScans++;
         }
     }
+    int safeScansCount = safeLinksCount + safeFilesCount;
+    int dangerScansCount = dangerFilesCount + dangerLinksCount;
+    int ambigiousScansCount = ambigiousFilesCount + ambigiousLinksCount;
+    int scansCount = safeScansCount + dangerScansCount + ambigiousScansCount;
 }
 
 <!DOCTYPE html>
@@ -247,7 +251,7 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>@fileScans</h3>
+                                    <h3>@scansCount</h3>
 
                                     <p>Scans</p>
                                 </div>
@@ -263,7 +267,7 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>@safeFilesCount</h3>
+                                    <h3>@safeScansCount</h3>
 
                                     <p>Safe Scans</p>
                                 </div>
@@ -279,7 +283,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>@ambigiousFilesCount</h3>
+                                    <h3>@ambigiousScansCount</h3>
                                     <p>Ambigious Scans</p>
                                 </div>
                                 <div class="icon size-40">
@@ -293,7 +297,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>@dangerFilesCount</h3>
+                                    <h3>@dangerScansCount</h3>
 
                                     <p>Danger Scans</p>
                                 </div>
