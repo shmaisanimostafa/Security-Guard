@@ -107,58 +107,58 @@ namespace Security_Guard.Data
 
         private static void SeedNeighbors(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Neighbor>().HasData(
-             new Neighbor()
+            modelBuilder.Entity<Article>().HasData(
+             new Article()
              {
                  Id = 1,
                  Rating = 3,
-                 Description = "Do you want to see the sea? This your best Hotel",
-                 Name = "Bitdefender",
+                 Body1 = "Do you want to see the sea? This your best Hotel",
+                 Title = "Bitdefender",
                  URL = "https://www.bitdefender.com/",
                  ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png"
              },
-            new Neighbor()
+            new Article()
             {
                 Id = 2,
                 Rating = 5,
-                Description = "The best for the best. The place where you can exercise your hiking and other sports.",
-                Name = "Dr.Web",
+                Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                Title = "Dr.Web",
                 URL = "https://www.drweb.com/",
                 ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png"
             },
-            new Neighbor()
+            new Article()
             {
                 Id = 3,
                 Rating = 4,
-                Description = "Sleep for cheap. Cheapest Hotel you may ever found",
-                Name = "eset",
+                Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                Title = "eset",
                 URL = "https://www.eset.com/",
                 ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg"
             },
-            new Neighbor()
+            new Article()
             {
                 Id = 4,
                 Rating = 3,
-                Description = "Do you want to see the sea? This your best Hotel",
-                Name = "Kaspersky",
+                Body1 = "Do you want to see the sea? This your best Hotel",
+                Title = "Kaspersky",
                 URL = "https://me-en.kaspersky.com/",
                 ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg"
             },
-            new Neighbor()
+            new Article()
             {
                 Id = 5,
                 Rating = 1,
-                Description = "The best for the best. The place where you can exercise your hiking and other sports.",
-                Name = "PhishTank",
+                Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                Title = "PhishTank",
                 URL = "https://phishtank.org/",
                 ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png"
             },
-            new Neighbor()
+            new Article()
             {
                 Id = 6,
                 Rating = 2,
-                Description = "Sleep for cheap. Cheapest Hotel you may ever found",
-                Name = "VirusTotal",
+                Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                Title = "VirusTotal",
                 URL = "https://www.virustotal.com/gui/home/upload",
                 ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg"
             }

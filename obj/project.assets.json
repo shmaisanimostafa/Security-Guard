@@ -4821,11 +4821,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shmai\\source\\repos\\Security Guard\\Security Guard.csproj",
+      "projectUniqueName": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Security Guard.csproj",
       "projectName": "Security Guard",
-      "projectPath": "C:\\Users\\shmai\\source\\repos\\Security Guard\\Security Guard.csproj",
+      "projectPath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Security Guard.csproj",
       "packagesPath": "C:\\Users\\shmai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shmai\\source\\repos\\Security Guard\\obj\\",
+      "outputPath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\shmai\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
@@ -4905,7 +4905,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

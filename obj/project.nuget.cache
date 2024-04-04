@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oHOGvqvCc3heheXuoXGZDJU7CwG82t1opYslDzjiXNLGKLIaAefLNFooldir0WDno1oOIYSyytleLVewDivp1A==",
+  "dgSpecHash": "OYOH1xtgKi3HhVhsc9W79Km/fE6jIqMY+W7yL0bKofl9iAjWwzQEDgQODlF8SeVssVeVgQ1GJjD2nDZ79+YSGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shmai\\source\\repos\\Security Guard\\Security Guard.csproj",
+  "projectFilePath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Security Guard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shmai\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\shmai\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

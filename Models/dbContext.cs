@@ -8,7 +8,7 @@ namespace Security_Guard.Models
     public class DBContext : IdentityDbContext<User>
     {
         public DBContext(DbContextOptions<DBContext> options) : base(options) { }
-        public DbSet<Neighbor> Neighbors { get; set; }
+        public DbSet<Article> Articles { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<Link> Links { get; set; }
         public DbSet<Report> Reports { get; set; }

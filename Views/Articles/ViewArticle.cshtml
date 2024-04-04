@@ -1,0 +1,45 @@
+﻿@{
+    var Article = ViewBag.Article;
+
+    string imagePath = "~/Articles/" + Article.Title + ".png";
+    
+}
+<br /><br />
+<h1>@Article.Title</h1>
+<div class="mb-3">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <div class="card-body">
+                <h5 class="card-title">Body</h5>
+                <p class="card-text">@Article.Body1</p>
+                <p class="card-text">@Article.Body2</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-auto">
+                            <h5 class="card-title">Rating:</h5>
+                        </div>
+                        <div class="col">
+                            @{
+
+                                for (var c = 0; c < @Article.Rating; c++)
+                                {
+                                    
+                                    <i class="fa fa-star" style="color: #ecec00;" aria-hidden="true"></i>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 mt-3">
+                        <a href="@Article.URL" class="btn btn-outline-success">Visit</a>
+                        <a asp-controller="Articles" asp-action="Index" class="btn btn-primary">Return</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="@Url.Content(imagePath)" class="img-fluid rounded-start img-thumbnail" alt="...">
+        </div>
+    </div>
+</div>

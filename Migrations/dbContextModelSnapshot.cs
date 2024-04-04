@@ -155,6 +155,104 @@ namespace Security_Guard.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Security_Guard.Models.Article", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Body1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Body2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImgURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("URL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Articles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Body1 = "Do you want to see the sea? This your best Hotel",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png",
+                            Rating = 3,
+                            Title = "Bitdefender",
+                            URL = "https://www.bitdefender.com/"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png",
+                            Rating = 5,
+                            Title = "Dr.Web",
+                            URL = "https://www.drweb.com/"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg",
+                            Rating = 4,
+                            Title = "eset",
+                            URL = "https://www.eset.com/"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Body1 = "Do you want to see the sea? This your best Hotel",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg",
+                            Rating = 3,
+                            Title = "Kaspersky",
+                            URL = "https://me-en.kaspersky.com/"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png",
+                            Rating = 1,
+                            Title = "PhishTank",
+                            URL = "https://phishtank.org/"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg",
+                            Rating = 2,
+                            Title = "VirusTotal",
+                            URL = "https://www.virustotal.com/gui/home/upload"
+                        });
+                });
+
             modelBuilder.Entity("Security_Guard.Models.File", b =>
                 {
                     b.Property<int?>("Id")
@@ -178,16 +276,11 @@ namespace Security_Guard.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Files");
 
@@ -195,7 +288,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9473),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5133),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -204,7 +297,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9517),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5185),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -213,7 +306,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9520),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5189),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -222,7 +315,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9523),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5192),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -231,7 +324,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9526),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5195),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -240,7 +333,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 5,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9529),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5198),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -271,17 +364,11 @@ namespace Security_Guard.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Links");
 
@@ -289,120 +376,29 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9775),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5571),
                             Status = "danger",
                             StatusMessage = "",
                             URL = "www.pdf.com.lb.mu.edu",
-                            UserId = "",
                             UserName = "Mostafa"
                         },
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9782),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5577),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.trojans.ar",
-                            UserId = "",
                             UserName = "Mostafa"
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 1, 5, 21, 25, 47, 514, DateTimeKind.Local).AddTicks(9787),
+                            DateTime = new DateTime(2024, 4, 4, 22, 12, 5, 786, DateTimeKind.Local).AddTicks(5582),
                             Status = "ambigious",
                             StatusMessage = "",
                             URL = "www.malosd.me",
-                            UserId = "",
                             UserName = "Mostafa"
-                        });
-                });
-
-            modelBuilder.Entity("Security_Guard.Models.Neighbor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<string>("URL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Neighbors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Do you want to see the sea? This your best Hotel",
-                            ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png",
-                            Name = "Bitdefender",
-                            Rating = 3,
-                            URL = "https://www.bitdefender.com/"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "The best for the best. The place where you can exercise your hiking and other sports.",
-                            ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png",
-                            Name = "Dr.Web",
-                            Rating = 5,
-                            URL = "https://www.drweb.com/"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Sleep for cheap. Cheapest Hotel you may ever found",
-                            ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg",
-                            Name = "eset",
-                            Rating = 4,
-                            URL = "https://www.eset.com/"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Do you want to see the sea? This your best Hotel",
-                            ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg",
-                            Name = "Kaspersky",
-                            Rating = 3,
-                            URL = "https://me-en.kaspersky.com/"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "The best for the best. The place where you can exercise your hiking and other sports.",
-                            ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png",
-                            Name = "PhishTank",
-                            Rating = 1,
-                            URL = "https://phishtank.org/"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Sleep for cheap. Cheapest Hotel you may ever found",
-                            ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg",
-                            Name = "VirusTotal",
-                            Rating = 2,
-                            URL = "https://www.virustotal.com/gui/home/upload"
                         });
                 });
 
@@ -582,29 +578,6 @@ namespace Security_Guard.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Security_Guard.Models.File", b =>
-                {
-                    b.HasOne("Security_Guard.Models.User", null)
-                        .WithMany("Files")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Security_Guard.Models.Link", b =>
-                {
-                    b.HasOne("Security_Guard.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Security_Guard.Models.User", b =>
-                {
-                    b.Navigation("Files");
                 });
 #pragma warning restore 612, 618
         }

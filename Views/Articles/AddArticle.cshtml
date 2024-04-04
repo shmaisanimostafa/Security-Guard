@@ -1,0 +1,42 @@
+﻿@model Security_Guard.Models.Article
+
+@{
+    ViewData["Title"] = "AddNeighbor";
+}
+
+<h1>AddNeighbor</h1>
+
+<form class="row g-3" asp-controller="Neighbors" asp-action="AddNeighbor" method="post">
+    <div class="col-md-6">
+        <label for="NeighborName" class="form-label">Neighbor Name</label>
+        <input type="text" class="form-control" id="NeighborName" name="Name" asp-for="Title">
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">Description</span>
+        <textarea class="form-control" aria-label="With textarea" name="Description" asp-for="Body1"></textarea>
+    </div>
+    <div class="col-md-4">
+        <label for="inputState" class="form-label">Rating</label>
+        <select id="inputState" class="form-select" name="Rating" asp-for="Rating">
+            <option selected>Choose...</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="Image" class="form-label">ImageURL</label>
+        <input class="form-control" type="url" id="Image" name="ImgURL" asp-for="ImgURL">
+    </div>
+    <div class="col-md-2">
+        <label for="URL" class="form-label">URL</label>
+        <input class="form-control" type="url" id="URL" name="URL" asp-for="URL">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+
