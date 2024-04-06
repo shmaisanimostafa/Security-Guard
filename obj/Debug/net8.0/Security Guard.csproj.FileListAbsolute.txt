@@ -414,9 +414,14 @@ C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\sta
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\scopedcss\bundle\Security Guard.styles.css
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\scopedcss\projectbundle\Security Guard.bundle.scp.css
-C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\Security Guard.csproj.CopyComplete
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\Security Guard.dll
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\refint\Security Guard.dll
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\Security Guard.pdb
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\Security Guard.genruntimeconfig.cache
 C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\ref\Security Guard.dll
+C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\obj\Debug\net8.0\Security.19F2FBEF.Up2Date

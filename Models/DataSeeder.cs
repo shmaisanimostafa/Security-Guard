@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Security_Guard.Models;
+using Security_Guard_API.Models;
 using File = Security_Guard.Models.File;
 
 namespace Security_Guard.Data
@@ -11,8 +12,81 @@ namespace Security_Guard.Data
         {
             SeedFiles(modelBuilder);
             SeedLinks(modelBuilder);
-            SeedNeighbors(modelBuilder);
+            SeedArticles(modelBuilder);
+            SeedMessages(modelBuilder);
             // Add more seeding methods as needed
+        }
+
+        private static void SeedMessages(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Message>().HasData(
+                new Message
+                {
+                    Id = 0,
+                    Text = "Hello",
+                    Sender = "Mostafa",
+                    IsAi = false,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 1,
+                    Text = "Hi",
+                    Sender = "AI",
+                    IsAi = true,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 2,
+                    Text = "How are you?",
+                    Sender = "Mostafa",
+                    IsAi = false,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 3,
+                    Text = "I'm fine",
+                    Sender = "AI",
+                    IsAi = true,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 4,
+                    Text = "Good",
+                    Sender = "Mostafa",
+                    IsAi = false,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 5,
+                    Text = "Bye",
+                    Sender = "AI",
+                    IsAi = true,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 6,
+                    Text = "Bye",
+                    Sender = "Mostafa",
+                    IsAi = false,
+                    Time = DateTime.Now
+                },
+                new Message
+                {
+                    Id = 7,
+                    Text = "Goodbye",
+                    Sender = "AI",
+                    IsAi = true,
+                    Time = DateTime.Now
+                }
+
+
+                );
         }
 
         private static void SeedFiles(ModelBuilder modelBuilder)
@@ -105,7 +179,7 @@ namespace Security_Guard.Data
             );
         }
 
-        private static void SeedNeighbors(ModelBuilder modelBuilder)
+        private static void SeedArticles(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Article>().HasData(
              new Article()

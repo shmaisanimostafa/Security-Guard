@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using Security_Guard.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Security_Guard_API.Models;
 
 namespace Security_Guard.Models
 {
@@ -12,6 +13,7 @@ namespace Security_Guard.Models
         public DbSet<File> Files { get; set; }
         public DbSet<Link> Links { get; set; }
         public DbSet<Report> Reports { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
