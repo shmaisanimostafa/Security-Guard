@@ -1,0 +1,35 @@
+﻿@{
+
+}
+@model File
+<h2 class="mt-3">Add File</h2>
+<form asp-action="AddFile" method="post">
+    <div class="form-group">
+        <label asp-for="FileName">File Name:</label>
+        <input asp-for="FileName" class="form-control" />
+        <span asp-validation-for="FileName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="URL">URL:</label>
+        <input asp-for="URL" class="form-control" />
+        <span asp-validation-for="URL" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status">Status:</label>
+        <select asp-for="Status" class="form-control">
+            <option value="safe">Safe</option>
+            <option value="smbiguous">Ambiguous</option>
+            <option value="danger">Danger</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StatusMessage">Status Message:</label>
+        <input asp-for="StatusMessage" class="form-control" />
+        <span asp-validation-for="StatusMessage" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Link</button>
+</form>

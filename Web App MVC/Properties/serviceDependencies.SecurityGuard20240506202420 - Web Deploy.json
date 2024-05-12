@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/SecurityGuardapi/apis/SecurityGuard",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/SecurityGuard20240506202420/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsdbContext_C43428EE87",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/security-guard-dbserver/databases/Security Guard_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:dbContext",
+      "dynamicId": null
+    }
+  }
+}

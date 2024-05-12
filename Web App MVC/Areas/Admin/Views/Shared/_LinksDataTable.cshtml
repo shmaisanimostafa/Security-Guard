@@ -1,0 +1,68 @@
+﻿<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- /.card-header -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Table of Links</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>UserName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @{
+                                    foreach (var link in Model.Links)
+                                    {
+                                        <tr>
+                                            <td>@link.Id</td>
+                                            <td>@link.UserName</td>
+                                            <td>@link.DateTime</td>
+                                            <td>@link.Status</td>
+                                            <td>@link.URL</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteLink"
+                                                      asp-route-id="@link.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete Link
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>UserName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
