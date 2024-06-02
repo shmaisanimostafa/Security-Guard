@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dGgbMpLhpKUg89KEkOFKvom1+z7mHm103rzRlWe0DNG0TwL2Rw0i26YiFegJSiVNWYc+Y+du8ezysUW9Wq3pfw==",
+  "dgSpecHash": "NLPv/nriC7BJ8z79PHa4GprQsmhiezQk7zF9OWX5Clk2dKHKmqusL8uqm5fDkghLgW8jpza2DdqQR9DnDYXP9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shmai\\OneDrive\\Documents\\My Own Files\\Security Guard\\Web APIs\\Web APIs.csproj",
+  "projectFilePath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Web APIs\\Web APIs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shmai\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\shmai\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

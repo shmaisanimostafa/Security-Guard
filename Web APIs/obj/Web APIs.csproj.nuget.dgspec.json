@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shmai\\OneDrive\\Documents\\My Own Files\\Security Guard\\Web APIs\\Web APIs.csproj": {}
+    "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Web APIs\\Web APIs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shmai\\OneDrive\\Documents\\My Own Files\\Security Guard\\Web APIs\\Web APIs.csproj": {
+    "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Web APIs\\Web APIs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shmai\\OneDrive\\Documents\\My Own Files\\Security Guard\\Web APIs\\Web APIs.csproj",
+        "projectUniqueName": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Web APIs\\Web APIs.csproj",
         "projectName": "Web APIs",
-        "projectPath": "C:\\Users\\shmai\\OneDrive\\Documents\\My Own Files\\Security Guard\\Web APIs\\Web APIs.csproj",
+        "projectPath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Web APIs\\Web APIs.csproj",
         "packagesPath": "C:\\Users\\shmai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shmai\\OneDrive\\Documents\\My Own Files\\Security Guard\\Web APIs\\obj\\",
+        "outputPath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\Web APIs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\shmai\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
