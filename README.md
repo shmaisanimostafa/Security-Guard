@@ -1,6 +1,6 @@
 # Security Guard
 
-This project is done while learning Web Development using ASP.net Core MVC
+This project is done using ASP.net Core MVC
 
 ![Screenshot1](<./Github%20Repo%20Images/Screenshot%20(1).png>)
 ![Screenshot2](<./Github%20Repo%20Images/Screenshot%20(2).png>)
