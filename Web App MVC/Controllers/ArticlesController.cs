@@ -21,6 +21,15 @@ namespace Security_Guard.Controllers
             ViewBag.Articles = Articles;
             return View();
         }
+          [HttpGet]
+        public IActionResult Index2()
+        {
+            IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
+
+            List<Article> Articles = queryArticles.ToList();
+            ViewBag.Articles = Articles;
+            return View();
+        }
         [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult AddArticle()
@@ -52,6 +61,20 @@ namespace Security_Guard.Controllers
         [HttpGet]
         public IActionResult ViewArticle(int id)
         {
+            var Article = Context.Articles.First(h => h.Id == id);
+            ViewBag.Article = Article;
+            return View();
+        }
+
+                [HttpGet]
+        public IActionResult ViewArticle2(int id)
+        {
+            // Get all articles
+            IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
+            List<Article> Articles = queryArticles.Take(3).ToList();
+            ViewBag.Articles = Articles;
+
+            // Get the article with the specified id
             var Article = Context.Articles.First(h => h.Id == id);
             ViewBag.Article = Article;
             return View();

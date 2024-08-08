@@ -9803,11 +9803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/shmaisanymostafa/Downloads/Security-Guard-main/Web APIs/Web APIs.csproj",
+      "projectUniqueName": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/Web APIs.csproj",
       "projectName": "Web APIs",
-      "projectPath": "/home/shmaisanymostafa/Downloads/Security-Guard-main/Web APIs/Web APIs.csproj",
+      "projectPath": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/Web APIs.csproj",
       "packagesPath": "/home/shmaisanymostafa/.nuget/packages/",
-      "outputPath": "/home/shmaisanymostafa/Downloads/Security-Guard-main/Web APIs/obj/",
+      "outputPath": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/shmaisanymostafa/.nuget/NuGet/NuGet.Config"
