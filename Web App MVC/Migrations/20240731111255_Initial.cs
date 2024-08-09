@@ -20,7 +20,7 @@ namespace Security_Guard.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Rating = table.Column<int>(type: "int", nullable: false),
-                    Body1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Body2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     URL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -252,7 +252,7 @@ namespace Security_Guard.Migrations
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "Id", "Body1", "Body2", "ImgURL", "Rating", "Title", "URL" },
+                columns: new[] { "Id", "Content", "Body2", "ImgURL", "Rating", "Title", "URL" },
                 values: new object[,]
                 {
                     { 1, "Do you want to see the sea? This your best Hotel", "Say Something as Body2", "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png", 3, "Bitdefender", "https://www.bitdefender.com/" },

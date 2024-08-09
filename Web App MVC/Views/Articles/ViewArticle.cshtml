@@ -2,7 +2,7 @@
     var Article = ViewBag.Article;
 
     string imagePath = "~/Articles/" + Article.Title + ".png";
-    
+
 }
 <br /><br />
 <h1>@Article.Title</h1>
@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="card-body">
                 <h5 class="card-title">Body</h5>
-                <p class="card-text">@Article.Body1</p>
+                <p class="card-text">@Article.Content</p>
                 <p class="card-text">@Article.Body2</p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 <div class="container">
@@ -24,7 +24,7 @@
 
                                 for (var c = 0; c < @Article.Rating; c++)
                                 {
-                                    
+
                                     <i class="fa fa-star" style="color: #ecec00;" aria-hidden="true"></i>
                                 }
                             }

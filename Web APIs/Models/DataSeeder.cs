@@ -103,20 +103,20 @@ namespace Security_Guard.Data
             },
             new File
             {
-                    Id = 1,
-                    UserName = "Mostafa",
-                    FileName = "Malware.pdf",
-                    DateTime = DateTime.Now,
-                    URL = "www.malware.ar",
+                Id = 1,
+                UserName = "Mostafa",
+                FileName = "Malware.pdf",
+                DateTime = DateTime.Now,
+                URL = "www.malware.ar",
                 Status = "danger"
             },
             new File
             {
-                    Id = 2,
-                    UserName = "Mostafa",
-                    FileName = "potato.pdf",
-                    DateTime = DateTime.Now,
-                    URL = "www.potato.me",
+                Id = 2,
+                UserName = "Mostafa",
+                FileName = "potato.pdf",
+                DateTime = DateTime.Now,
+                URL = "www.potato.me",
                 Status = "danger"
             },
             new File
@@ -175,7 +175,7 @@ namespace Security_Guard.Data
                 DateTime = DateTime.Now,
                 URL = "www.malosd.me",
                 Status = "ambigious"
-            }       
+            }
             );
         }
 
@@ -186,7 +186,7 @@ namespace Security_Guard.Data
              {
                  Id = 1,
                  Rating = 3,
-                 Body1 = "Do you want to see the sea? This your best Hotel",
+                 Content = "Do you want to see the sea? This your best Hotel",
                  Title = "Bitdefender",
                  URL = "https://www.bitdefender.com/",
                  ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png"
@@ -195,7 +195,7 @@ namespace Security_Guard.Data
             {
                 Id = 2,
                 Rating = 5,
-                Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                 Title = "Dr.Web",
                 URL = "https://www.drweb.com/",
                 ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png"
@@ -204,7 +204,7 @@ namespace Security_Guard.Data
             {
                 Id = 3,
                 Rating = 4,
-                Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                 Title = "eset",
                 URL = "https://www.eset.com/",
                 ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg"
@@ -213,7 +213,7 @@ namespace Security_Guard.Data
             {
                 Id = 4,
                 Rating = 3,
-                Body1 = "Do you want to see the sea? This your best Hotel",
+                Content = "Do you want to see the sea? This your best Hotel",
                 Title = "Kaspersky",
                 URL = "https://me-en.kaspersky.com/",
                 ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg"
@@ -222,7 +222,7 @@ namespace Security_Guard.Data
             {
                 Id = 5,
                 Rating = 1,
-                Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                 Title = "PhishTank",
                 URL = "https://phishtank.org/",
                 ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png"
@@ -231,7 +231,7 @@ namespace Security_Guard.Data
             {
                 Id = 6,
                 Rating = 2,
-                Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                 Title = "VirusTotal",
                 URL = "https://www.virustotal.com/gui/home/upload",
                 ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg"

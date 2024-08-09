@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
+using Markdig;
 
 namespace Security_Guard.Controllers
 {
@@ -21,7 +22,7 @@ namespace Security_Guard.Controllers
             ViewBag.Articles = Articles;
             return View();
         }
-          [HttpGet]
+        [HttpGet]
         public IActionResult Index2()
         {
             IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
@@ -30,12 +31,13 @@ namespace Security_Guard.Controllers
             ViewBag.Articles = Articles;
             return View();
         }
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddArticle()
         {
             return View();
         }
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Delete(int id)
@@ -45,16 +47,19 @@ namespace Security_Guard.Controllers
             if (articleToDelete != null)
             {
                 Context.Articles.Remove(articleToDelete);
+                Context.SaveChanges();
             }
             return RedirectToAction("Index");
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult AddArticle(Article newArticle)
         {
-            int newId = Context.Articles.ToList().Count > 0 ? Context.Articles.Max(h => h.Id) + 1 : 1;
-            newArticle.Id = newId;
+            // int newId = Context.Articles.ToList().Count > 0 ? Context.Articles.Max(h => h.Id) + 1 : 1;
+            // newArticle.Id = newId;
             Context.Articles.Add(newArticle);
+            Context.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -63,10 +68,11 @@ namespace Security_Guard.Controllers
         {
             var Article = Context.Articles.First(h => h.Id == id);
             ViewBag.Article = Article;
+
             return View();
         }
 
-                [HttpGet]
+        [HttpGet]
         public IActionResult ViewArticle2(int id)
         {
             // Get all articles
@@ -77,7 +83,19 @@ namespace Security_Guard.Controllers
             // Get the article with the specified id
             var Article = Context.Articles.First(h => h.Id == id);
             ViewBag.Article = Article;
+
+            // Get the markdown content of the article with the specified id
+            var htmlContent = ConvertMarkdownToHtml(Article.Content);
+            ViewBag.HtmlContent = htmlContent;
+
             return View();
+        }
+
+        public string ConvertMarkdownToHtml(string markdown)
+        {
+            var pipeline = new MarkdownPipelineBuilder().Build();
+            var html = Markdown.ToHtml(markdown, pipeline);
+            return html;
         }
     }
 }

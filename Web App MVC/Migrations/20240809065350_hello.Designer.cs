@@ -9,18 +9,18 @@ using Security_Guard.Models;
 
 #nullable disable
 
-namespace Security_Guard_API.Migrations
+namespace Security_Guard.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20240406144804_Initial2")]
-    partial class Initial2
+    [Migration("20240809065350_hello")]
+    partial class hello
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -216,6 +216,16 @@ namespace Security_Guard_API.Migrations
                         },
                         new
                         {
+                            Id = 7,
+                            Content = "> Hi \n # What do you have today \n \"Good\" `Morning`  ",
+                            Body2 = "Say Something as Body2",
+                            ImgURL = "https://wallpaperaccess.com/full/2081980.jpg",
+                            Rating = 5,
+                            Title = "Markdown",
+                            URL = "https://www.drweb.com/"
+                        },
+                        new
+                        {
                             Id = 3,
                             Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             Body2 = "Say Something as Body2",
@@ -291,7 +301,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(3957),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(1752),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -300,7 +310,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4009),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(1798),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -309,7 +319,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4013),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(1802),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -318,7 +328,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4016),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(1806),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -327,7 +337,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4019),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(1810),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -336,7 +346,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 5,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4022),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(1813),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -379,7 +389,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4292),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2042),
                             Status = "danger",
                             StatusMessage = "",
                             URL = "www.pdf.com.lb.mu.edu",
@@ -388,7 +398,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4299),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2049),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.trojans.ar",
@@ -397,7 +407,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4304),
+                            DateTime = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2055),
                             Status = "ambigious",
                             StatusMessage = "",
                             URL = "www.malosd.me",
@@ -455,6 +465,7 @@ namespace Security_Guard_API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -564,7 +575,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "Hello",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4396)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2146)
                         },
                         new
                         {
@@ -572,7 +583,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "Hi",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4400)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2151)
                         },
                         new
                         {
@@ -580,7 +591,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "How are you?",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4403)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2154)
                         },
                         new
                         {
@@ -588,7 +599,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "I'm fine",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4407)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2158)
                         },
                         new
                         {
@@ -596,7 +607,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "Good",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4410)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2161)
                         },
                         new
                         {
@@ -604,7 +615,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "Bye",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4413)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2165)
                         },
                         new
                         {
@@ -612,7 +623,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "Bye",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4416)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2168)
                         },
                         new
                         {
@@ -620,7 +631,7 @@ namespace Security_Guard_API.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "Goodbye",
-                            Time = new DateTime(2024, 4, 6, 17, 48, 2, 265, DateTimeKind.Local).AddTicks(4419)
+                            Time = new DateTime(2024, 8, 9, 9, 53, 49, 824, DateTimeKind.Local).AddTicks(2171)
                         });
                 });
 

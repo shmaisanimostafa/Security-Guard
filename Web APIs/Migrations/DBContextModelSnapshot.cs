@@ -163,7 +163,7 @@ namespace Security_Guard_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Body1")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -194,7 +194,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 1,
-                            Body1 = "Do you want to see the sea? This your best Hotel",
+                            Content = "Do you want to see the sea? This your best Hotel",
                             Body2 = "Say Something as Body2",
                             ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png",
                             Rating = 3,
@@ -204,7 +204,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 2,
-                            Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                            Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                             Body2 = "Say Something as Body2",
                             ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png",
                             Rating = 5,
@@ -214,7 +214,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 3,
-                            Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                            Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             Body2 = "Say Something as Body2",
                             ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg",
                             Rating = 4,
@@ -224,7 +224,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 4,
-                            Body1 = "Do you want to see the sea? This your best Hotel",
+                            Content = "Do you want to see the sea? This your best Hotel",
                             Body2 = "Say Something as Body2",
                             ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg",
                             Rating = 3,
@@ -234,7 +234,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 5,
-                            Body1 = "The best for the best. The place where you can exercise your hiking and other sports.",
+                            Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                             Body2 = "Say Something as Body2",
                             ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png",
                             Rating = 1,
@@ -244,7 +244,7 @@ namespace Security_Guard_API.Migrations
                         new
                         {
                             Id = 6,
-                            Body1 = "Sleep for cheap. Cheapest Hotel you may ever found",
+                            Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             Body2 = "Say Something as Body2",
                             ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg",
                             Rating = 2,

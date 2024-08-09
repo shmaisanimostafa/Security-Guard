@@ -1,19 +1,19 @@
 ﻿@model Security_Guard.Models.Article
 
 @{
-    ViewData["Title"] = "AddNeighbor";
+    ViewData["Title"] = "AddArticle";
 }
 
-<h1>AddNeighbor</h1>
+<h1>Add Article</h1>
 
-<form class="row g-3" asp-controller="Neighbors" asp-action="AddNeighbor" method="post">
+<form class="row g-3" asp-controller="Articles" asp-action="AddArticle" method="post">
     <div class="col-md-6">
-        <label for="NeighborName" class="form-label">Neighbor Name</label>
-        <input type="text" class="form-control" id="NeighborName" name="Name" asp-for="Title">
+        <label for="ArticleTitle" class="form-label">Article Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" asp-for="Title">
     </div>
     <div class="input-group">
         <span class="input-group-text">Description</span>
-        <textarea class="form-control" aria-label="With textarea" name="Description" asp-for="Body1"></textarea>
+        <textarea class="form-control" aria-label="With textarea" name="Description" asp-for="Content"></textarea>
     </div>
     <div class="col-md-4">
         <label for="inputState" class="form-label">Rating</label>
@@ -38,5 +38,3 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
-
-

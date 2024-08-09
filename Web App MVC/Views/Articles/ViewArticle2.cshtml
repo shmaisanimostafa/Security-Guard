@@ -3,12 +3,15 @@
 
     var Articles = ViewBag.Articles;
 
+    var HtmlContent = ViewBag.HtmlContent;
+
     string imagePath = "~/Articles/" + Article.Title + ".png";
     
 }
 
   <div class="row g-5">
     <div class="col-md-8">
+
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         From the Firehose
       </h3>
@@ -16,6 +19,10 @@
       <article class="blog-post">
         <h2 class="display-5 link-body-emphasis mb-1">@Article.Title</h2>
         <p class="blog-post-meta">@DateTime.Now by <a href="#">Mostafa Shmaisany</a></p>
+
+        @Html.Raw(HtmlContent)
+    @* using Microsoft.EntityFrameworkCore.Metadata.Internal; *@
+      @* 
 
         <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
         <hr>
@@ -132,8 +139,8 @@
         <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
         <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
       </nav>
-
-    </div>
+*@
+    </div> 
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
