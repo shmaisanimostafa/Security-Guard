@@ -35,7 +35,7 @@ namespace Security_Guard.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
-                    ImgURL = model.ImgURL,
+                    ImageURL = model.ImageURL,
                     Name = model.FirstName + model.LastName,
                     ConfirmEmail = model.Email,
                 };
@@ -141,7 +141,7 @@ namespace Security_Guard.Controllers
         }
 
         [HttpGet]
-public async Task<IActionResult> UpdateProfile()
+        public async Task<IActionResult> UpdateProfile()
         {
             // Get the current user
             var user = await userManager.GetUserAsync(User);
@@ -152,7 +152,7 @@ public async Task<IActionResult> UpdateProfile()
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.UserName,
-                ImgURL = user.ImgURL,
+                ImageURL = user.ImageURL,
                 Email = user.Email,
                 // Map other properties as needed
             };
@@ -172,7 +172,7 @@ public async Task<IActionResult> UpdateProfile()
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
                 user.UserName = model.Username;
-                user.ImgURL = model.ImgURL;
+                user.ImageURL = model.ImageURL;
                 user.Email = model.Email;
 
                 // Update the user in the database

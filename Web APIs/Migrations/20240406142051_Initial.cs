@@ -24,7 +24,7 @@ namespace Security_Guard_API.Migrations
                     Body2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     URL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,7 +57,7 @@ namespace Security_Guard_API.Migrations
                     ConfirmPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ConfirmEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -252,7 +252,7 @@ namespace Security_Guard_API.Migrations
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "Id", "Content", "Body2", "ImgURL", "Rating", "Title", "URL" },
+                columns: new[] { "Id", "Content", "Body2", "ImageURL", "Rating", "Title", "URL" },
                 values: new object[,]
                 {
                     { 1, "Do you want to see the sea? This your best Hotel", "Say Something as Body2", "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png", 3, "Bitdefender", "https://www.bitdefender.com/" },

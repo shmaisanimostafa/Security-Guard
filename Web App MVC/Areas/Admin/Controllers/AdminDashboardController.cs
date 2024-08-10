@@ -7,7 +7,7 @@ using File = Security_Guard.Models.File;
 
 namespace Security_Guard.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     
     public class AdminDashboardController : Controller

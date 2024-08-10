@@ -20,11 +20,17 @@ namespace Security_Guard.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Rating = table.Column<int>(type: "int", nullable: false),
+                    Tags = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReadCount = table.Column<int>(type: "int", nullable: false),
+                    LikeCount = table.Column<int>(type: "int", nullable: false),
+                    DisLikeCount = table.Column<int>(type: "int", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Body2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    URL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsFeatured = table.Column<bool>(type: "bit", nullable: false),
+                    SourceURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PublishDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +64,7 @@ namespace Security_Guard.Migrations
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
                     ConfirmEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -252,15 +258,16 @@ namespace Security_Guard.Migrations
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "Id", "Content", "Body2", "ImgURL", "Rating", "Title", "URL" },
+                columns: new[] { "Id", "Content", "DisLikeCount", "ImageURL", "IsFeatured", "LikeCount", "PublishDate", "Rating", "ReadCount", "SourceURL", "Summary", "Tags", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Do you want to see the sea? This your best Hotel", "Say Something as Body2", "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png", 3, "Bitdefender", "https://www.bitdefender.com/" },
-                    { 2, "The best for the best. The place where you can exercise your hiking and other sports.", "Say Something as Body2", "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png", 5, "Dr.Web", "https://www.drweb.com/" },
-                    { 3, "Sleep for cheap. Cheapest Hotel you may ever found", "Say Something as Body2", "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg", 4, "eset", "https://www.eset.com/" },
-                    { 4, "Do you want to see the sea? This your best Hotel", "Say Something as Body2", "https://wallpapershome.com/images/pages/ico_h/655.jpg", 3, "Kaspersky", "https://me-en.kaspersky.com/" },
-                    { 5, "The best for the best. The place where you can exercise your hiking and other sports.", "Say Something as Body2", "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png", 1, "PhishTank", "https://phishtank.org/" },
-                    { 6, "Sleep for cheap. Cheapest Hotel you may ever found", "Say Something as Body2", "https://wallpapercave.com/wp/wp12549190.jpg", 2, "VirusTotal", "https://www.virustotal.com/gui/home/upload" }
+                    { 1, "Do you want to see the sea? This your best Hotel", 0, "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9222), 3, 0, "https://www.bitdefender.com/", "A brief summary on the article", "[]", "Bitdefender" },
+                    { 2, "The best for the best. The place where you can exercise your hiking and other sports.", 0, "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9230), 5, 0, "https://www.drweb.com/", "A brief summary on the article", "[]", "Dr.Web" },
+                    { 3, "Sleep for cheap. Cheapest Hotel you may ever found", 0, "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9244), 4, 0, "https://www.eset.com/", "A brief summary on the article", "[]", "eset" },
+                    { 4, "Do you want to see the sea? This your best Hotel", 0, "https://wallpapershome.com/images/pages/ico_h/655.jpg", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9250), 3, 0, "https://me-en.kaspersky.com/", "A brief summary on the article", "[]", "Kaspersky" },
+                    { 5, "The best for the best. The place where you can exercise your hiking and other sports.", 0, "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9256), 1, 0, "https://phishtank.org/", "A brief summary on the article", "[]", "PhishTank" },
+                    { 6, "Sleep for cheap. Cheapest Hotel you may ever found", 0, "https://wallpapercave.com/wp/wp12549190.jpg", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9263), 2, 0, "https://www.virustotal.com/gui/home/upload", "A brief summary on the article", "[]", "VirusTotal" },
+                    { 7, "> Hi \n # What do you have today \n \"Good\" `Morning`  ", 0, "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png", false, 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9237), 5, 0, "https://www.drweb.com/", "A brief summary on the article", "[]", "Markdown" }
                 });
 
             migrationBuilder.InsertData(
@@ -268,12 +275,12 @@ namespace Security_Guard.Migrations
                 columns: new[] { "Id", "DateTime", "FileName", "StatusMessage", "URL", "UserName" },
                 values: new object[,]
                 {
-                    { 0, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6219), "Virus.pdf", "", "www.virus.com", "Mostafa" },
-                    { 1, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6268), "Malware.pdf", "", "www.malware.ar", "Mostafa" },
-                    { 2, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6272), "potato.pdf", "", "www.potato.me", "Mostafa" },
-                    { 3, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6276), "Virus.pdf", "", "www.virus.com", "Mostafa" },
-                    { 4, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6279), "Malware.pdf", "", "www.malware.ar", "Mostafa" },
-                    { 5, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6283), "potato.pdf", "", "www.potato.me", "Mostafa" }
+                    { 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(8601), "Virus.pdf", "", "www.virus.com", "Mostafa" },
+                    { 1, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(8674), "Malware.pdf", "", "www.malware.ar", "Mostafa" },
+                    { 2, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(8682), "potato.pdf", "", "www.potato.me", "Mostafa" },
+                    { 3, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(8687), "Virus.pdf", "", "www.virus.com", "Mostafa" },
+                    { 4, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(8694), "Malware.pdf", "", "www.malware.ar", "Mostafa" },
+                    { 5, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(8699), "potato.pdf", "", "www.potato.me", "Mostafa" }
                 });
 
             migrationBuilder.InsertData(
@@ -281,9 +288,9 @@ namespace Security_Guard.Migrations
                 columns: new[] { "Id", "DateTime", "Status", "StatusMessage", "URL", "UserName" },
                 values: new object[,]
                 {
-                    { 0, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6540), "danger", "", "www.pdf.com.lb.mu.edu", "Mostafa" },
-                    { 1, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6548), "safe", "", "www.trojans.ar", "Mostafa" },
-                    { 2, new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6554), "ambigious", "", "www.malosd.me", "Mostafa" }
+                    { 0, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9127), "danger", "", "www.pdf.com.lb.mu.edu", "Mostafa" },
+                    { 1, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9143), "safe", "", "www.trojans.ar", "Mostafa" },
+                    { 2, new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9153), "ambigious", "", "www.malosd.me", "Mostafa" }
                 });
 
             migrationBuilder.InsertData(
@@ -291,14 +298,14 @@ namespace Security_Guard.Migrations
                 columns: new[] { "Id", "IsAi", "Sender", "Text", "Time" },
                 values: new object[,]
                 {
-                    { 0, false, "Mostafa", "Hello", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6652) },
-                    { 1, true, "AI", "Hi", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6659) },
-                    { 2, false, "Mostafa", "How are you?", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6663) },
-                    { 3, true, "AI", "I'm fine", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6666) },
-                    { 4, false, "Mostafa", "Good", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6669) },
-                    { 5, true, "AI", "Bye", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6673) },
-                    { 6, false, "Mostafa", "Bye", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6676) },
-                    { 7, true, "AI", "Goodbye", new DateTime(2024, 7, 31, 14, 12, 54, 834, DateTimeKind.Local).AddTicks(6679) }
+                    { 0, false, "Mostafa", "Hello", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9340) },
+                    { 1, true, "AI", "Hi", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9348) },
+                    { 2, false, "Mostafa", "How are you?", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9353) },
+                    { 3, true, "AI", "I'm fine", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9360) },
+                    { 4, false, "Mostafa", "Good", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9365) },
+                    { 5, true, "AI", "Bye", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9371) },
+                    { 6, false, "Mostafa", "Bye", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9377) },
+                    { 7, true, "AI", "Goodbye", new DateTime(2024, 8, 9, 19, 39, 10, 997, DateTimeKind.Local).AddTicks(9383) }
                 });
 
             migrationBuilder.CreateIndex(

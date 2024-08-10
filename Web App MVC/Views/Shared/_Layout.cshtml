@@ -99,13 +99,13 @@
                         {
                             <div class="nav-item d-inline">
                                 <a class="btn" style="border-radius: 50%" data-bs-toggle="dropdown">
-                                    <img src="@currentUser.ImgURL" style="" alt="User Image" width="30" class="rounded-circle user-image" />
+                                    <img src="@currentUser.ImageURL" style="" alt="User Image" width="30" class="rounded-circle user-image" />
                                 </a>
                                 
                                     <div style="margin-left: 83%;" class=" dropdown-menu dropdown-menu-right text-center">
                                     <div class="dropdown-header text-center">
                                         <p class="dropdown-user-name">@currentUser.Email</p>
-                                        <img src="@currentUser.ImgURL" alt="User Image" width="70" class="rounded-circle user-image-dropdown" />
+                                        <img src="@currentUser.ImageURL" alt="User Image" width="70" class="rounded-circle user-image-dropdown" />
                                     </div>
                                     <h5 class="text-warning">Hi, @User.Identity.Name !</h5>
                                     <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="UpdateProfile">Manage Account</a>

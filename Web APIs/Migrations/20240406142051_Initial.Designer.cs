@@ -174,7 +174,7 @@ namespace Security_Guard_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImgURL")
+                    b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -199,7 +199,7 @@ namespace Security_Guard_API.Migrations
                             Id = 1,
                             Content = "Do you want to see the sea? This your best Hotel",
                             Body2 = "Say Something as Body2",
-                            ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png",
+                            ImageURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png",
                             Rating = 3,
                             Title = "Bitdefender",
                             URL = "https://www.bitdefender.com/"
@@ -209,7 +209,7 @@ namespace Security_Guard_API.Migrations
                             Id = 2,
                             Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                             Body2 = "Say Something as Body2",
-                            ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png",
+                            ImageURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png",
                             Rating = 5,
                             Title = "Dr.Web",
                             URL = "https://www.drweb.com/"
@@ -219,7 +219,7 @@ namespace Security_Guard_API.Migrations
                             Id = 3,
                             Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             Body2 = "Say Something as Body2",
-                            ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg",
+                            ImageURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg",
                             Rating = 4,
                             Title = "eset",
                             URL = "https://www.eset.com/"
@@ -229,7 +229,7 @@ namespace Security_Guard_API.Migrations
                             Id = 4,
                             Content = "Do you want to see the sea? This your best Hotel",
                             Body2 = "Say Something as Body2",
-                            ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg",
+                            ImageURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg",
                             Rating = 3,
                             Title = "Kaspersky",
                             URL = "https://me-en.kaspersky.com/"
@@ -239,7 +239,7 @@ namespace Security_Guard_API.Migrations
                             Id = 5,
                             Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                             Body2 = "Say Something as Body2",
-                            ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png",
+                            ImageURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png",
                             Rating = 1,
                             Title = "PhishTank",
                             URL = "https://phishtank.org/"
@@ -249,7 +249,7 @@ namespace Security_Guard_API.Migrations
                             Id = 6,
                             Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             Body2 = "Say Something as Body2",
-                            ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg",
+                            ImageURL = "https://wallpapercave.com/wp/wp12549190.jpg",
                             Rating = 2,
                             Title = "VirusTotal",
                             URL = "https://www.virustotal.com/gui/home/upload"
@@ -465,7 +465,7 @@ namespace Security_Guard_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImgURL")
+                    b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

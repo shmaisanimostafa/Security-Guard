@@ -28,12 +28,22 @@
     </div>
     <div class="col-md-2">
         <label for="Image" class="form-label">ImageURL</label>
-        <input class="form-control" type="url" id="Image" name="ImgURL" asp-for="ImgURL">
+        <input class="form-control" type="url" id="Image" name="ImageURL" asp-for="ImageURL">
     </div>
     <div class="col-md-2">
-        <label for="URL" class="form-label">URL</label>
-        <input class="form-control" type="url" id="URL" name="URL" asp-for="URL">
+        <label for="SourceURL" class="form-label">SourceURL</label>
+        <input class="form-control" type="url" id="URL" name="URL" asp-for="SourceURL">
     </div>
+
+
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="IsFeatured" value="true" name="IsFeatured"
+            asp-for="IsFeatured">
+        <label class="form-check-label" for="IsFeatured">Is Featured?</label>
+    </div>
+
+
+
     <div class="col-12">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

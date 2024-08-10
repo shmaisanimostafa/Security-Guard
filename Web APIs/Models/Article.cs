@@ -12,6 +12,6 @@ namespace Security_Guard.Models
         [Required]
         public string Title { get; set; } = "";
         [Required]
-        public string ImgURL { get; set; } = "";
+        public string ImageURL { get; set; } = "";
     }
 }

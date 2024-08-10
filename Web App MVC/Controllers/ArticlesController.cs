@@ -22,15 +22,33 @@ namespace Security_Guard.Controllers
             ViewBag.Articles = Articles;
             return View();
         }
+
+
         [HttpGet]
         public IActionResult Index2()
         {
+            // Query for all articles ordered by Id
             IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
-
             List<Article> Articles = queryArticles.ToList();
+
+            // Query for the first featured article
+            Article featuredArticle = Context.Articles
+                                              .Where(a => a.IsFeatured)
+                                              .OrderBy(a => a.Id) // Ensure there's an order, or choose another property
+                                              .FirstOrDefault();
+
+            // Pass both lists to the view using ViewBag
             ViewBag.Articles = Articles;
+            ViewBag.FeaturedArticle = featuredArticle;
+
             return View();
         }
+
+
+
+
+
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddArticle()

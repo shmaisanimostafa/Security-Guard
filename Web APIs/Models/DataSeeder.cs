@@ -189,7 +189,7 @@ namespace Security_Guard.Data
                  Content = "Do you want to see the sea? This your best Hotel",
                  Title = "Bitdefender",
                  URL = "https://www.bitdefender.com/",
-                 ImgURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png"
+                 ImageURL = "file://C:/Users/shmai/source/repos/Security%20Guard/wwwroot/Neighbors/Bitdefender.png"
              },
             new Article()
             {
@@ -198,7 +198,7 @@ namespace Security_Guard.Data
                 Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                 Title = "Dr.Web",
                 URL = "https://www.drweb.com/",
-                ImgURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png"
+                ImageURL = "file://C:/Users/shmai/source/repos/Security_Guard/wwwroot/Neighbors/Dr.Web.png"
             },
             new Article()
             {
@@ -207,7 +207,7 @@ namespace Security_Guard.Data
                 Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                 Title = "eset",
                 URL = "https://www.eset.com/",
-                ImgURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg"
+                ImageURL = "https://c4.wallpaperflare.com/wallpaper/813/904/915/hotel-new-york-statue-of-liberty-in-las-vegas-nevada-usa-hd-desktop-wallpaper-1920%C3%971200-wallpaper-preview.jpg"
             },
             new Article()
             {
@@ -216,7 +216,7 @@ namespace Security_Guard.Data
                 Content = "Do you want to see the sea? This your best Hotel",
                 Title = "Kaspersky",
                 URL = "https://me-en.kaspersky.com/",
-                ImgURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg"
+                ImageURL = "https://wallpapershome.com/images/pages/ico_h/655.jpg"
             },
             new Article()
             {
@@ -225,7 +225,7 @@ namespace Security_Guard.Data
                 Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                 Title = "PhishTank",
                 URL = "https://phishtank.org/",
-                ImgURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png"
+                ImageURL = "https://www.thesouthafrican.com/wp-content/uploads/2022/07/hotel-800x529.png"
             },
             new Article()
             {
@@ -234,7 +234,7 @@ namespace Security_Guard.Data
                 Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                 Title = "VirusTotal",
                 URL = "https://www.virustotal.com/gui/home/upload",
-                ImgURL = "https://wallpapercave.com/wp/wp12549190.jpg"
+                ImageURL = "https://wallpapercave.com/wp/wp12549190.jpg"
             }
             );
         }

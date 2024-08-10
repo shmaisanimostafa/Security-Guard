@@ -12,7 +12,7 @@
             <div class="card-body">
                 <h5 class="card-title">Body</h5>
                 <p class="card-text">@Article.Content</p>
-                <p class="card-text">@Article.Body2</p>
+                <p class="card-text">@Article.Summary</p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 <div class="container">
                     <div class="row">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 mt-3">
-                        <a href="@Article.URL" class="btn btn-outline-success">Visit</a>
+                        <a href="@Article.SourceURL" class="btn btn-outline-success">Visit</a>
                         <a asp-controller="Articles" asp-action="Index" class="btn btn-primary">Return</a>
                     </div>
                 </div>

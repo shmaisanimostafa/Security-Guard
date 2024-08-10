@@ -13,12 +13,12 @@ namespace Security_Guard.Models
         public IList<string>? RoleNames { get; set; }
 
         public string Password { get; set; } = string.Empty;
-        public string ConfirmPassword {  get; set; } = string.Empty;
+        public string ConfirmPassword { get; set; } = string.Empty;
 
         public string Role { get; set; } = string.Empty;
         //public string Email { get; set; } = string.Empty;
         public string ConfirmEmail { get; set; } = string.Empty;
-        public string ImgURL { get; set; } = string.Empty;
+        public string ImageURL { get; set; } = string.Empty;
 
     }
 }
