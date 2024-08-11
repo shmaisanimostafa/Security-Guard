@@ -25,7 +25,7 @@
                 string imagePath = "~/Articles/" + Article.Title + ".png";
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="@Url.Content(imagePath)" alt="Image for @Article.Title" class="card-img-top">
+                        <img src="@Url.Content(Article.ImageURL)" alt="Image for @Article.Title" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">@Article.Title</h5>
                             @{
@@ -35,10 +35,12 @@
                                 }
                             }
                             <div class="mt-1">
-                                <a class="btn btn-primary" role="button" asp-controller="Articles" asp-action="ViewArticle" asp-route-id="@Article.Id">View</a>
-                            <a class="btn btn-outline-danger" asp-controller="Articles" asp-action="Delete" asp-route-id="@Article.Id">
-                                <i class="bi bi-trash"></i> Delete
-                            </a>
+                                <a class="btn btn-primary" role="button" asp-controller="Articles" asp-action="ViewArticle"
+                                    asp-route-id="@Article.Id">View</a>
+                                <a class="btn btn-outline-danger" asp-controller="Articles" asp-action="Delete"
+                                    asp-route-id="@Article.Id">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
                             </div>
                         </div>
                     </div>

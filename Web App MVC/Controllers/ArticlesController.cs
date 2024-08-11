@@ -39,7 +39,10 @@ namespace Security_Guard.Controllers
 
             // Pass both lists to the view using ViewBag
             ViewBag.Articles = Articles;
-            ViewBag.FeaturedArticle = featuredArticle;
+            if (featuredArticle != null)
+            {
+                ViewBag.FeaturedArticle = featuredArticle;
+            }
 
             return View();
         }
@@ -68,6 +71,30 @@ namespace Security_Guard.Controllers
                 Context.SaveChanges();
             }
             return RedirectToAction("Index");
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult EditArticle(int id)
+        {
+            var articleToEdit = Context.Articles.OrderBy(f => f.Id).First(h => h.Id == id);
+            if (articleToEdit != null)
+            {
+
+                ViewBag.Article = articleToEdit;
+            }
+            return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult UpdateArticle(Article updatedArticle)
+        {
+            var articleToUpdate = Context.Articles.OrderBy(f => f.Id).First(h => h.Id == updatedArticle.Id);
+            articleToUpdate.Title = updatedArticle.Title;
+            articleToUpdate.Content = updatedArticle.Content;
+            articleToUpdate.Summary = updatedArticle.Summary;
+            articleToUpdate.ImageURL = updatedArticle.ImageURL;
+            articleToUpdate.SourceURL = updatedArticle.SourceURL;
+            articleToUpdate.IsFeatured = updatedArticle.IsFeatured;
+            Context.SaveChanges();
+            return RedirectToAction("Index2");
         }
 
         [Authorize(Roles = "Admin")]
