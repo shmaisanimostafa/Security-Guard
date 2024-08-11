@@ -5,7 +5,7 @@
 @inject IAuthorizationService AuthorizationService
 
 @{
-  var authorizationResult = User.HasClaim(c => c.Type == "Permission" && c.Value == "Edites Article");
+  var authorizationResult = User.HasClaim(c => c.Type == "Permission" && c.Value == "Post Article");
   var currentUser = await userManager.GetUserAsync(User);
   ViewData["Title"] = "Articles";
 
