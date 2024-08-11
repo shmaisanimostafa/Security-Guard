@@ -1,8 +1,11 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> signInManager
 @inject UserManager<User> userManager
+@inject IAuthorizationService AuthorizationService
 
 @{
+  var authorizationResult = User.HasClaim(c => c.Type == "Permission" && c.Value == "Edites Article");
   var currentUser = await userManager.GetUserAsync(User);
   ViewData["Title"] = "Articles";
 
@@ -199,7 +202,7 @@
           <path d="M21 21l-5.2-5.2" />
           </svg>
           </a> *@
-          @if (currentUser != null && await userManager.IsInRoleAsync(currentUser, "Admin"))
+          @if (currentUser != null && authorizationResult)
           {
             <a class="btn btn-sm btn-outline-success" role="button" asp-controller="Articles" asp-action="AddArticle">Post
               Article</a>

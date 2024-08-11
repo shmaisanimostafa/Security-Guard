@@ -1,57 +1,83 @@
 ﻿@using Security_Guard.Areas.Admin.Models
 @model UserViewModel
 @{
-    ViewData["Title"] = "Admin | Manage Users";
+    ViewData["Title"] = "Admin | Manage Users and Roles";
 }
 
-@* Table of Users *@
 <h1 class="mb-2">Manage Users</h1>
 
 <h5 class="mt-2"><a asp-area="" asp-controller="Account" asp-action="Register">Register a User</a></h5>
 
 <table class="table table-bordered table-striped table-sm">
     <thead>
-        <tr><th>Username</th><th>Role</th><th>Delete</th><th>Admin</th><th>Remove</th></tr>
+        <tr>
+            <th>Username</th>
+            <th>Roles</th>
+            <th>Delete</th>
+            @* <th>Add Admin</th> *@
+            @* <th>Remove Admin</th> *@
+            <th>Add Role</th>
+            <th>Remove Role</th>
+        </tr>
     </thead>
     <tbody>
-        @if (Model.Users.Count() == 0)
+        @if (!Model.Users.Any())
         {
-            <tr><td colspan="5">There are no user accounts.</td></tr>
+            <tr>
+                <td colspan="7">There are no user accounts.</td>
+            </tr>
         }
         else
         {
-            @foreach (User user in Model.Users)
+            @foreach (var user in Model.Users)
             {
                 <tr>
                     <td>@user.UserName</td>
                     <td>
-                        @foreach (string roleName in user.RoleNames)
+                        @foreach (var roleName in user.RoleNames)
                         {
                             <div>@roleName</div>
                         }
                     </td>
                     <td>
-                        <form method="post" asp-action="Delete"
-                              asp-route-id="@user.Id">
-                            <button type="submit" class="btn btn-danger">
-                                Delete User
-                            </button>
+                        <form method="post" asp-action="Delete" asp-route-id="@user.Id">
+                            <button type="submit" class="btn btn-danger">Delete User</button>
+                        </form>
+                    </td>
+                    @* <td>
+            <form method="post" asp-action="AddToAdmin" asp-route-id="@user.Id">
+            <button type="submit" class="btn btn-primary">Add To Admin</button>
+            </form>
+            </td> *@
+                    @* <td>
+            <form method="post" asp-action="RemoveFromAdmin" asp-route-id="@user.Id">
+            <button type="submit" class="btn btn-danger">Remove From Admin</button>
+            </form>
+            </td> *@
+                    <td>
+                        <form method="post" asp-action="AddRoleToUser">
+                            <select name="roleName" class="form-select" required>
+                                <option value="">Select Role</option>
+                                @foreach (var role in Model.Roles)
+                                {
+                                    <option value="@role.Name">@role.Name</option>
+                                }
+                            </select>
+                            <input type="hidden" name="userId" value="@user.Id" />
+                            <button type="submit" class="btn btn-primary mt-2">Add Role</button>
                         </form>
                     </td>
                     <td>
-                        <form method="post" asp-action="AddToAdmin"
-                              asp-route-id="@user.Id">
-                            <button type="submit" class="btn btn-primary">
-                                Add To Admin
-                            </button>
-                        </form>
-                    </td>
-                    <td>
-                        <form method="post" asp-action="RemoveFromAdmin"
-                              asp-route-id="@user.Id">
-                            <button type="submit" class="btn btn-danger">
-                                Remove From Admin
-                            </button>
+                        <form method="post" asp-action="RemoveRoleFromUser">
+                            <select name="roleName" class="form-select" required>
+                                <option value="">Select Role</option>
+                                @foreach (var role in user.RoleNames)
+                                {
+                                    <option value="@role">@role</option>
+                                }
+                            </select>
+                            <input type="hidden" name="userId" value="@user.Id" />
+                            <button type="submit" class="btn btn-danger mt-2">Remove Role</button>
                         </form>
                     </td>
                 </tr>
@@ -60,34 +86,36 @@
     </tbody>
 </table>
 
-@* Table of Roles *@
 <h1 class="mb-2">Manage Roles</h1>
 
-@if (Model.Roles.Count() == 0)
+@if (!Model.Roles.Any())
 {
     <form method="post" asp-action="CreateAdminRole">
-        <button type="submit" class="btn btn-primary">
-            Create Admin Role
-        </button>
-    </form>
+    <button type="submit" class="btn btn-primary">Create Admin Role</button>
+</form>
 }
 else
 {
     <table class="table table-bordered table-striped table-sm">
-        <thead>
-            <tr><th>Role</th><th></th></tr>
-        </thead>
-        <tbody>
-            @foreach (var role in Model.Roles)
+    <thead>
+        <tr>
+            <th>Role</th>
+            <th>Claims</th>
+            <th>Delete Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model.Roles)
             {
                 <tr>
                     <td>@role.Name</td>
                     <td>
-                        <form method="post" asp-action="DeleteRole"
-                              asp-route-id="@role.Id">
-                            <button type="submit" class="btn btn-danger">
-                                Delete Role
-                            </button>
+                        @* To display claims for this role, additional logic is required *@
+                        <a asp-controller="RoleClaim" asp-action="Index" class="btn btn-secondary">Manage Claims</a>
+                    </td>
+                    <td>
+                        <form method="post" asp-action="DeleteRole" asp-route-id="@role.Id">
+                            <button type="submit" class="btn btn-danger">Delete Role</button>
                         </form>
                     </td>
                 </tr>
@@ -95,3 +123,6 @@ else
         </tbody>
     </table>
 }
+
+@* <!-- Back to Dashboard Button -->
+<a href="@Url.Action("Index", "Dashboard")" class="btn btn-secondary mt-4">Back to Dashboard</a> *@

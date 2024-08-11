@@ -108,8 +108,8 @@
                                         <img src="@currentUser.ImageURL" alt="User Image" width="70" class="rounded-circle user-image-dropdown" />
                                     </div>
                                     <h5 class="text-warning">Hi, @User.Identity.Name !</h5>
-                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="UpdateProfile">Manage Account</a>
-                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-controller="Account" asp-action="ChangePassword">Change Password</a>
+                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-area="" asp-controller="Account" asp-action="UpdateProfile">Manage Account</a>
+                                    <a class="btn btn-outline-warning rounded dropdown-item" asp-area="" asp-controller="Account" asp-action="ChangePassword">Change Password</a>
                                     <div class="dropdown-divider"></div>
                                     <form method="post" asp-action="Logout" asp-controller="Account" asp-area="">
                                         <input type="submit" value="Sign Out" class="btn btn-outline-warning" />
