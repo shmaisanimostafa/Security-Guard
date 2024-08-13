@@ -9803,9 +9803,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/Web APIs.csproj",
-      "projectName": "Web APIs",
-      "projectPath": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/Web APIs.csproj",
+      "projectUniqueName": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/Security Guard APIs.csproj",
+      "projectName": "Security Guard APIs",
+      "projectPath": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/Security Guard APIs.csproj",
       "packagesPath": "/home/shmaisanymostafa/.nuget/packages/",
       "outputPath": "/home/shmaisanymostafa/Development/Security-Guard/Web APIs/obj/",
       "projectStyle": "PackageReference",

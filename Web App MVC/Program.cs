@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews();
 
 // Add Roles 
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddHttpClient<FastApiService>();
 
 // Add Policies
 // builder.Services.AddAuthorization(options =>
