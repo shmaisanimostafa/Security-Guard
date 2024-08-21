@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace Security_Guard.Models
 {
@@ -9,16 +9,10 @@ namespace Security_Guard.Models
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
-        [NotMapped]
-        public IList<string>? RoleNames { get; set; }
-
-        public string Password { get; set; } = string.Empty;
-        public string ConfirmPassword { get; set; } = string.Empty;
-
-        public string Role { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string ConfirmEmail { get; set; } = string.Empty;
         public string ImageURL { get; set; } = string.Empty;
+        public bool IsSubscribed { get; set; } = false;
 
+        [NotMapped]
+        public IList<string>? RoleNames { get; set; }  // Use for display purposes only
     }
 }

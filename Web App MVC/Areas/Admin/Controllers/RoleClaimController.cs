@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Security_Guard.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class RoleClaimController : Controller
     {

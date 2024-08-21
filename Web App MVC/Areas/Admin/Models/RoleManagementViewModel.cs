@@ -1,7 +1,9 @@
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
+
 
 public class RoleManagementViewModel
 {
-    public List<RoleClaimsViewModel> RolesWithClaims { get; set; } = new List<RoleClaimsViewModel>();
+    public List<RoleClaimsViewModel> RolesWithClaims { get; set; }
 }
+

@@ -5,10 +5,25 @@
 @inject IAuthorizationService AuthorizationService
 
 @{
+  String SubscribeStatus = "Subscribe";
+
+
   var authorizationResult = User.HasClaim(c => c.Type == "Permission" && c.Value == "Post Article");
   var currentUser = await userManager.GetUserAsync(User);
   ViewData["Title"] = "Articles";
 
+  if (currentUser != null)
+  {
+
+    if (currentUser.IsSubscribed == true)
+    {
+      SubscribeStatus = "UnSubscribe";
+    }
+    else
+    {
+      SubscribeStatus = "Subscribe";
+    }
+  }
   Article FeaturedArticle = ViewBag.FeaturedArticle;
 
   if (FeaturedArticle == null)
@@ -187,7 +202,11 @@
     <header class="border-bottom lh-1 py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-4 pt-1">
-          <a class="link-secondary" href="#">Subscribe</a>
+          @if (currentUser != null && authorizationResult)
+          {
+            <a class="btn btn-sm btn-outline-warning" role="button" asp-action="Subscribe"
+              asp-controller="Articles">@SubscribeStatus</a>
+          }
         </div>
         <div class="col-4 text-center">
           <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Security Guard Blogs</a>
@@ -221,7 +240,16 @@
         <a class="nav-item nav-link link-body-emphasis" href="#">Artificial Intelligence</a>
         <a class="nav-item nav-link link-body-emphasis" href="#">Mobile Dev</a>
         <a class="nav-item nav-link link-body-emphasis" href="#">UI / UX</a>
+        @if (currentUser != null && authorizationResult)
+        {
+          <a class="nav-item nav-link btn text-success ms-2" role="button" asp-controller="Categories"
+            asp-action="EditCategories">
+            Edit Categories
+          </a>
+        }
       </nav>
+
+
     </div>
   </div>
 
@@ -296,14 +324,14 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
                 @* <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong> *@
-                <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+                <strong class="d-inline-block mb-2 text-primary-emphasis">Computer Science</strong>
                 <h3 class="mb-0">@Article.Title</h3>
-                <div class="mb-1 text-body-secondary">@Article.</div>
+                @* <div class="mb-1 text-body-secondary">@Article.</div> *@
                 <p class="mb-auto">@Article.Summary</p>
                 @* shall be called lead *@
                 <a class="icon-link gap-1 icon-link-hover stretched-link" role="button" asp-controller="Articles"
                   asp-action="ViewArticle2" asp-route-id="@Article.Id">
-                  Continue reading
+                  Continue reading...
                   <svg class="bi">
                     <use xlink:href="#chevron-right" />
                   </svg>
@@ -356,6 +384,7 @@
         href="https://twitter.com/mdo">@@mdo</a>.</p>
     <p class="mb-0">
       <a href="#">Back to top</a>
+
     </p>
   </footer>
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

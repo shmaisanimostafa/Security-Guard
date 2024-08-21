@@ -1,111 +1,127 @@
+@using Security_Guard.Areas.Admin.Models
 @model RoleManagementViewModel
+
 @{
-    ViewData["Title"] = "Role and Claims Management";
+    ViewData["Title"] = "Manage Roles and Claims";
 }
 
-<h1>Role and Claims Management</h1>
+<h1 class="mb-2">Manage Roles</h1>
 
-<!-- Create New Role Form -->
-<h2>Create New Role</h2>
+@if (Model.RolesWithClaims != null && Model.RolesWithClaims.Any())
+
+{
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Claims</th>
+                <th>Delete Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var roleWithClaims in Model.RolesWithClaims)
+
+            {
+                <tr>
+                    <td>@roleWithClaims.Role.Name</td>
+                    <td>
+                        @if (roleWithClaims.Claims != null && roleWithClaims.Claims.Any())
+
+                        {
+                            @foreach (var claim in roleWithClaims.Claims)
+
+                            {
+                                <div>@claim.ClaimType: @claim.ClaimValue</div>
+                            }
+                        }
+
+                        else
+
+                        {
+                            <div>No claims</div>
+                        }
+                    </td>
+                    <td>
+                        <form method="post" asp-action="DeleteRole" asp-route-id="@roleWithClaims.Role.Id">
+                            <button type="submit" class="btn btn-danger">Delete Role</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+else
+
+{
+    <p>No roles available.</p>
+}
+
+<h1 class="mb-2 mt-4">Manage Claims</h1>
+
 <form method="post" asp-action="CreateRole">
     <div class="form-group">
-        <label for="newRoleName">Role Name</label>
-        <input type="text" class="form-control" id="newRoleName" name="newRoleName" required />
+        <label for="newRoleName">Create a new role</label>
+        <input type="text" id="newRoleName" name="newRoleName" class="form-control" placeholder="Role name" required />
     </div>
     <button type="submit" class="btn btn-primary mt-2">Create Role</button>
 </form>
 
-<!-- Delete Role Form -->
-<h2>Delete Role</h2>
-<form method="post" asp-action="DeleteRole">
-    <div class="form-group">
-        <label for="deleteRoleName">Role Name</label>
-        <select class="form-select" id="deleteRoleName" name="roleName" required>
-            <option value="">Select Role</option>
-            @foreach (var role in Model.RolesWithClaims.Select(rc => rc.Role).Distinct())
-            {
-                <option value="@role.Name">@role.Name</option>
-            }
-        </select>
-    </div>
-    <button type="submit" class="btn btn-danger mt-2">Delete Role</button>
-</form>
+<h1 class="mb-2 mt-4">Manage Role Claims</h1>
 
-<!-- Add Claim to Role Form -->
-<h2>Add Claim to Role</h2>
-<form method="post" asp-action="AddClaimToRole">
-    <div class="form-group">
-        <label for="claimRoleName">Role Name</label>
-        <select class="form-select" id="claimRoleName" name="roleName" required>
-            <option value="">Select Role</option>
-            @foreach (var role in Model.RolesWithClaims.Select(rc => rc.Role).Distinct())
-            {
-                <option value="@role.Name">@role.Name</option>
-            }
-        </select>
-    </div>
-    <div class="form-group mt-2">
-        <label for="claimType">Claim Type</label>
-        <input type="text" class="form-control" id="claimType" name="claimType" required />
-    </div>
-    <div class="form-group mt-2">
-        <label for="claimValue">Claim Value</label>
-        <input type="text" class="form-control" id="claimValue" name="claimValue" required />
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">Add Claim</button>
-</form>
+@if (Model.RolesWithClaims != null && Model.RolesWithClaims.Any())
 
-<!-- Remove Claim from Role Form -->
-<h2>Remove Claim from Role</h2>
-<form method="post" asp-action="RemoveClaimFromRole">
-    <div class="form-group">
-        <label for="removeClaimRoleName">Role Name</label>
-        <select class="form-select" id="removeClaimRoleName" name="roleName" required>
-            <option value="">Select Role</option>
-            @foreach (var role in Model.RolesWithClaims.Select(rc => rc.Role).Distinct())
-            {
-                <option value="@role.Name">@role.Name</option>
-            }
-        </select>
-    </div>
-    <div class="form-group mt-2">
-        <label for="removeClaimType">Claim Type</label>
-        <input type="text" class="form-control" id="removeClaimType" name="claimType" required />
-    </div>
-    <div class="form-group mt-2">
-        <label for="removeClaimValue">Claim Value</label>
-        <input type="text" class="form-control" id="removeClaimValue" name="claimValue" required />
-    </div>
-    <button type="submit" class="btn btn-danger mt-2">Remove Claim</button>
-</form>
+{
+    <form method="post" asp-action="AddClaimToRole">
+        <div class="form-group">
+            <label for="roleName">Select Role</label>
+            <select id="roleName" name="roleName" class="form-select" required>
+                <option value="">Select Role</option>
+                @foreach (var role in Model.RolesWithClaims.Select(rc => rc.Role))
 
-<!-- Display Current Roles and Claims -->
-<h2>Current Roles and Claims</h2>
-<table class="table table-striped mt-4">
-    <thead>
-        <tr>
-            <th>Role Name</th>
-            <th>Claims</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var roleClaims in Model.RolesWithClaims)
-        {
-            <tr>
-                <td>@roleClaims.Role.Name</td>
-                <td>
-                    <ul>
-                        @foreach (var claim in roleClaims.Claims)
-                        {
-                            <li>@claim.ClaimType: @claim.ClaimValue</li>
-                        }
-                    </ul>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                {
+                    <option value="@role.Name">@role.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-group mt-2">
+            <label for="claimType">Claim Type</label>
+            <input type="text" id="claimType" name="claimType" class="form-control" placeholder="Claim Type" required />
+        </div>
+        <div class="form-group mt-2">
+            <label for="claimValue">Claim Value</label>
+            <input type="text" id="claimValue" name="claimValue" class="form-control" placeholder="Claim Value" required />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Add Claim</button>
+    </form>
 
-<!-- Back to Dashboard Button -->
-<a asp-area="Admin" asp-controller="User" asp-action="Index" class="btn btn-secondary mt-4">Back to
-    Dashboard</a>
+    <form method="post" asp-action="RemoveClaimFromRole" class="mt-4">
+        <div class="form-group">
+            <label for="removeRoleName">Select Role</label>
+            <select id="removeRoleName" name="roleName" class="form-select" required>
+                <option value="">Select Role</option>
+                @foreach (var role in Model.RolesWithClaims.Select(rc => rc.Role))
+
+                {
+                    <option value="@role.Name">@role.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-group mt-2">
+            <label for="removeClaimType">Claim Type</label>
+            <input type="text" id="removeClaimType" name="claimType" class="form-control" placeholder="Claim Type" required />
+        </div>
+        <div class="form-group mt-2">
+            <label for="removeClaimValue">Claim Value</label>
+            <input type="text" id="removeClaimValue" name="claimValue" class="form-control" placeholder="Claim Value" required />
+        </div>
+        <button type="submit" class="btn btn-danger mt-2">Remove Claim</button>
+    </form>
+}
+
+else
+
+{
+    <p>No roles available to manage claims.</p>
+}

@@ -1,16 +1,20 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
+
 using Markdig;
+using Microsoft.AspNetCore.Identity;
 
 namespace Security_Guard.Controllers
 {
     public class ArticlesController : Controller
     {
+        private readonly UserManager<User> _userManager;
         private DBContext Context { get; set; }
-        public ArticlesController(DBContext ctx)
+        public ArticlesController(DBContext ctx, UserManager<User> userManager)
         {
             Context = ctx;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -141,6 +145,31 @@ namespace Security_Guard.Controllers
             var pipeline = new MarkdownPipelineBuilder().Build();
             var html = Markdown.ToHtml(markdown, pipeline);
             return html;
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Subscribe()
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            // Toggle the IsSubscribed property
+            user.IsSubscribed = !user.IsSubscribed;
+
+            // Update the user in the database
+            var result = await _userManager.UpdateAsync(user);
+
+            if (result.Succeeded)
+            {
+                // Redirect to another action if the update was successful
+                return RedirectToAction("Index2");
+            }
+            else
+            {
+                // Handle the case where the update fails
+                // You might want to add some error handling here
+                ModelState.AddModelError("", "Unable to update subscription status.");
+                return View(); // or another appropriate view
+            }
         }
     }
 }

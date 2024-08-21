@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\shmai\\Documents\\My Own Files\\GitHub\\Security-Guard\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\Development\\Security-Guard\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\security-guard\\web app mvc\\views\\download\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\download\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +27,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Development\\Security-Guard\\Web App MVC\\Views\\Download\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Download\\Index.cshtml",
+              "ToolTip": "E:\\Development\\Security-Guard\\Web App MVC\\Views\\Download\\Index.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Download\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-20T13:45:49.159Z",
+              "EditorCaption": ""
             }
           ]
         }

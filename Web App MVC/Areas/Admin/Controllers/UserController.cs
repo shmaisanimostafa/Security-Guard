@@ -1,17 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Security_Guard.Areas.Admin.Models;
 using Security_Guard.Models;
-using Security_Guard.Models.AccountManagement;
+using Security_Guard.Areas.Admin.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Security_Guard.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class UserController : Controller
     {
@@ -34,7 +31,7 @@ namespace Security_Guard.Areas.Admin.Controllers
                 user.RoleNames = await userManager.GetRolesAsync(user);
             }
 
-            var roles = roleManager.Roles.ToList();
+            var roles = await roleManager.Roles.ToListAsync();
             var roleClaims = new List<RoleClaimsViewModel>();
 
             foreach (var role in roles)
@@ -76,85 +73,6 @@ namespace Security_Guard.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public IActionResult Add()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new User { UserName = model.Username };
-                var result = await userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
-            }
-            return View(model);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> AddToAdmin(string id)
-        {
-            var adminRole = await roleManager.FindByNameAsync("Admin");
-            if (adminRole == null)
-            {
-                TempData["message"] = "Admin role does not exist. Click 'Create Admin Role' button to create it.";
-            }
-            else
-            {
-                var user = await userManager.FindByIdAsync(id);
-                await userManager.AddToRoleAsync(user, adminRole.Name);
-            }
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> RemoveFromAdmin(string id)
-        {
-            var user = await userManager.FindByIdAsync(id);
-            var result = await userManager.RemoveFromRoleAsync(user, "Admin");
-            if (!result.Succeeded)
-            {
-                TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
-            }
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateAdminRole()
-        {
-            var result = await roleService.CreateRoleAsync("Admin");
-            if (!result.Succeeded)
-            {
-                TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
-            }
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeleteRole(string roleId)
-        {
-            var role = await roleManager.FindByIdAsync(roleId);
-            if (role != null)
-            {
-                var result = await roleManager.DeleteAsync(role);
-                if (!result.Succeeded)
-                {
-                    TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
-                }
-            }
-            return RedirectToAction("Index");
-        }
-
         [HttpPost]
         public async Task<IActionResult> AddRoleToUser(string userId, string roleName)
         {
@@ -185,24 +103,30 @@ namespace Security_Guard.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ManageClaims(string roleName)
+        [HttpPost]
+        public async Task<IActionResult> CreateAdminRole()
         {
-            var role = await roleManager.FindByNameAsync(roleName);
-            if (role == null)
+            var result = await roleService.CreateRoleAsync("Admin");
+            if (!result.Succeeded)
             {
-                TempData["message"] = "Role not found.";
-                return RedirectToAction("Index");
+                TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
             }
+            return RedirectToAction("Index");
+        }
 
-            var claims = await roleManager.GetClaimsAsync(role);
-            var model = new RoleClaimsViewModel
+        [HttpPost]
+        public async Task<IActionResult> DeleteRole(string roleId)
+        {
+            var role = await roleManager.FindByIdAsync(roleId);
+            if (role != null)
             {
-                Role = role,
-                Claims = claims.Select(c => new IdentityUserClaim<string> { ClaimType = c.Type, ClaimValue = c.Value }).ToList()
-            };
-
-            return View(model);
+                var result = await roleManager.DeleteAsync(role);
+                if (!result.Succeeded)
+                {
+                    TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
+                }
+            }
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

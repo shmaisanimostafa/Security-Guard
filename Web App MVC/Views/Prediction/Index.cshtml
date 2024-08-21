@@ -1,0 +1,119 @@
+@{
+    ViewData["Title"] = "Prediction";
+}
+
+<h2>Prediction</h2>
+
+<form method="post" action="/Prediction/Predict">
+    <div class="form-group">
+        <label for="text">Enter text to analyze:</label>
+        <input type="text" id="text" name="text" class="form-control" placeholder="Enter text here" />
+    </div>
+    <button type="submit" class="btn btn-primary">Predict</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">
+    <strong>Error:</strong> @ViewBag.Error
+</div>
+}
+
+@if (ViewBag.BertResult != null)
+{
+    <div class="mt-3">
+    <h3>BERT Model Prediction Result</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Predicted Class</th>
+                <th>Confidence Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@ViewBag.BertResult.predicted_class</td>
+                <td>@ViewBag.BertResult.confidence_score.ToString("F4")</td>
+                <td
+                    style="color: @(ViewBag.BertResult.confidence_score < 0.7 ? "yellow" : (ViewBag.BertResult.predicted_class == 1 ? "red" : "green"))">
+                    @if (ViewBag.BertResult.confidence_score < 0.7)
+                        {
+                            <span style="font-weight: bold;">Ambiguous</span>
+                        }
+                        else
+                        {
+                            @(ViewBag.BertResult.predicted_class == 1 ? "Danger" : "Safe")
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+@if (ViewBag.NewModelResult != null)
+{
+    <div class="mt-3">
+    <h3>New Model Prediction Result</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Predicted Class</th>
+                <th>Confidence Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@ViewBag.NewModelResult.predicted_class</td>
+                <td>@ViewBag.NewModelResult.confidence_score.ToString("F4")</td>
+                <td
+                    style="color: @(ViewBag.NewModelResult.confidence_score < 0.7 ? "yellow" : (ViewBag.NewModelResult.predicted_class == 1 ? "red" : "green"))">
+                    @if (ViewBag.NewModelResult.confidence_score < 0.7)
+                        {
+                            <span style="font-weight: bold;">Ambiguous</span>
+                        }
+                        else
+                        {
+                            @(ViewBag.NewModelResult.predicted_class == 1 ? "Danger" : "Safe")
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+@if (ViewBag.PhishingNewResult != null)
+{
+    <div class="mt-3">
+    <h3>Phishing New Model Prediction Result</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Predicted Class</th>
+                <th>Confidence Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@ViewBag.PhishingNewResult.predicted_class</td>
+                <td>@ViewBag.PhishingNewResult.confidence_score.ToString("F4")</td>
+                <td
+                    style="color: @(ViewBag.PhishingNewResult.confidence_score < 0.7 ? "yellow" : (ViewBag.PhishingNewResult.predicted_class == 1 ? "red" : "green"))">
+                    @if (ViewBag.PhishingNewResult.confidence_score < 0.7)
+                        {
+                            <span style="font-weight: bold;">Ambiguous</span>
+                        }
+                        else
+                        {
+                            @(ViewBag.PhishingNewResult.predicted_class == 1 ? "Danger" : "Safe")
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Security_Guard.Models
 {
-    public class DBContext : IdentityDbContext<IdentityUser>
+    public class DBContext : IdentityDbContext<User>
     {
         public DBContext(DbContextOptions<DBContext> options) : base(options) { }
         public DbSet<Article> Articles { get; set; }

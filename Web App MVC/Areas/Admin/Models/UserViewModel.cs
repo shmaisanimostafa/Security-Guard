@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Security_Guard.Models;
+using System.Collections.Generic;
 
-namespace Security_Guard.Areas.Admin.Models
-{
+
     public class UserViewModel
     {
-        public IEnumerable<User> Users { get; set; } = null!;
-        public IEnumerable<IdentityRole> Roles { get; set; } = null!;
-    }
+        public IEnumerable<User> Users { get; set; }
+        public IEnumerable<IdentityRole> Roles { get; set; }
+    public RoleManagementViewModel RolesWithClaims { get; set; } // Add this line
+
 }
+

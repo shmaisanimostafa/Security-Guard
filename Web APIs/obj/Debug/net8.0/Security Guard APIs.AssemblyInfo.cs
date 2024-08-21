@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Security Guard APIs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a956bc2ce18cef5fbf5b44869e82ba764a903060")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30e79cb2fdcb611030c96caa9809e5d2f02f8c9a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Security Guard APIs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Security Guard APIs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
