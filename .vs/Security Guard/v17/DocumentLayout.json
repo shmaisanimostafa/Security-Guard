@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C3F302CA-764B-401A-994E-FCD69452BE97}|Web APIs\\Web APIs.csproj|e:\\development\\repositories\\security-guard\\web apis\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C3F302CA-764B-401A-994E-FCD69452BE97}|Web APIs\\Web APIs.csproj|solutionrelative:web apis\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -35,6 +39,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "serviceDependencies.json",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Properties\\serviceDependencies.json",
+              "RelativeDocumentMoniker": "Web APIs\\Properties\\serviceDependencies.json",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Properties\\serviceDependencies.json",
+              "RelativeToolTip": "Web APIs\\Properties\\serviceDependencies.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-22T15:06:49.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\appsettings.json",
               "RelativeDocumentMoniker": "Web App MVC\\appsettings.json",
@@ -47,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Web App MVC",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Web App MVC.csproj",
               "RelativeDocumentMoniker": "Web App MVC\\Web App MVC.csproj",
@@ -72,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Program.cs",
               "RelativeDocumentMoniker": "Web APIs\\Program.cs",
@@ -85,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserDataModel.cs",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Models\\UserDataModel.cs",
               "RelativeDocumentMoniker": "Web APIs\\Models\\UserDataModel.cs",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Web APIs\\Controllers\\AuthController.cs",
