@@ -10,7 +10,7 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_DbContextTypeFullName>Security_Guard.Models.DBContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>C:\Users\shmai\Documents\My Own Files\GitHub\Security-Guard\.github\workflows\Security-Guard-API20240407161750.yml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>E:\Development\Repositories\Security-Guard\Web APIs\Properties\PublishProfiles\SecurityGuardAPIsService - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_ViewDialogWidth>800</WebStackScaffolding_ViewDialogWidth>
   </PropertyGroup>
 </Project>

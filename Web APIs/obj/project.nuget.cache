@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "htjlKvSnN90=",
+  "dgSpecHash": "Dkoy5Xs2Jp0=",
   "success": true,
-  "projectFilePath": "E:\\Development\\Security-Guard\\Web APIs\\Web APIs.csproj",
+  "projectFilePath": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Web APIs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mostafa Shmaisany\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Mostafa Shmaisany\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

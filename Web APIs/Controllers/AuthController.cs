@@ -7,6 +7,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Security_Guard.Models;
+using Microsoft.AspNetCore.Authorization;
+using Security_Guard_API.Models;
 
 namespace Security_Guard.Controllers
 {
@@ -192,27 +194,83 @@ namespace Security_Guard.Controllers
             return BadRequest(deleteResult.Errors);
         }
 
-        // [Authorize]
-        [HttpGet("user-info/{userId}")]
-        public async Task<IActionResult> GetUserInfoById(string userId)
+        [HttpGet("user-data")]
+        public async Task<IActionResult> GetUserData([FromQuery] string token)
         {
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
+            // Debug: Log the start of the method
+            Console.WriteLine("GetUserData method called.");
+
+            // Debug: Log the received token
+            Console.WriteLine($"Received token: {token}");
+
+            if (string.IsNullOrEmpty(token))
             {
-                return NotFound("User not found.");
+                Console.WriteLine("Token is null or empty.");
+                return BadRequest("Token is required.");
             }
 
-            var userInfo = new UserInfoModel
+            // Extract the username from the JWT token claims
+            var userName = GetUserNameFromToken(token);
+
+            // Debug: Log the extracted username
+            Console.WriteLine($"Extracted username from token: {userName}");
+
+            if (string.IsNullOrEmpty(userName))
             {
-                Username = user.UserName,
+                // Debug: Log the issue with the username
+                Console.WriteLine("Username not found in the token.");
+                return BadRequest("User not found.");
+            }
+
+            // Find the user by username
+            var user = await _userManager.FindByNameAsync(userName);
+
+            // Debug: Log whether the user was found or not
+            if (user == null)
+            {
+                Console.WriteLine($"User not found for username: {userName}");
+                return BadRequest("User not found.");
+            }
+
+            // Debug: Log user details before creating the response model
+            Console.WriteLine($"User found: {user.UserName}, Email: {user.Email}");
+
+            // Create a response model
+            var userData = new UserDataModel
+            {
+                UserName = user.UserName,
                 Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                ImageURL = user.ImageURL
+                ImageURL = user.ImageURL,
+                //Roles = user.RoleNames // Add other properties if needed
             };
 
-            return Ok(userInfo);
+            // Debug: Log the user data being returned
+            Console.WriteLine($"Returning user data: {userData}");
+
+            return Ok(userData);
         }
+
+        private string GetUserNameFromToken(string token)
+        {
+            // Implement logic to decode JWT and extract username
+            try
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+                var userName = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value;
+                return userName;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error decoding token: {ex.Message}");
+                return null;
+            }
+        }
+
+
+
 
         private string GenerateJwtToken(User user)
         {

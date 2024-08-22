@@ -232,16 +232,16 @@
   },
   {
     "ContainingType": "Security_Guard.Controllers.AuthController",
-    "Method": "GetUserInfoById",
-    "RelativePath": "api/Auth/user-info/{userId}",
+    "Method": "GetUserData",
+    "RelativePath": "api/Auth/user-data",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "token",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

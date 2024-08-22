@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Development\\Security-Guard\\Web APIs\\Web APIs.csproj": {}
+    "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Web APIs.csproj": {}
   },
   "projects": {
-    "E:\\Development\\Security-Guard\\Web APIs\\Web APIs.csproj": {
+    "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Web APIs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Development\\Security-Guard\\Web APIs\\Web APIs.csproj",
+        "projectUniqueName": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Web APIs.csproj",
         "projectName": "Web APIs",
-        "projectPath": "E:\\Development\\Security-Guard\\Web APIs\\Web APIs.csproj",
+        "projectPath": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Web APIs.csproj",
         "packagesPath": "C:\\Users\\Mostafa Shmaisany\\.nuget\\packages\\",
-        "outputPath": "E:\\Development\\Security-Guard\\Web APIs\\obj\\",
+        "outputPath": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mostafa Shmaisany\\AppData\\Roaming\\NuGet\\NuGet.Config",
