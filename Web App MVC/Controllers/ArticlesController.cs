@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
-
 using Markdig;
 using Microsoft.AspNetCore.Identity;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Security_Guard.Controllers
 {
@@ -11,6 +14,7 @@ namespace Security_Guard.Controllers
     {
         private readonly UserManager<User> _userManager;
         private DBContext Context { get; set; }
+
         public ArticlesController(DBContext ctx, UserManager<User> userManager)
         {
             Context = ctx;
@@ -20,41 +24,73 @@ namespace Security_Guard.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
+            var articles = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag) // Include tags
+                .OrderBy(n => n.Id)
+                .ToList();
 
-            List<Article> Articles = queryArticles.ToList();
-            ViewBag.Articles = Articles;
+            ViewBag.Articles = articles;
             return View();
         }
+
 
 
         [HttpGet]
         public IActionResult Index2()
         {
-            // Query for all articles ordered by Id
-            IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
-            List<Article> Articles = queryArticles.ToList();
+            var articles = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag) // Include tags
+                .OrderBy(n => n.Id)
+                .ToList();
 
-            // Query for the first featured article
-            Article featuredArticle = Context.Articles
-                                              .Where(a => a.IsFeatured)
-                                              .OrderBy(a => a.Id) // Ensure there's an order, or choose another property
-                                              .FirstOrDefault();
+            var tags = Context.Tags.ToList(); // Fetch all tags for navigation bar
 
-            // Pass both lists to the view using ViewBag
-            ViewBag.Articles = Articles;
-            if (featuredArticle != null)
-            {
-                ViewBag.FeaturedArticle = featuredArticle;
-            }
+            var featuredArticle = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag)
+                .Where(a => a.IsFeatured)
+                .OrderBy(a => a.Id)
+                .FirstOrDefault();
+
+            ViewBag.Tags = tags;
+            ViewBag.Articles = articles;
+            ViewBag.FeaturedArticle = featuredArticle;
+            ViewBag.currentTagId = null;
 
             return View();
         }
+        [HttpGet]
+        public IActionResult Index3(int tagId)
+        {
 
 
+            var tags = Context.Tags.ToList(); // Fetch all tags for navigation bar
+
+            var featuredArticle = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag)
+                .Where(a => a.IsFeatured)
+                .OrderBy(a => a.Id)
+                .FirstOrDefault();
+
+            var articles = Context.Articles
+                           .Include(a => a.ArticleTags)
+                           .ThenInclude(at => at.Tag)
+                           .Where(a => a.ArticleTags.Any(at => at.TagId == tagId))
+                           .OrderBy(a => a.Id)
+                           .ToList();
 
 
+            ViewBag.Articles = articles;
+            ViewBag.Tags = tags;
+            ViewBag.CurrentTagId = tagId;
 
+            ViewBag.FeaturedArticle = featuredArticle;
+
+            return View("Index2");
+        }
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -67,36 +103,58 @@ namespace Security_Guard.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var articleToDelete = Context.Articles.OrderBy(f => f.Id).First(h => h.Id == id);
+            var articleToDelete = Context.Articles
+                .Include(a => a.ArticleTags) // Include tags
+                .FirstOrDefault(h => h.Id == id);
 
             if (articleToDelete != null)
             {
                 Context.Articles.Remove(articleToDelete);
                 Context.SaveChanges();
             }
+
             return RedirectToAction("Index");
         }
+
         [Authorize(Roles = "Admin")]
+        [HttpGet]
         public IActionResult EditArticle(int id)
         {
-            var articleToEdit = Context.Articles.OrderBy(f => f.Id).First(h => h.Id == id);
+            var articleToEdit = Context.Articles
+                .Include(a => a.ArticleTags) // Include tags
+                .ThenInclude(at => at.Tag)
+                .FirstOrDefault(h => h.Id == id);
+
             if (articleToEdit != null)
             {
-
                 ViewBag.Article = articleToEdit;
             }
+
             return View();
         }
+
         [Authorize(Roles = "Admin")]
+        [HttpPost]
         public IActionResult UpdateArticle(Article updatedArticle)
         {
-            var articleToUpdate = Context.Articles.OrderBy(f => f.Id).First(h => h.Id == updatedArticle.Id);
-            articleToUpdate.Title = updatedArticle.Title;
-            articleToUpdate.Content = updatedArticle.Content;
-            articleToUpdate.Summary = updatedArticle.Summary;
-            articleToUpdate.ImageURL = updatedArticle.ImageURL;
-            articleToUpdate.SourceURL = updatedArticle.SourceURL;
-            articleToUpdate.IsFeatured = updatedArticle.IsFeatured;
+            var articleToUpdate = Context.Articles
+                .Include(a => a.ArticleTags) // Include tags
+                .ThenInclude(at => at.Tag)
+                .FirstOrDefault(h => h.Id == updatedArticle.Id);
+
+            if (articleToUpdate != null)
+            {
+                articleToUpdate.Title = updatedArticle.Title;
+                articleToUpdate.Content = updatedArticle.Content;
+                articleToUpdate.Summary = updatedArticle.Summary;
+                articleToUpdate.ImageURL = updatedArticle.ImageURL;
+                articleToUpdate.SourceURL = updatedArticle.SourceURL;
+                articleToUpdate.IsFeatured = updatedArticle.IsFeatured;
+
+                // Update tags if needed
+                // Context.SaveChanges();
+            }
+
             Context.SaveChanges();
             return RedirectToAction("Index2");
         }
@@ -105,8 +163,6 @@ namespace Security_Guard.Controllers
         [HttpPost]
         public IActionResult AddArticle(Article newArticle)
         {
-            // int newId = Context.Articles.ToList().Count > 0 ? Context.Articles.Max(h => h.Id) + 1 : 1;
-            // newArticle.Id = newId;
             Context.Articles.Add(newArticle);
             Context.SaveChanges();
             return RedirectToAction("Index");
@@ -115,26 +171,34 @@ namespace Security_Guard.Controllers
         [HttpGet]
         public IActionResult ViewArticle(int id)
         {
-            var Article = Context.Articles.First(h => h.Id == id);
-            ViewBag.Article = Article;
+            var article = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag) // Include tags
+                .FirstOrDefault(h => h.Id == id);
 
+            ViewBag.Article = article;
             return View();
         }
 
         [HttpGet]
         public IActionResult ViewArticle2(int id)
         {
-            // Get all articles
-            IQueryable<Article> queryArticles = Context.Articles.OrderBy(n => n.Id);
-            List<Article> Articles = queryArticles.Take(3).ToList();
-            ViewBag.Articles = Articles;
+            var articles = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag) // Include tags
+                .OrderBy(n => n.Id)
+                .Take(3)
+                .ToList();
 
-            // Get the article with the specified id
-            var Article = Context.Articles.First(h => h.Id == id);
-            ViewBag.Article = Article;
+            var article = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag) // Include tags
+                .FirstOrDefault(h => h.Id == id);
 
-            // Get the markdown content of the article with the specified id
-            var htmlContent = ConvertMarkdownToHtml(Article.Content);
+            var htmlContent = ConvertMarkdownToHtml(article?.Content);
+
+            ViewBag.Articles = articles;
+            ViewBag.Article = article;
             ViewBag.HtmlContent = htmlContent;
 
             return View();
@@ -148,6 +212,7 @@ namespace Security_Guard.Controllers
         }
 
         [Authorize]
+        [HttpPost]
         public async Task<IActionResult> Subscribe()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -160,16 +225,50 @@ namespace Security_Guard.Controllers
 
             if (result.Succeeded)
             {
-                // Redirect to another action if the update was successful
                 return RedirectToAction("Index2");
             }
             else
             {
-                // Handle the case where the update fails
-                // You might want to add some error handling here
                 ModelState.AddModelError("", "Unable to update subscription status.");
                 return View(); // or another appropriate view
             }
         }
+
+        //public IActionResult FilterByTag(int tagId)
+        //{
+        //    var articles = Context.Articles
+        //        .Include(a => a.ArticleTags)
+        //        .ThenInclude(at => at.Tag)
+        //        .Where(a => a.ArticleTags.Any(at => at.TagId == tagId))
+        //        .OrderBy(a => a.Id)
+        //        .ToList();
+
+        //    var tags = Context.Tags.ToList(); // Fetch all tags for navigation bar
+
+        //    ViewBag.Articles = articles;
+        //    ViewBag.Tags = tags;
+        //    ViewBag.CurrentTagId = tagId;
+
+        //    return View("Index"); // Ensure this view has the updated logic to display the filtered articles
+        //}
+        public IActionResult FilterByTag(int tagId)
+        {
+            var articles = Context.Articles
+                .Include(a => a.ArticleTags)
+                .ThenInclude(at => at.Tag)
+                .Where(a => a.ArticleTags.Any(at => at.TagId == tagId))
+                .OrderBy(a => a.Id)
+                .ToList();
+
+            var tags = Context.Tags.ToList(); // Fetch all tags for navigation bar
+
+            ViewBag.Articles = articles;
+            ViewBag.Tags = tags;
+            ViewBag.CurrentTagId = tagId;
+
+            return View("FilterByTag"); // Use the new FilterByTag view
+        }
+
+
     }
 }

@@ -8,7 +8,10 @@
   String SubscribeStatus = "Subscribe";
 
 
-  var authorizationResult = User.HasClaim(c => c.Type == "Permission" && c.Value == "Post Article");
+
+    var currentTagId = ViewBag.CurrentTagId as int?;
+    var tags = ViewBag.Tags as List<Tag>;
+    var authorizationResult = User.HasClaim(c => c.Type == "Permission" && c.Value == "Post Article");
   var currentUser = await userManager.GetUserAsync(User);
   ViewData["Title"] = "Articles";
 
@@ -56,6 +59,7 @@
   @* <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> *@
 
   <style>
+     
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -232,14 +236,16 @@
 
     <div class="nav-scroller py-1 mb-3 border-bottom">
       <nav class="nav nav-underline justify-content-between">
-        <a class="nav-item nav-link link-body-emphasis active" href="#">Computer Science</a>
-        <a class="nav-item nav-link link-body-emphasis" href="#">CyberSecurity</a>
-        <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
-        <a class="nav-item nav-link link-body-emphasis" href="#">Web Dev</a>
-        <a class="nav-item nav-link link-body-emphasis" href="#">Game Dev</a>
+                <a class="nav-item nav-link link-body-emphasis active" href="#">Computer Science</a>
+                @{
+                    foreach (var Tag in tags)
+                    {
+                        <a class="nav-item nav-link link-body-emphasis @(currentTagId == Tag.Id ? "active" : "")" href="@Url.Action("Index3", "Articles", new { tagId = Tag.Id })">@Tag.Name</a>
+
+                    }
+                }
+                
         <a class="nav-item nav-link link-body-emphasis" href="#">Artificial Intelligence</a>
-        <a class="nav-item nav-link link-body-emphasis" href="#">Mobile Dev</a>
-        <a class="nav-item nav-link link-body-emphasis" href="#">UI / UX</a>
         @if (currentUser != null && authorizationResult)
         {
           <a class="nav-item nav-link btn text-success ms-2" role="button" asp-controller="Categories"
@@ -380,8 +386,10 @@
   </main>
 
   <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-        href="https://twitter.com/mdo">@@mdo</a>.</p>
+        <p style="font-family: " Playfair Display", Georgia, "Times New Roman" , serif;">"Show me a family of readers, and I will show you the people who move the world."</p>
+        @*<p>
+            Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@@mdo</a>.
+          </p>*@
     <p class="mb-0">
       <a href="#">Back to top</a>
 

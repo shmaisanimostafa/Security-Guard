@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using Security_Guard.Models
+
+@{
+    var articles = ViewBag.Articles as List<Article>;
+    var tags = ViewBag.Tags as List<Tag>;
+    var currentTagId = ViewBag.CurrentTagId as int?;
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles by Tag</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <!-- Include other CSS or JavaScript here -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                @foreach (var tag in tags)
+                {
+                    <li>
+                        <a href="@Url.Action("FilterByTag", "Articles", new { tagId = tag.Id })"
+                           class="@(currentTagId == tag.Id ? "active" : "")">
+                            @tag.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Articles</h1>
+            @if (articles != null && articles.Any())
+            {
+                foreach (var article in articles)
+                {
+                    <article>
+                        <h2>@article.Title</h2>
+                        <p>@article.Summary</p>
+                        <a href="@Url.Action("ViewArticle2", "Articles", new { id = article.Id })">
+                            Read more
+                        </a>
+                    </article>
+                }
+            }
+            else
+            {
+                <p>No articles found for the selected tag.</p>
+            }
+        </section>
+    </main>
+
+    <footer>
+        <p>Footer content here.</p>
+    </footer>
+</body>
+
+</html>

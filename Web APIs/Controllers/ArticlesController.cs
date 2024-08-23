@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Security_Guard.Data;
 using Security_Guard.Models;
 
 namespace Security_Guard_API.Controllers
