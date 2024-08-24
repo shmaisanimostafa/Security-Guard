@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Security_Guard.Areas.Admin.Models;
 using Security_Guard.Models.AccountManagement;
-using Security_Guard.Models;
+//using Security_Guard.Models;
+using Shared.Models;
+using RegisterViewModel = Shared.Models.RegisterViewModel;
 
 namespace Security_Guard.Areas.Admin.Controllers
 {

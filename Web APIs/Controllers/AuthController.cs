@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Security_Guard.Models;
 using Microsoft.AspNetCore.Authorization;
 using Security_Guard_API.Models;
+using Shared.Models;
 
 namespace Security_Guard.Controllers
 {

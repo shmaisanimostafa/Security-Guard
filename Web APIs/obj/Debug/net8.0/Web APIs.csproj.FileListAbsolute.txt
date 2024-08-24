@@ -2147,3 +2147,6 @@ E:\Development\Repositories\Security-Guard\Web APIs\obj\Debug\net8.0\refint\Web 
 E:\Development\Repositories\Security-Guard\Web APIs\obj\Debug\net8.0\Web APIs.pdb
 E:\Development\Repositories\Security-Guard\Web APIs\obj\Debug\net8.0\Web APIs.genruntimeconfig.cache
 E:\Development\Repositories\Security-Guard\Web APIs\obj\Debug\net8.0\ref\Web APIs.dll
+E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Markdig.dll
+E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Shared.dll
+E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Shared.pdb

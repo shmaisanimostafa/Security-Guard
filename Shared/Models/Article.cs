@@ -12,8 +12,10 @@ namespace Shared.Models
         public int LikeCount { get; set; }
         public int DisLikeCount { get; set; }
         public string Content { get; set; } = "";
+        //Body2 to summary
         public string Summary { get; set; } = "A brief summary of the article";
         public bool IsFeatured { get; set; } = false;
+        //URL to source URL
         public string SourceURL { get; set; } = "";
         [Required]
         public string Title { get; set; } = "";

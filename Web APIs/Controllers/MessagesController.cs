@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
+//using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Security_Guard.Models;
-using Security_Guard_API.Models;
+//using Security_Guard.Models;
+//using Security_Guard_API.Models;
+using Shared.Models;
 
 namespace Security_Guard_API.Controllers
 {

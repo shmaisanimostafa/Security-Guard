@@ -1,5 +1,6 @@
 ﻿using Security_Guard.Models;
-using File = Security_Guard.Models.File;
+using Shared.Models;
+using File = Shared.Models.File;
 
 namespace Security_Guard.Areas.Admin.Models
 {

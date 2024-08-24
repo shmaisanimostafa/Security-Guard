@@ -3481,6 +3481,22 @@
             "rid": "win"
           }
         }
+      },
+      "Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Markdig": "0.37.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shared.dll": {}
+        }
       }
     }
   },
@@ -9648,6 +9664,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Shared/1.0.0": {
+      "type": "project",
+      "path": "../Shared/Shared.csproj",
+      "msbuildProject": "../Shared/Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9664,6 +9685,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration >= 8.0.4",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.4",
       "SendGrid >= 9.29.3",
+      "Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.7.1"
     ]
   },
@@ -9694,7 +9716,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Development\\Repositories\\Security-Guard\\Shared\\Shared.csproj": {
+              "projectPath": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

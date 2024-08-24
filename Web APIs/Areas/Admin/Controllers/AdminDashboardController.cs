@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Models;
 using Security_Guard.Areas.Admin.Models;
-using File = Security_Guard.Models.File;
+using File = Shared.Models.File;
+using Shared.Models;
+using User = Shared.Models.User;
 
 namespace Security_Guard.Controllers
 {

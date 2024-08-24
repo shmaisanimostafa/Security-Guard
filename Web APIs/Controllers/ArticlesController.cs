@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
+//using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Security_Guard.Data;
+//using Security_Guard.Data;
 using Security_Guard.Models;
+using Shared.Models;
 
 namespace Security_Guard_API.Controllers
 {
@@ -45,7 +46,7 @@ namespace Security_Guard_API.Controllers
         // PUT: api/Articles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutArticle(int id, Article article)
+        public async Task<IActionResult> PutArticle(int id, ArticleOld article)
         {
             if (id != article.Id)
             {
@@ -76,7 +77,7 @@ namespace Security_Guard_API.Controllers
         // POST: api/Articles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Article>> PostArticle(Article article)
+        public async Task<ActionResult<ArticleOld>> PostArticle(Article article)
         {
             _context.Articles.Add(article);
             await _context.SaveChangesAsync();

@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Security_Guard.Models.Article, Web APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Shared.Models.Article, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,13 +29,13 @@
     "Parameters": [
       {
         "Name": "article",
-        "Type": "Security_Guard.Models.Article",
+        "Type": "Shared.Models.Article",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Security_Guard.Models.Article",
+        "Type": "Security_Guard.Models.ArticleOld",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Security_Guard.Models.Article",
+        "Type": "Shared.Models.Article",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -86,7 +86,7 @@
       },
       {
         "Name": "article",
-        "Type": "Security_Guard.Models.Article",
+        "Type": "Security_Guard.Models.ArticleOld",
         "IsRequired": true
       }
     ],
@@ -256,7 +256,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Security_Guard_API.Models.Message, Web APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Shared.Models.Message, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -276,13 +276,13 @@
     "Parameters": [
       {
         "Name": "message",
-        "Type": "Security_Guard_API.Models.Message",
+        "Type": "Shared.Models.Message",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Security_Guard_API.Models.Message",
+        "Type": "Shared.Models.Message",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -308,7 +308,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Security_Guard_API.Models.Message",
+        "Type": "Shared.Models.Message",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -333,7 +333,7 @@
       },
       {
         "Name": "message",
-        "Type": "Security_Guard_API.Models.Message",
+        "Type": "Shared.Models.Message",
         "IsRequired": true
       }
     ],

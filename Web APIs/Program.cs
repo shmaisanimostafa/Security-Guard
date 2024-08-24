@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Security_Guard.Models;
 using System.Text;
+using Shared.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
