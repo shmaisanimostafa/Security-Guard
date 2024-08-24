@@ -233,7 +233,10 @@
         </div>
       </div>
     </header>
-
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Warning!</strong> Reading may increase your knowledge, we are not responsible for that!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
     <div class="nav-scroller py-1 mb-3 border-bottom">
       <nav class="nav nav-underline justify-content-between">
                 <a class="nav-item nav-link link-body-emphasis active" href="#">Computer Science</a>
@@ -324,7 +327,7 @@
       @{
         foreach (var Article in ViewBag.Articles)
         {
-          string imagePath = "~/Articles/" + Article.Title + ".png";
+          // string imagePath = "~/Articles/" + Article.Title + ".png";
 
           <div class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
