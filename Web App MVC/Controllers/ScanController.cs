@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Components.Routing;
+﻿//using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models;
+
 //using Security_Guard.Data;
-using Security_Guard.Models;
-using File = Security_Guard.Models.File;
+//using Security_Guard.Models;
+using File = Shared.Models.File;
 
 namespace Security_Guard.Controllers
 {

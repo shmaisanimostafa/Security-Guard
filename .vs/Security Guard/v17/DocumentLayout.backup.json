@@ -3,16 +3,168 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\models\\configureidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\models\\configureidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\viewarticle2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\viewarticle2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\exportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\exportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\migrations\\20240823172337_update seeders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\migrations\\20240823172337_update seeders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\migrations\\20240823172337_update seeders.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\migrations\\20240823172337_update seeders.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\models\\fulldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\models\\fulldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\scancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\scancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\filterbytag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\filterbytag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\editarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\editarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\addarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\addarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\views\\admindashboard\\addlink.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\views\\admindashboard\\addlink.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\accountmanagement\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\accountmanagement\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\accountmanagement\\userprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\accountmanagement\\userprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\accountmanagement\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\accountmanagement\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\accountmanagement\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\accountmanagement\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\filelink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\filelink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\articletag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\articletag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\adminseedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\adminseedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\shared\\_navlink.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\shared\\_navlink.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\shared\\_navfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\shared\\_navfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +174,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +190,535 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:41:55.515Z",
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\DashboardController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAMwCEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:20:20.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index2.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAAAOwAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:27:19.092Z",
+              "DocumentIndex": 1,
+              "Title": "ConfigureIdentity.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Models\\ConfigureIdentity.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Models\\ConfigureIdentity.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Models\\ConfigureIdentity.cs*",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Models\\ConfigureIdentity.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:20:11.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ViewArticle2.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAABzAAAAAAAAAA==",
+              "Title": "ExportController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ExportController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\ExportController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ExportController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\ExportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:19:57.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20240823172337_update seeders.Designer.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Migrations\\20240823172337_update seeders.Designer.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Migrations\\20240823172337_update seeders.Designer.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Migrations\\20240823172337_update seeders.Designer.cs",
+              "RelativeToolTip": "Web App MVC\\Migrations\\20240823172337_update seeders.Designer.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:19:51.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FullData.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Models\\FullData.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Models\\FullData.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Models\\FullData.cs",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Models\\FullData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:19:28.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ScanController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ScanController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\ScanController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ScanController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\ScanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:18:57.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:18:29.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20240823172337_update seeders.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Migrations\\20240823172337_update seeders.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Migrations\\20240823172337_update seeders.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Migrations\\20240823172337_update seeders.cs",
+              "RelativeToolTip": "Web App MVC\\Migrations\\20240823172337_update seeders.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:18:14.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Models\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Models\\UserViewModel.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Models\\UserViewModel.cs",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Models\\UserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:16:33.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:16:05.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FilterByTag.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\FilterByTag.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\FilterByTag.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\FilterByTag.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Articles\\FilterByTag.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:23:17.386Z",
+              "WhenOpened": "2024-08-24T11:15:32.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:15:20.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:14:36.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Program.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Program.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Program.cs",
+              "RelativeToolTip": "Web App MVC\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:14:32.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EditArticle.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\EditArticle.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\EditArticle.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\EditArticle.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Articles\\EditArticle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:14:25.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AddArticle.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\AddArticle.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\AddArticle.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\AddArticle.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Articles\\AddArticle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:14:14.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:14:03.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Account\\ChangePassword.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Account\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:13:35.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:13:00.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddLink.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\AddLink.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\AddLink.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\AddLink.cshtml",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\AddLink.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:12:24.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\AccountManagement\\RegisterViewModel.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\RegisterViewModel.cs",
+              "RelativeToolTip": "Shared\\Models\\AccountManagement\\RegisterViewModel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA0wBkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:11:11.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserProfileViewModel.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\UserProfileViewModel.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\AccountManagement\\UserProfileViewModel.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\UserProfileViewModel.cs",
+              "RelativeToolTip": "Shared\\Models\\AccountManagement\\UserProfileViewModel.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:10:50.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\AccountManagement\\LoginViewModel.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\LoginViewModel.cs",
+              "RelativeToolTip": "Shared\\Models\\AccountManagement\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:10:48.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ChangePasswordViewModel.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\ChangePasswordViewModel.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\AccountManagement\\ChangePasswordViewModel.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AccountManagement\\ChangePasswordViewModel.cs",
+              "RelativeToolTip": "Shared\\Models\\AccountManagement\\ChangePasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:10:41.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\User.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\User.cs",
+              "RelativeToolTip": "Shared\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:10:20.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Tag.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Tag.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Tag.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Tag.cs",
+              "RelativeToolTip": "Shared\\Models\\Tag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:10:17.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Report.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Report.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Report.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Report.cs",
+              "RelativeToolTip": "Shared\\Models\\Report.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:58.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Message.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Message.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Message.cs",
+              "RelativeToolTip": "Shared\\Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:54.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Link.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Link.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Link.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Link.cs",
+              "RelativeToolTip": "Shared\\Models\\Link.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:50.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FileLink.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\FileLink.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\FileLink.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\FileLink.cs",
+              "RelativeToolTip": "Shared\\Models\\FileLink.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:17.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "File.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\File.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\File.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\File.cs",
+              "RelativeToolTip": "Shared\\Models\\File.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:13.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\ErrorViewModel.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Shared\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:09.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "dbContext.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\dbContext.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\dbContext.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\dbContext.cs",
+              "RelativeToolTip": "Shared\\Models\\dbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:03.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DataSeeder.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\DataSeeder.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\DataSeeder.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\DataSeeder.cs",
+              "RelativeToolTip": "Shared\\Models\\DataSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:09:00.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Comment.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Comment.cs",
+              "RelativeToolTip": "Shared\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:08:57.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ArticleTag.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\ArticleTag.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\ArticleTag.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\ArticleTag.cs",
+              "RelativeToolTip": "Shared\\Models\\ArticleTag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:08:56.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Article.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Article.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Article.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Article.cs",
+              "RelativeToolTip": "Shared\\Models\\Article.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:08:53.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "AdminSeedService.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AdminSeedService.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\AdminSeedService.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\AdminSeedService.cs",
+              "RelativeToolTip": "Shared\\Models\\AdminSeedService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T11:08:52.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "_NavLink.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_NavLink.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Shared\\_NavLink.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_NavLink.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Shared\\_NavLink.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:07:56.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "_NavFile.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_NavFile.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Shared\\_NavFile.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_NavFile.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Shared\\_NavFile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:07:52.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T11:07:50.221Z",
               "EditorCaption": ""
             }
           ]

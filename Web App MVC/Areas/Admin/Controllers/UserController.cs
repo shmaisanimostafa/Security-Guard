@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Security_Guard.Models;
-using Security_Guard.Areas.Admin.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Shared.Models;
+
+//using Security_Guard.Models;
+//using Security_Guard.Areas.Admin.Models;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
 
 namespace Security_Guard.Areas.Admin.Controllers
 {

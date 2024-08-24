@@ -1,4 +1,4 @@
-﻿@model File
+﻿@model Shared.Models.File;
 @{
     ViewData["Title"] = "Scan Page";
 }
@@ -35,7 +35,7 @@
 
     <div id="File" class="tabcontent">
 
-                @await Html.PartialAsync("_NavFile", new File())
+            @await Html.PartialAsync("_NavFile", new Shared.Models.File())
         </div>
             <p class="card-text mb-3">Submitting means you agree to our <span class="text-info-emphasis">Terms</span> & <span class="text-info-emphasis">Policies</span>.</p>
     </div>

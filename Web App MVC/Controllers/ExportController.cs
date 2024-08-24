@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 //using Security_Guard.Data;
-using Security_Guard.Models;
+//using Security_Guard.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using File = Security_Guard.Models.File;
-
+using File = Shared.Models.File;
 public class ExportController : Controller
 {
     private DBContext Context { get; set; }

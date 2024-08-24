@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Security_Guard.Models;
-using System.Diagnostics;
-using System.Linq;
-
+//using Security_Guard.Models;
+//using System.Diagnostics;
+//using System.Linq;
+//using Shared.Models;
 namespace Security_Guard.Controllers
 {
     public class DownloadController : Controller

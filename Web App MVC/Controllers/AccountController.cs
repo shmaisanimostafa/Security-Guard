@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Security_Guard.Models;
-using Security_Guard.Models.AccountManagement;
+using Shared.Models;
+//using Security_Guard.Models;
+//using Security_Guard.Models.AccountManagement;
 
 
 namespace Security_Guard.Controllers

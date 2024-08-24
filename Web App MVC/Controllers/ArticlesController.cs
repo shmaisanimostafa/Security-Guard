@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Security_Guard.Models;
+//using Security_Guard.Models;
 using Markdig;
 using Microsoft.AspNetCore.Identity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
+//using System.Collections.Generic;
+using Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Security_Guard.Controllers

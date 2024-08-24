@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\viewarticle2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\viewarticle2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,43 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:41:55.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index2.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAAAOwAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:27:19.092Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ViewArticle2.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:23:17.386Z"
             }
           ]
         }

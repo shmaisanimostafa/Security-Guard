@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Security_Guard.Models;
-
+using Shared.Models;
+//using Security_Guard.Models;
+//using Shared.Models;
 namespace Security_Guard.Areas.Admin.Models
 {
     public class ConfigureIdentity

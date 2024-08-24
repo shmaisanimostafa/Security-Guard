@@ -1,0 +1,13 @@
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.sourcelink.json
+E:\Development\Repositories\Security-Guard\Shared\bin\Debug\net8.0\Shared.deps.json
+E:\Development\Repositories\Security-Guard\Shared\bin\Debug\net8.0\Shared.dll
+E:\Development\Repositories\Security-Guard\Shared\bin\Debug\net8.0\Shared.pdb
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.dll
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\refint\Shared.dll
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\Shared.pdb
+E:\Development\Repositories\Security-Guard\Shared\obj\Debug\net8.0\ref\Shared.dll

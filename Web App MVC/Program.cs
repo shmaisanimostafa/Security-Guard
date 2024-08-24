@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Security_Guard.Models;
+//using Security_Guard.Models;
 using OfficeOpenXml;
 using Microsoft.AspNetCore.Identity;
+using Shared.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
