@@ -4,8 +4,9 @@ using OfficeOpenXml;
 using Microsoft.AspNetCore.Identity;
 using Shared.Models;
 
-
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -30,6 +31,12 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 })
 	.AddEntityFrameworkStores<DBContext>()
 	.AddDefaultTokenProviders();
+
+services.AddAuthentication().AddGoogle(googleOptions =>
+{
+    googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
+    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+});
 
 builder.Services.AddDbContext<DBContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));

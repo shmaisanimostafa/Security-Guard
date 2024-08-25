@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3F302CA-764B-401A-994E-FCD69452BE97}|Web APIs\\Web APIs.csproj|e:\\development\\repositories\\security-guard\\web apis\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C3F302CA-764B-401A-994E-FCD69452BE97}|Web APIs\\Web APIs.csproj|solutionrelative:web apis\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3F302CA-764B-401A-994E-FCD69452BE97}|Web APIs\\Web APIs.csproj|e:\\development\\repositories\\security-guard\\web apis\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3F302CA-764B-401A-994E-FCD69452BE97}|Web APIs\\Web APIs.csproj|solutionrelative:web apis\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,40 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\appsettings.json",
-              "RelativeDocumentMoniker": "Web APIs\\appsettings.json",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\appsettings.json",
-              "RelativeToolTip": "Web APIs\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-24T13:24:25.686Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Article.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Article.cs",
-              "RelativeDocumentMoniker": "Shared\\Models\\Article.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Article.cs",
-              "RelativeToolTip": "Shared\\Models\\Article.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA5wBEAAAAbAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAwwJYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T13:20:41.157Z",
+              "WhenOpened": "2024-08-25T06:43:28.846Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ArticlesController.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Controllers\\ArticlesController.cs",
-              "RelativeDocumentMoniker": "Web APIs\\Controllers\\ArticlesController.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Controllers\\ArticlesController.cs",
-              "RelativeToolTip": "Web APIs\\Controllers\\ArticlesController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAIAwwE0AAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T13:19:38.575Z",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-25T06:41:15.72Z",
               "EditorCaption": ""
             }
           ]

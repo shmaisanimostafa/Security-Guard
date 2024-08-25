@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models;
+using System.Security.Claims;
 //using Security_Guard.Models;
 //using Security_Guard.Models.AccountManagement;
 
@@ -104,6 +108,47 @@ namespace Security_Guard.Controllers
             ModelState.AddModelError("", "Invalid username/password.");
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult GoogleLogin(string returnUrl = "/")
+        {
+            var properties = new AuthenticationProperties
+            {
+                RedirectUri = Url.Action("GoogleResponse", new { ReturnUrl = returnUrl })
+            };
+            return Challenge(properties, GoogleDefaults.AuthenticationScheme);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GoogleResponse(string returnUrl = "/")
+        {
+            var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            if (result.Succeeded)
+            {
+                var user = await userManager.FindByEmailAsync(result.Principal.FindFirstValue(ClaimTypes.Email));
+                if (user == null)
+                {
+                    user = new User
+                    {
+                        UserName = result.Principal.FindFirstValue(ClaimTypes.Name),
+                        Email = result.Principal.FindFirstValue(ClaimTypes.Email)
+                    };
+                    var creationResult = await userManager.CreateAsync(user);
+                    if (!creationResult.Succeeded)
+                    {
+                        ModelState.AddModelError("", "Error creating user");
+                        return View("Error");
+                    }
+                }
+
+                await signInManager.SignInAsync(user, isPersistent: false);
+                return Redirect(returnUrl);
+            }
+
+            return RedirectToAction("LogIn");
+        }
+
         public ViewResult AccessDenied()
         {
             return View();
