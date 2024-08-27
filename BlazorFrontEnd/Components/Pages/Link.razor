@@ -1,0 +1,269 @@
+﻿@page "/admin-dashboard"
+@inject IHttpClientFactory HttpClientFactory
+
+<PageTitle>Admin Dashboard</PageTitle>
+
+<h1>Admin Dashboard</h1>
+
+@if (loading)
+{
+    <p><em>Loading...</em></p>
+}
+else if (errorMessage != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @errorMessage
+    </div>
+}
+else
+{
+    <!-- Display Links -->
+    <h2>Links</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Status Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var link in links)
+            {
+                <tr>
+                    <td>@link.Id</td>
+                    <td>@link.URL</td>
+                    <td>@link.Status</td>
+                    <td>@link.StatusMessage</td>
+                    <td>
+                        <button @onclick="() => DeleteLink(link.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Add Link Form -->
+    <h2>Add Link</h2>
+    <EditForm Model="newLink" OnValidSubmit="AddLink">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label for="url">URL:</label>
+            <InputText id="url" class="form-control" @bind-Value="newLink.URL" />
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <InputText id="status" class="form-control" @bind-Value="newLink.Status" />
+        </div>
+        <div class="form-group">
+            <label for="statusMessage">Status Message:</label>
+            <InputText id="statusMessage" class="form-control" @bind-Value="newLink.StatusMessage" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Link</button>
+    </EditForm>
+
+    <!-- Display Files -->
+    <h2>Files</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>File Name</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Status Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var file in files)
+            {
+                <tr>
+                    <td>@file.Id</td>
+                    <td>@file.FileName</td>
+                    <td>@file.URL</td>
+                    <td>@file.Status</td>
+                    <td>@file.StatusMessage</td>
+                    <td>
+                        <button @onclick="() => DeleteFile(file.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Add File Form -->
+    <h2>Add File</h2>
+    <EditForm Model="newFile" OnValidSubmit="AddFile">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label for="fileName">File Name:</label>
+            <InputText id="fileName" class="form-control" @bind-Value="newFile.FileName" />
+        </div>
+        <div class="form-group">
+            <label for="url">URL:</label>
+            <InputText id="url" class="form-control" @bind-Value="newFile.URL" />
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <InputText id="status" class="form-control" @bind-Value="newFile.Status" />
+        </div>
+        <div class="form-group">
+            <label for="statusMessage">Status Message:</label>
+            <InputText id="statusMessage" class="form-control" @bind-Value="newFile.StatusMessage" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add File</button>
+    </EditForm>
+}
+
+@code {
+    private List<Shared.Models.Link>? links;
+    private List<Shared.Models.File>? files;
+    private Shared.Models.Link newLink = new Shared.Models.Link();
+    private Shared.Models.File newFile = new Shared.Models.File();
+    private string? errorMessage;
+    private bool loading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            links = await httpClient.GetFromJsonAsync<List<Shared.Models.Link>>("api/AdminDashboardApi/links");
+            files = await httpClient.GetFromJsonAsync<List<Shared.Models.File>>("api/AdminDashboardApi/files");
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private async Task AddLink()
+    {
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.PostAsJsonAsync("api/AdminDashboardApi/links", newLink);
+
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadData();
+                newLink = new Shared.Models.Link(); // Reset form
+            }
+            else
+            {
+                errorMessage = $"Error adding link: {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+    }
+
+    private async Task AddFile()
+    {
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.PostAsJsonAsync("api/AdminDashboardApi/files", newFile);
+
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadData();
+                newFile = new Shared.Models.File(); // Reset form
+            }
+            else
+            {
+                errorMessage = $"Error adding file: {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+    }
+
+    private async Task DeleteLink(int? id)
+    {
+        if (id.HasValue)
+        {
+            try
+            {
+                var httpClient = HttpClientFactory.CreateClient("ApiClient");
+                var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/links/{id.Value}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    await LoadData();
+                }
+                else
+                {
+                    errorMessage = $"Error deleting link: {response.ReasonPhrase}";
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                errorMessage = $"Request error: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Unexpected error: {ex.Message}";
+            }
+        }
+    }
+
+    private async Task DeleteFile(int? id)
+    {
+        if (id.HasValue)
+        {
+            try
+            {
+                var httpClient = HttpClientFactory.CreateClient("ApiClient");
+                var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/files/{id.Value}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    await LoadData();
+                }
+                else
+                {
+                    errorMessage = $"Error deleting file: {response.ReasonPhrase}";
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                errorMessage = $"Request error: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Unexpected error: {ex.Message}";
+            }
+        }
+    }
+}

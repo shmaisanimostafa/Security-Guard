@@ -2150,3 +2150,4 @@ E:\Development\Repositories\Security-Guard\Web APIs\obj\Debug\net8.0\ref\Web API
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Markdig.dll
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Shared.dll
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Shared.pdb
+E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

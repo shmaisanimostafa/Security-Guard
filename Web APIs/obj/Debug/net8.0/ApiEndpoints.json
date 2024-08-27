@@ -1,5 +1,129 @@
 [
   {
+    "ContainingType": "Security_Guard.Controllers.AdminDashboardApiController",
+    "Method": "GetFiles",
+    "RelativePath": "api/AdminDashboardApi/files",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Shared.Models.File, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Security_Guard.Controllers.AdminDashboardApiController",
+    "Method": "AddFile",
+    "RelativePath": "api/AdminDashboardApi/files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newFile",
+        "Type": "Shared.Models.File",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Shared.Models.File",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Security_Guard.Controllers.AdminDashboardApiController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/AdminDashboardApi/files/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Controllers.AdminDashboardApiController",
+    "Method": "GetLinks",
+    "RelativePath": "api/AdminDashboardApi/links",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Shared.Models.Link, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Security_Guard.Controllers.AdminDashboardApiController",
+    "Method": "AddLink",
+    "RelativePath": "api/AdminDashboardApi/links",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newLink",
+        "Type": "Shared.Models.Link",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Shared.Models.Link",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Security_Guard.Controllers.AdminDashboardApiController",
+    "Method": "DeleteLink",
+    "RelativePath": "api/AdminDashboardApi/links/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Security_Guard_API.Controllers.ArticlesController",
     "Method": "GetArticles",
     "RelativePath": "api/Articles",
