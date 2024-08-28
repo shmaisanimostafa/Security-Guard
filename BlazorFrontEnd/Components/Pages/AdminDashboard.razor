@@ -1,7 +1,7 @@
-﻿@page "/link"
+﻿@page "/admin-dashboard"
 @inject IHttpClientFactory HttpClientFactory
 
-<PageTitle>Links Management</PageTitle>
+<PageTitle>Admin Dashboard</PageTitle>
 
 <h1>Admin Dashboard</h1>
 
@@ -65,14 +65,66 @@ else
         <button type="submit" class="btn btn-primary">Add Link</button>
     </EditForm>
 
- 
-  
+    <!-- Display Files -->
+    <h2>Files</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>File Name</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Status Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var file in files)
+            {
+                <tr>
+                    <td>@file.Id</td>
+                    <td>@file.FileName</td>
+                    <td>@file.URL</td>
+                    <td>@file.Status</td>
+                    <td>@file.StatusMessage</td>
+                    <td>
+                        <button class="btn btn-outline-danger" @onclick="() => DeleteFile(file.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Add File Form -->
+    <h2>Add File</h2>
+    <EditForm Model="newFile" OnValidSubmit="AddFile">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label for="fileName">File Name:</label>
+            <InputText id="fileName" class="form-control" @bind-Value="newFile.FileName" />
+        </div>
+        <div class="form-group">
+            <label for="url">URL:</label>
+            <InputText id="url" class="form-control" @bind-Value="newFile.URL" />
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <InputText id="status" class="form-control" @bind-Value="newFile.Status" />
+        </div>
+        <div class="form-group">
+            <label for="statusMessage">Status Message:</label>
+            <InputText id="statusMessage" class="form-control" @bind-Value="newFile.StatusMessage" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add File</button>
+    </EditForm>
 }
 
 @code {
     private List<Shared.Models.Link>? links;
-
+    private List<Shared.Models.File>? files;
     private Shared.Models.Link newLink = new Shared.Models.Link();
+    private Shared.Models.File newFile = new Shared.Models.File();
     private string? errorMessage;
     private bool loading = true;
 
@@ -87,6 +139,7 @@ else
         {
             var httpClient = HttpClientFactory.CreateClient("ApiClient");
             links = await httpClient.GetFromJsonAsync<List<Shared.Models.Link>>("api/AdminDashboardApi/links");
+            files = await httpClient.GetFromJsonAsync<List<Shared.Models.File>>("api/AdminDashboardApi/files");
         }
         catch (HttpRequestException ex)
         {
@@ -129,6 +182,32 @@ else
         }
     }
 
+    private async Task AddFile()
+    {
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.PostAsJsonAsync("api/AdminDashboardApi/files", newFile);
+
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadData();
+                newFile = new Shared.Models.File(); // Reset form
+            }
+            else
+            {
+                errorMessage = $"Error adding file: {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+    }
 
     private async Task DeleteLink(int? id)
     {
@@ -159,6 +238,32 @@ else
         }
     }
 
-   
-    
+    private async Task DeleteFile(int? id)
+    {
+        if (id.HasValue)
+        {
+            try
+            {
+                var httpClient = HttpClientFactory.CreateClient("ApiClient");
+                var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/files/{id.Value}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    await LoadData();
+                }
+                else
+                {
+                    errorMessage = $"Error deleting file: {response.ReasonPhrase}";
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                errorMessage = $"Request error: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Unexpected error: {ex.Message}";
+            }
+        }
+    }
 }

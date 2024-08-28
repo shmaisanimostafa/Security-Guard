@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web App MVC", "Web App MVC\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFrontEnd", "BlazorFrontEnd\BlazorFrontEnd.csproj", "{E5477B6F-B048-46F2-AC9D-5F88899982F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFrontEnd", "BlazorFrontEnd\BlazorFrontEnd.csproj", "{E5477B6F-B048-46F2-AC9D-5F88899982F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
