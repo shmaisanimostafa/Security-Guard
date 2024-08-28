@@ -1,0 +1,228 @@
+﻿@page "/role-claims"
+@inject IHttpClientFactory HttpClientFactory
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using System.Collections.Generic
+@using Microsoft.AspNetCore.Identity
+
+<h3>Role Claims Management</h3>
+
+<div>
+    <h4>Create Role</h4>
+    <input @bind="newRoleName" placeholder="New Role Name" />
+    <button @onclick="CreateRole">Create Role</button>
+    @if (createRoleError != null)
+    {
+        <p class="text-danger">@createRoleError</p>
+    }
+</div>
+
+<div>
+    <h4>Delete Role</h4>
+    <input @bind="deleteRoleName" placeholder="Role Name to Delete" />
+    <button @onclick="DeleteRole">Delete Role</button>
+    @if (deleteRoleError != null)
+    {
+        <p class="text-danger">@deleteRoleError</p>
+    }
+</div>
+
+<div>
+    <h4>Add Claim to Role</h4>
+    <input @bind="claimRoleName" placeholder="Role Name" />
+    <input @bind="claimType" placeholder="Claim Type" />
+    <input @bind="claimValue" placeholder="Claim Value" />
+    <button @onclick="AddClaimToRole">Add Claim</button>
+    @if (addClaimError != null)
+    {
+        <p class="text-danger">@addClaimError</p>
+    }
+</div>
+
+<div>
+    <h4>Remove Claim from Role</h4>
+    <input @bind="removeClaimRoleName" placeholder="Role Name" />
+    <input @bind="removeClaimType" placeholder="Claim Type" />
+    <input @bind="removeClaimValue" placeholder="Claim Value" />
+    <button @onclick="RemoveClaimFromRole">Remove Claim</button>
+    @if (removeClaimError != null)
+    {
+        <p class="text-danger">@removeClaimError</p>
+    }
+</div>
+
+<div>
+    <h4>Roles and Claims</h4>
+    @if (rolesWithClaims != null)
+    {
+        <ul>
+            @foreach (var role in rolesWithClaims.RolesWithClaims)
+            {
+                <li>
+                    <strong>@role.Role.Name</strong>
+                    <ul>
+                        @foreach (var claim in role.Claims)
+                        {
+                            <li>@claim.ClaimType: @claim.ClaimValue</li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+@code {
+    private string newRoleName;
+    private string deleteRoleName;
+    private string claimRoleName;
+    private string claimType;
+    private string claimValue;
+    private string removeClaimRoleName;
+    private string removeClaimType;
+    private string removeClaimValue;
+
+    private string createRoleError;
+    private string deleteRoleError;
+    private string addClaimError;
+    private string removeClaimError;
+
+    private RoleManagementViewModel rolesWithClaims;
+
+    private HttpClient HttpClient => HttpClientFactory.CreateClient("ApiClient");
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRolesWithClaims();
+    }
+
+    private async Task LoadRolesWithClaims()
+    {
+        rolesWithClaims = await HttpClient.GetFromJsonAsync<RoleManagementViewModel>("api/ApiRoleClaim/roles");
+    }
+
+    private async Task CreateRole()
+    {
+        createRoleError = null;
+
+        if (string.IsNullOrWhiteSpace(newRoleName))
+        {
+            createRoleError = "Role name is required.";
+            return;
+        }
+
+        var response = await HttpClient.PostAsJsonAsync("api/ApiRoleClaim/roles", newRoleName);
+
+        if (response.IsSuccessStatusCode)
+        {
+            newRoleName = string.Empty;
+            await LoadRolesWithClaims();
+        }
+        else
+        {
+            createRoleError = await response.Content.ReadAsStringAsync();
+        }
+    }
+
+    private async Task DeleteRole()
+    {
+        deleteRoleError = null;
+
+        if (string.IsNullOrWhiteSpace(deleteRoleName))
+        {
+            deleteRoleError = "Role name is required.";
+            return;
+        }
+
+        var response = await HttpClient.DeleteAsync($"api/ApiRoleClaim/roles/{deleteRoleName}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            deleteRoleName = string.Empty;
+            await LoadRolesWithClaims();
+        }
+        else
+        {
+            deleteRoleError = await response.Content.ReadAsStringAsync();
+        }
+    }
+
+    private async Task AddClaimToRole()
+    {
+        addClaimError = null;
+
+        if (string.IsNullOrWhiteSpace(claimRoleName) || string.IsNullOrWhiteSpace(claimType) || string.IsNullOrWhiteSpace(claimValue))
+        {
+            addClaimError = "Role name, claim type, and claim value are required.";
+            return;
+        }
+
+        var claimDto = new ClaimDto
+            {
+                ClaimType = claimType,
+                ClaimValue = claimValue
+            };
+
+        var response = await HttpClient.PostAsJsonAsync($"api/ApiRoleClaim/roles/{claimRoleName}/claims", claimDto);
+
+        if (response.IsSuccessStatusCode)
+        {
+            claimRoleName = string.Empty;
+            claimType = string.Empty;
+            claimValue = string.Empty;
+            await LoadRolesWithClaims();
+        }
+        else
+        {
+            addClaimError = await response.Content.ReadAsStringAsync();
+        }
+    }
+
+    private async Task RemoveClaimFromRole()
+    {
+        removeClaimError = null;
+
+        if (string.IsNullOrWhiteSpace(removeClaimRoleName) || string.IsNullOrWhiteSpace(removeClaimType) || string.IsNullOrWhiteSpace(removeClaimValue))
+        {
+            removeClaimError = "Role name, claim type, and claim value are required.";
+            return;
+        }
+
+        var claimDto = new ClaimDto
+            {
+                ClaimType = removeClaimType,
+                ClaimValue = removeClaimValue
+            };
+
+        var response = await HttpClient.DeleteAsync($"api/ApiRoleClaim/roles/{removeClaimRoleName}/claims?claimType={removeClaimType}&claimValue={removeClaimValue}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            removeClaimRoleName = string.Empty;
+            removeClaimType = string.Empty;
+            removeClaimValue = string.Empty;
+            await LoadRolesWithClaims();
+        }
+        else
+        {
+            removeClaimError = await response.Content.ReadAsStringAsync();
+        }
+    }
+
+    public class RoleClaimsViewModel
+    {
+        public IdentityRole Role { get; set; }
+        public List<IdentityUserClaim<string>> Claims { get; set; }
+    }
+
+    public class RoleManagementViewModel
+    {
+        public List<RoleClaimsViewModel> RolesWithClaims { get; set; }
+    }
+
+    public class ClaimDto
+    {
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
+    }
+}

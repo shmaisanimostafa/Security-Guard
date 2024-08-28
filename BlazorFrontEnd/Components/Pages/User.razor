@@ -26,6 +26,9 @@ else
                 <th>Username</th>
                 <th>Email</th>
                 <th>ImageURL</th>
+                <th>Roles</th>
+                <th>Add Role</th>
+                <th>Remove Role</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -36,7 +39,42 @@ else
                     <td>@user.Id</td>
                     <td>@user.UserName</td>
                     <td>@user.Email</td>
-                    <td>@user.ImageURL</td>
+                    <td><img src="@user.ImageURL" width="100"/></td>
+                    <td>
+                        @if (user.RoleNames != null && user.RoleNames.Any())
+                        {
+                            <ul>
+                                @foreach (var role in user.RoleNames)
+                                {
+                                    <li>@role</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <span>No roles assigned</span>
+                        }
+                    </td>
+                    <td>
+                        <select @bind="roleToAdd">
+                            <option value="">Select Role</option>
+                            @foreach (var role in Roles)
+                            {
+                                <option value="@role">@role</option>
+                            }
+                        </select>
+                        <button class="btn btn-outline-primary" @onclick="() => AddRoleToUser(user.Id)">Add Role</button>
+                    </td>
+                    <td>
+                        <select @bind="roleToRemove">
+                            <option value="">Select Role</option>
+                            @foreach (var role in user.RoleNames)
+                            {
+                                <option value="@role">@role</option>
+                            }
+                        </select>
+                        <button class="btn btn-outline-danger" @onclick="() => RemoveRoleFromUser(user.Id)">Remove Role</button>
+                    </td>
                     <td>
                         <button class="btn btn-outline-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
                     </td>
@@ -44,19 +82,20 @@ else
             }
         </tbody>
     </table>
-
-  
 }
 
 @code {
     public List<Shared.Models.User> Users { get; set; } = new List<Shared.Models.User>();
-    private Shared.Models.Link newLink = new Shared.Models.Link();
+    public List<string> Roles { get; set; } = new List<string>();
+    private string? roleToAdd;
+    private string? roleToRemove;
     private string? errorMessage;
     private bool loading = true;
 
     protected override async Task OnInitializedAsync()
     {
         await LoadData();
+        // await LoadRoles();
     }
 
     private async Task LoadData()
@@ -89,7 +128,96 @@ else
         }
     }
 
-   
+    // private async Task LoadRoles()
+    // {
+    //     try
+    //     {
+    //         var httpClient = HttpClientFactory.CreateClient("ApiClient");
+    //         var response = await httpClient.GetFromJsonAsync<List<string>>("api/Role");
+
+    //         if (response != null)
+    //         {
+    //             Roles = response;
+    //         }
+    //         else
+    //         {
+    //             errorMessage = "No roles found.";
+    //         }
+    //     }
+    //     catch (HttpRequestException ex)
+    //     {
+    //         errorMessage = $"Request error: {ex.Message}";
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         errorMessage = $"Unexpected error: {ex.Message}";
+    //     }
+    // }
+
+    private async Task AddRoleToUser(string userId)
+    {
+        if (string.IsNullOrEmpty(roleToAdd))
+        {
+            errorMessage = "Please select a role to add.";
+            return;
+        }
+
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.PostAsJsonAsync("api/User/AddRoleToUser", new AddRoleRequest { UserId = userId, RoleName = roleToAdd });
+
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadData(); // Reload data to reflect changes
+            }
+            else
+            {
+                errorMessage = $"Error adding role to user: {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+    }
+
+    private async Task RemoveRoleFromUser(string userId)
+    {
+        if (string.IsNullOrEmpty(roleToRemove))
+        {
+            errorMessage = "Please select a role to remove.";
+            return;
+        }
+
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.PostAsJsonAsync("api/User/RemoveRoleFromUser", new RemoveRoleRequest { UserId = userId, RoleName = roleToRemove });
+
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadData(); // Reload data to reflect changes
+            }
+            else
+            {
+                errorMessage = $"Error removing role from user: {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+    }
+
     private async Task DeleteUser(string id)
     {
         try
@@ -114,5 +242,30 @@ else
         {
             errorMessage = $"Unexpected error: {ex.Message}";
         }
+    }
+    public class AddRoleRequest
+    {
+        public string UserId { get; set; }
+        public string RoleName { get; set; }
+    }
+
+    public class RemoveRoleRequest
+    {
+        public string UserId { get; set; }
+        public string RoleName { get; set; }
+    }
+
+    public class AddClaimRequest
+    {
+        public string RoleName { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
+    }
+
+    public class RemoveClaimRequest
+    {
+        public string RoleName { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
     }
 }

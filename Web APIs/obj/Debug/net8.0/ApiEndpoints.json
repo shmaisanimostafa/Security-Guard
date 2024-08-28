@@ -124,6 +124,90 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.ApiRoleClaimController",
+    "Method": "GetRolesWithClaims",
+    "RelativePath": "api/ApiRoleClaim/roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.ApiRoleClaimController",
+    "Method": "CreateRole",
+    "RelativePath": "api/ApiRoleClaim/roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newRoleName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.ApiRoleClaimController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/ApiRoleClaim/roles/{roleName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.ApiRoleClaimController",
+    "Method": "AddClaimToRole",
+    "RelativePath": "api/ApiRoleClaim/roles/{roleName}/claims",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "claimDto",
+        "Type": "Security_Guard.Areas.Admin.Controllers.ClaimDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.ApiRoleClaimController",
+    "Method": "RemoveClaimFromRole",
+    "RelativePath": "api/ApiRoleClaim/roles/{roleName}/claims",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "claimDto",
+        "Type": "Security_Guard.Areas.Admin.Controllers.ClaimDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Security_Guard_API.Controllers.ArticlesController",
     "Method": "GetArticles",
     "RelativePath": "api/Articles",
