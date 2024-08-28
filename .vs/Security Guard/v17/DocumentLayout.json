@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\scan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\scan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\roleclaims.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\roleclaims.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Scan\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Scan\\Index.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Scan\\Index.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Scan\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-28T16:18:09.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
@@ -54,25 +71,24 @@
               "RelativeToolTip": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACsAAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T14:33:35.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T14:33:35.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RoleClaims.razor",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\RoleClaims.razor",
               "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\RoleClaims.razor",
               "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\RoleClaims.razor",
               "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\RoleClaims.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-28T14:33:06.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ApiRoleClaimController.cs",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web APIs\\Areas\\Admin\\Controllers\\ApiRoleClaimController.cs",
               "RelativeDocumentMoniker": "Web APIs\\Areas\\Admin\\Controllers\\ApiRoleClaimController.cs",
@@ -80,12 +96,11 @@
               "RelativeToolTip": "Web APIs\\Areas\\Admin\\Controllers\\ApiRoleClaimController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T14:29:16.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T14:29:16.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Layout\\MainLayout.razor",
@@ -93,12 +108,11 @@
               "RelativeToolTip": "BlazorFrontEnd\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T14:24:20.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T14:24:20.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "User.razor",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\User.razor",
               "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\User.razor",
@@ -106,8 +120,7 @@
               "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\User.razor",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAGQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T10:36:09.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T10:36:09.017Z"
             }
           ]
         }
