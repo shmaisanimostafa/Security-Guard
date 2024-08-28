@@ -17,6 +17,15 @@ else if (errorMessage != null)
 }
 else
 {
+    <!-- Display Links Counts -->
+    <h2>Links Summary</h2>
+    <ul>
+        <li><strong>Danger Links:</strong> @dangerLinksCount</li>
+        <li><strong>Ambiguous Links:</strong> @ambiguousLinksCount</li>
+        <li><strong>Safe Links:</strong> @safeLinksCount</li>
+        <li><strong>Total Link Scans:</strong> @linkScans</li>
+    </ul>
+
     <!-- Display Links -->
     <h2>Links</h2>
     <table class="table">
@@ -38,7 +47,7 @@ else
                     <td>@link.Status</td>
                     <td>@link.StatusMessage</td>
                     <td>
-                        <button class="btn btn-outline-danger" @onclick="() => DeleteLink(link.Id)">Delete</button>
+                        <button class="btn btn-outline-danger" @onclick="() => DeleteLink(link.Id.Value)">Delete</button>
                     </td>
                 </tr>
             }
@@ -64,9 +73,6 @@ else
         </div>
         <button type="submit" class="btn btn-primary">Add Link</button>
     </EditForm>
-
- 
-  
 }
 
 @code {
@@ -75,6 +81,12 @@ else
     private Shared.Models.Link newLink = new Shared.Models.Link();
     private string? errorMessage;
     private bool loading = true;
+
+    // Link counts
+    private int dangerLinksCount = 0;
+    private int ambiguousLinksCount = 0;
+    private int safeLinksCount = 0;
+    private int linkScans = 0;
 
     protected override async Task OnInitializedAsync()
     {
@@ -87,6 +99,9 @@ else
         {
             var httpClient = HttpClientFactory.CreateClient("ApiClient");
             links = await httpClient.GetFromJsonAsync<List<Shared.Models.Link>>("api/AdminDashboardApi/links");
+
+            // Update link counts after loading data
+            CountLinkStatuses();
         }
         catch (HttpRequestException ex)
         {
@@ -99,6 +114,17 @@ else
         finally
         {
             loading = false;
+        }
+    }
+
+    private void CountLinkStatuses()
+    {
+        if (links != null)
+        {
+            dangerLinksCount = links.Count(link => link.Status == "danger");
+            ambiguousLinksCount = links.Count(link => link.Status == "ambiguous");
+            safeLinksCount = links.Count(link => link.Status == "safe");
+            linkScans = dangerLinksCount + ambiguousLinksCount + safeLinksCount;
         }
     }
 
@@ -129,36 +155,29 @@ else
         }
     }
 
-
-    private async Task DeleteLink(int? id)
+    private async Task DeleteLink(int id)
     {
-        if (id.HasValue)
+        try
         {
-            try
-            {
-                var httpClient = HttpClientFactory.CreateClient("ApiClient");
-                var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/links/{id.Value}");
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/links/{id}");
 
-                if (response.IsSuccessStatusCode)
-                {
-                    await LoadData();
-                }
-                else
-                {
-                    errorMessage = $"Error deleting link: {response.ReasonPhrase}";
-                }
-            }
-            catch (HttpRequestException ex)
+            if (response.IsSuccessStatusCode)
             {
-                errorMessage = $"Request error: {ex.Message}";
+                await LoadData();
             }
-            catch (Exception ex)
+            else
             {
-                errorMessage = $"Unexpected error: {ex.Message}";
+                errorMessage = $"Error deleting link: {response.ReasonPhrase}";
             }
         }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
     }
-
-   
-    
 }

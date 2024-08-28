@@ -17,6 +17,14 @@ else if (errorMessage != null)
 }
 else
 {
+    <!-- Display Files Counts -->
+    <h2>Files Summary</h2>
+    <ul>
+        <li><strong>Danger Files:</strong> @dangerFilesCount</li>
+        <li><strong>Ambiguous Files:</strong> @ambiguousFilesCount</li>
+        <li><strong>Safe Files:</strong> @safeFilesCount</li>
+        <li><strong>Total File Scans:</strong> @fileScans</li>
+    </ul>
 
     <!-- Display Files -->
     <h2>Files</h2>
@@ -41,7 +49,7 @@ else
                     <td>@file.Status</td>
                     <td>@file.StatusMessage</td>
                     <td>
-                        <button class="btn btn-outline-danger" @onclick="() => DeleteFile(file.Id)">Delete</button>
+                        <button class="btn btn-outline-danger" @onclick="() => DeleteFile(file.Id.Value)">Delete</button>
                     </td>
                 </tr>
             }
@@ -79,19 +87,28 @@ else
     private string? errorMessage;
     private bool loading = true;
 
-    //When the component is initialized, it will call the LoadData method to load the data.
+    // File counts
+    private int dangerFilesCount = 0;
+    private int ambiguousFilesCount = 0;
+    private int safeFilesCount = 0;
+    private int fileScans = 0;
+
+    // When the component is initialized, it will call the LoadData method to load the data.
     protected override async Task OnInitializedAsync()
     {
         await LoadData();
     }
 
-    //The LoadData method will make an HTTP GET request to the API to get the list of files.
+    // The LoadData method will make an HTTP GET request to the API to get the list of files.
     private async Task LoadData()
     {
         try
         {
             var httpClient = HttpClientFactory.CreateClient("ApiClient");
             files = await httpClient.GetFromJsonAsync<List<Shared.Models.File>>("api/AdminDashboardApi/files");
+
+            // Update file counts after loading data
+            CountFileStatuses();
         }
         catch (HttpRequestException ex)
         {
@@ -107,7 +124,16 @@ else
         }
     }
 
-    
+    private void CountFileStatuses()
+    {
+        if (files != null)
+        {
+            dangerFilesCount = files.Count(file => file.Status == "danger");
+            ambiguousFilesCount = files.Count(file => file.Status == "ambiguous");
+            safeFilesCount = files.Count(file => file.Status == "safe");
+            fileScans = dangerFilesCount + ambiguousFilesCount + safeFilesCount;
+        }
+    }
 
     private async Task AddFile()
     {
@@ -136,34 +162,29 @@ else
         }
     }
 
-   
-
-    private async Task DeleteFile(int? id)
+    private async Task DeleteFile(int id)
     {
-        if (id.HasValue)
+        try
         {
-            try
-            {
-                var httpClient = HttpClientFactory.CreateClient("ApiClient");
-                var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/files/{id.Value}");
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.DeleteAsync($"api/AdminDashboardApi/files/{id}");
 
-                if (response.IsSuccessStatusCode)
-                {
-                    await LoadData();
-                }
-                else
-                {
-                    errorMessage = $"Error deleting file: {response.ReasonPhrase}";
-                }
-            }
-            catch (HttpRequestException ex)
+            if (response.IsSuccessStatusCode)
             {
-                errorMessage = $"Request error: {ex.Message}";
+                await LoadData();
             }
-            catch (Exception ex)
+            else
             {
-                errorMessage = $"Unexpected error: {ex.Message}";
+                errorMessage = $"Error deleting file: {response.ReasonPhrase}";
             }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
         }
     }
 }

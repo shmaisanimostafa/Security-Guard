@@ -1,0 +1,118 @@
+﻿@page "/usermanagement"
+@inject IHttpClientFactory HttpClientFactory
+
+<PageTitle>Users Management</PageTitle>
+
+<h1>User Management</h1>
+
+@if (loading)
+{
+    <p><em>Loading...</em></p>
+}
+else if (errorMessage != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @errorMessage
+    </div>
+}
+else
+{
+    <!-- Display Users -->
+    <h2>Users</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>ImageURL</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.ImageURL</td>
+                    <td>
+                        <button class="btn btn-outline-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+  
+}
+
+@code {
+    public List<Shared.Models.User> Users { get; set; } = new List<Shared.Models.User>();
+    private Shared.Models.Link newLink = new Shared.Models.Link();
+    private string? errorMessage;
+    private bool loading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.GetFromJsonAsync<Shared.Models.UserResponse>("api/User");
+
+            if (response != null)
+            {
+                Users = response.Users;
+            }
+            else
+            {
+                errorMessage = "No data found.";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+   
+    private async Task DeleteUser(string id)
+    {
+        try
+        {
+            var httpClient = HttpClientFactory.CreateClient("ApiClient");
+            var response = await httpClient.DeleteAsync($"api/User/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadData(); // Reload data to reflect changes
+            }
+            else
+            {
+                errorMessage = $"Error deleting user: {response.ReasonPhrase}";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Request error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+        }
+    }
+}

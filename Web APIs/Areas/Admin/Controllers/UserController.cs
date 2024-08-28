@@ -1,134 +1,207 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Security_Guard.Areas.Admin.Models;
-using Security_Guard.Models.AccountManagement;
-//using Security_Guard.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Shared.Models;
-using RegisterViewModel = Shared.Models.RegisterViewModel;
+
 
 namespace Security_Guard.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
-    public class UserController : Controller
-{
-    private UserManager<User> userManager;
-    private RoleManager<IdentityRole> roleManager;
-    public UserController(UserManager<User> userMngr,
-    RoleManager<IdentityRole> roleMngr)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : ControllerBase
     {
-        userManager = userMngr;
-        roleManager = roleMngr;
-    }
-    public async Task<IActionResult> Index()
-        {
-            List<User> users = new List<User>();
-            foreach (User user in userManager.Users)
-            {
-                user.RoleNames = await userManager.GetRolesAsync(user);
-                users.Add(user);
-            }
-            UserViewModel model = new UserViewModel
-            {
-                Users = users,
-                Roles = roleManager.Roles
-            };
-            return View(model);
-        }
+        private readonly UserManager<User> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly IRoleService roleService;
 
-        [HttpPost]
-        public async Task<IActionResult> Delete(string id)
+        public UserController(UserManager<User> userMngr, RoleManager<IdentityRole> roleMngr, IRoleService roleSvc)
         {
-            User user = await userManager.FindByIdAsync(id);
-            if (user != null)
-            {
-                IdentityResult result =
-                await userManager.DeleteAsync(user);
-                if (!result.Succeeded)
-                { // if failed
-                    string errorMessage = "";
-                    foreach (IdentityError error in result.Errors)
-                    {
-                        errorMessage += error.Description + " | ";
-                    }
-                    TempData["message"] = errorMessage;
-                }
-            }
-            return RedirectToAction("Index");
+            userManager = userMngr;
+            roleManager = roleMngr;
+            roleService = roleSvc;
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> GetUsers()
         {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(RegisterViewModel model)
-        {
-
-            if (ModelState.IsValid)
+            var users = await userManager.Users.ToListAsync();
+            foreach (var user in users)
             {
-                var user = new User { UserName = model.Username };
-                var result = await userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                user.RoleNames = await userManager.GetRolesAsync(user);
+            }
+
+            var roles = await roleManager.Roles.ToListAsync();
+            var roleClaims = new List<RoleClaimsViewModel>();
+
+            foreach (var role in roles)
+            {
+                var claims = await roleManager.GetClaimsAsync(role);
+                roleClaims.Add(new RoleClaimsViewModel
                 {
-                    return RedirectToAction("Index");
-                }
-                else
+                    Role = role,
+                    Claims = claims.Select(c => new IdentityUserClaim<string> { ClaimType = c.Type, ClaimValue = c.Value }).ToList()
+                });
+            }
+
+            var model = new UserViewModel
+            {
+                Users = users,
+                Roles = roles
+            };
+
+            return Ok(new
+            {
+                Users = model.Users,
+                Roles = model.Roles,
+                RoleManagementModel = new RoleManagementViewModel
                 {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
+                    RolesWithClaims = roleClaims
                 }
-            }
-            return View(model);
+            });
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddToAdmin(string id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(string id)
         {
-            IdentityRole adminRole =
-            await roleManager.FindByNameAsync("Admin");
-            if (adminRole == null)
+            var user = await userManager.FindByIdAsync(id);
+            if (user == null)
             {
-                TempData["message"] = "Admin role does not exist. "
-                + "Click 'Create Admin Role' button to create it.";
+                return NotFound($"User with ID {id} not found.");
             }
-            else
+
+            var result = await userManager.DeleteAsync(user);
+            if (!result.Succeeded)
             {
-                User user = await userManager.FindByIdAsync(id);
-                await userManager.AddToRoleAsync(user, adminRole.Name);
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
             }
-            return RedirectToAction("Index");
+
+            return NoContent(); // Status code 204 for successful deletion
         }
 
-        [HttpPost]
-        public async Task<IActionResult> RemoveFromAdmin(string id)
+        [HttpPost("AddRoleToUser")]
+        public async Task<IActionResult> AddRoleToUser([FromBody] AddRoleRequest request)
         {
-            User user = await userManager.FindByIdAsync(id);
-            var result = await userManager.RemoveFromRoleAsync(user, "Admin");
-            if (result.Succeeded) { }
-            return RedirectToAction("Index");
+            var user = await userManager.FindByIdAsync(request.UserId);
+            if (user == null)
+            {
+                return NotFound($"User with ID {request.UserId} not found.");
+            }
+
+            var result = await userManager.AddToRoleAsync(user, request.RoleName);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+            }
+
+            return Ok(); // Status code 200 for successful role addition
         }
 
-        [HttpPost]
-        public async Task<IActionResult> DeleteRole(string id)
+        [HttpPost("RemoveRoleFromUser")]
+        public async Task<IActionResult> RemoveRoleFromUser([FromBody] RemoveRoleRequest request)
         {
-            IdentityRole role = await roleManager.FindByIdAsync(id);
-            var result = await roleManager.DeleteAsync(role);
-            if (result.Succeeded) { }
-            return RedirectToAction("Index");
+            var user = await userManager.FindByIdAsync(request.UserId);
+            if (user == null)
+            {
+                return NotFound($"User with ID {request.UserId} not found.");
+            }
+
+            var result = await userManager.RemoveFromRoleAsync(user, request.RoleName);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+            }
+
+            return Ok(); // Status code 200 for successful role removal
         }
 
-        [HttpPost]
+        [HttpPost("CreateAdminRole")]
         public async Task<IActionResult> CreateAdminRole()
         {
-            var result = await roleManager.CreateAsync(new IdentityRole("Admin"));
-            if (result.Succeeded) { }
-            return RedirectToAction("Index");
+            var result = await roleService.CreateRoleAsync("Admin");
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+            }
+
+            return Ok(); // Status code 200 for successful role creation
+        }
+
+        [HttpDelete("DeleteRole/{roleId}")]
+        public async Task<IActionResult> DeleteRole(string roleId)
+        {
+            var role = await roleManager.FindByIdAsync(roleId);
+            if (role == null)
+            {
+                return NotFound($"Role with ID {roleId} not found.");
+            }
+
+            var result = await roleManager.DeleteAsync(role);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+            }
+
+            return NoContent(); // Status code 204 for successful role deletion
+        }
+
+        [HttpPost("AddClaimToRole")]
+        public async Task<IActionResult> AddClaimToRole([FromBody] AddClaimRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.RoleName) || string.IsNullOrWhiteSpace(request.ClaimType) || string.IsNullOrWhiteSpace(request.ClaimValue))
+            {
+                return BadRequest("Role name, claim type, and claim value are required.");
+            }
+
+            var result = await roleService.AddClaimToRoleAsync(request.RoleName, request.ClaimType, request.ClaimValue);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+            }
+
+            return Ok(); // Status code 200 for successful claim addition
+        }
+
+        [HttpPost("RemoveClaimFromRole")]
+        public async Task<IActionResult> RemoveClaimFromRole([FromBody] RemoveClaimRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.RoleName) || string.IsNullOrWhiteSpace(request.ClaimType) || string.IsNullOrWhiteSpace(request.ClaimValue))
+            {
+                return BadRequest("Role name, claim type, and claim value are required.");
+            }
+
+            var result = await roleService.RemoveClaimFromRoleAsync(request.RoleName, request.ClaimType, request.ClaimValue);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { Errors = result.Errors.Select(e => e.Description) });
+            }
+
+            return Ok(); // Status code 200 for successful claim removal
+        }
+
+        public class AddRoleRequest
+        {
+            public string UserId { get; set; }
+            public string RoleName { get; set; }
+        }
+
+        public class RemoveRoleRequest
+        {
+            public string UserId { get; set; }
+            public string RoleName { get; set; }
+        }
+
+        public class AddClaimRequest
+        {
+            public string RoleName { get; set; }
+            public string ClaimType { get; set; }
+            public string ClaimValue { get; set; }
+        }
+
+        public class RemoveClaimRequest
+        {
+            public string RoleName { get; set; }
+            public string ClaimType { get; set; }
+            public string ClaimValue { get; set; }
         }
     }
 }

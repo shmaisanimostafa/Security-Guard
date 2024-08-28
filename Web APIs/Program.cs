@@ -21,11 +21,19 @@ builder.Services.AddDbContext<DBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("dbContext")));
 
 // Configure Identity
-builder.Services.AddDefaultIdentity<User>(options =>
+builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
-    options.SignIn.RequireConfirmedAccount = false; // Disable email confirmation requirements
+    options.Password.RequiredLength = 8;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireDigit = true;
 })
-    .AddEntityFrameworkStores<DBContext>();
+    .AddEntityFrameworkStores<DBContext>()
+    .AddDefaultTokenProviders();
+
+// Add Roles 
+builder.Services.AddScoped<IRoleService, RoleService>();
+// builder.Services.AddHttpClient<FastApiService>(); // Uncomment if needed
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(options =>

@@ -480,6 +480,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "AddClaimToRole",
+    "RelativePath": "api/User/AddClaimToRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Security_Guard.Areas.Admin.Controllers.UserController\u002BAddClaimRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "AddRoleToUser",
+    "RelativePath": "api/User/AddRoleToUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Security_Guard.Areas.Admin.Controllers.UserController\u002BAddRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "CreateAdminRole",
+    "RelativePath": "api/User/CreateAdminRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/User/DeleteRole/{roleId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "RemoveClaimFromRole",
+    "RelativePath": "api/User/RemoveClaimFromRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Security_Guard.Areas.Admin.Controllers.UserController\u002BRemoveClaimRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_Guard.Areas.Admin.Controllers.UserController",
+    "Method": "RemoveRoleFromUser",
+    "RelativePath": "api/User/RemoveRoleFromUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Security_Guard.Areas.Admin.Controllers.UserController\u002BRemoveRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Security_Guard_API.Controllers.UserController",
     "Method": "GetUserInfo",
     "RelativePath": "api/User/userinfo",

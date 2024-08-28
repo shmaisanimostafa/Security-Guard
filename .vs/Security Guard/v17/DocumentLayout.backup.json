@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\file.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\file.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\link.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\link.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\user.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\user.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,67 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\App.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\App.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\App.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T03:33:16.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminDashboard.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T03:27:59.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "File.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACsAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-28T03:13:00.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABXAAAAAAAAAA==",
+              "Title": "User.razor",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAwKMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-27T19:21:08.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Link.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-27T09:14:31.64Z",
+              "WhenOpened": "2024-08-28T10:36:09.017Z",
               "EditorCaption": ""
             }
           ]
