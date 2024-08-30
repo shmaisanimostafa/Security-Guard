@@ -1,13 +1,17 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿
+<div class="top-row ps-3 navbar navbar-dark  bg-warning">
+
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Security Guard</a>
+        <a class="navbar-brand text-bg-warning" href="">Security Guard</a>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+<div  class="nav-scrollable bg-dark  border-end border-3 border-warning" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
+        
+        <img src="Logo.png" class="rounded mt-3 mx-auto d-block" width="100" />
+        
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Analysis
@@ -26,24 +30,37 @@
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="link">
-                <span class="bi bi-link-nav-menu" aria-hidden="true"></span> Links Management
+                <span class="bi bi-link-45deg" aria-hidden="true"></span> Links Management
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="file">
-                <span class="bi bi-archive-fill-nav-menu" aria-hidden="true"></span> Files Management
+                <span class="bi bi-archive-fill" aria-hidden="true"></span> Files Management
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="usermanagement">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Users Management
+                <span class="bi bi-plus-square-fill" aria-hidden="true"></span> Users Management
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="role-claims">
-                <span class="bi bi-person-workspace-nav-menu" aria-hidden="true"></span> Roles & Claims Management
+                <span class="bi bi-person-workspace" width="32" height="32" aria-hidden="true"></span> Roles Management
             </NavLink>
         </div>
+        <hr>
+        <div class="dropdown m-3">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocKfC7gHJl4fsFP6wVnrMtwotDeRmZ_lVM4sWQk2xz6M7oPX8dhA=s288-c-no" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong class="text-warning-emphasis">Shmaisanymostafa</strong>            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+        <hr>
     </nav>
 </div>
-

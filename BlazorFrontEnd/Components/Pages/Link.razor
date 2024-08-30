@@ -1,11 +1,12 @@
 ﻿@page "/link"
 @inject IHttpClientFactory HttpClientFactory
+@inject IJSRuntime JS
 
 <PageTitle>Links Management</PageTitle>
 
-<h1>Admin Dashboard</h1>
+<h1>Links Management</h1>
 
-@if (loading)
+@if (links == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -19,12 +20,12 @@ else
 {
     <!-- Display Links Counts -->
     <h2>Links Summary</h2>
-    <ul>
-        <li><strong>Danger Links:</strong> @dangerLinksCount</li>
-        <li><strong>Ambiguous Links:</strong> @ambiguousLinksCount</li>
-        <li><strong>Safe Links:</strong> @safeLinksCount</li>
-        <li><strong>Total Link Scans:</strong> @linkScans</li>
-    </ul>
+
+    <span class="badge text-bg-info">Total Link Scans: @linkScans</span>
+    <span class="badge text-bg-danger">Danger Links: @dangerLinksCount</span>
+    <span class="badge text-bg-success">Safe Links: @safeLinksCount</span>
+    <span class="badge text-bg-warning">Ambiguous Links: @ambiguousLinksCount</span>
+
 
     <!-- Display Links -->
     <h2>Links</h2>
@@ -80,7 +81,6 @@ else
 
     private Shared.Models.Link newLink = new Shared.Models.Link();
     private string? errorMessage;
-    private bool loading = true;
 
     // Link counts
     private int dangerLinksCount = 0;
@@ -90,9 +90,14 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        
         await LoadData();
-    }
 
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JS.InvokeAsync<string>("setTheme(getPreferredTheme())");
+    }
     private async Task LoadData()
     {
         try
@@ -111,10 +116,7 @@ else
         {
             errorMessage = $"Unexpected error: {ex.Message}";
         }
-        finally
-        {
-            loading = false;
-        }
+
     }
 
     private void CountLinkStatuses()

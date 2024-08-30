@@ -19,12 +19,11 @@ else
 {
     <!-- Display Files Counts -->
     <h2>Files Summary</h2>
-    <ul>
-        <li><strong>Danger Files:</strong> @dangerFilesCount</li>
-        <li><strong>Ambiguous Files:</strong> @ambiguousFilesCount</li>
-        <li><strong>Safe Files:</strong> @safeFilesCount</li>
-        <li><strong>Total File Scans:</strong> @fileScans</li>
-    </ul>
+
+    <span class="badge text-bg-info">Total File Scans: @fileScans</span>
+    <span class="badge text-bg-danger">Danger Files: @dangerFilesCount</span>
+    <span class="badge text-bg-success">Safe Files: @safeFilesCount</span>
+    <span class="badge text-bg-warning">Ambiguous Files: @ambiguousFilesCount</span>
 
     <!-- Display Files -->
     <h2>Files</h2>

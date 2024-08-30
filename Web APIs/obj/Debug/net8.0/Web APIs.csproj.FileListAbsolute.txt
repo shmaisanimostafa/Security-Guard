@@ -1840,9 +1840,6 @@ E:\Development\Security-Guard\Web APIs\obj\Debug\net8.0\Web APIs.genruntimeconfi
 E:\Development\Security-Guard\Web APIs\obj\Debug\net8.0\ref\Web APIs.dll
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\appsettings.Development.json
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\appsettings.json
-E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\wwwrootold\build\config\.eslintrc.json
-E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\wwwrootold\build\npm\.eslintrc.json
-E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\wwwrootold\dist\js\.eslintrc.json
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Web APIs.staticwebassets.runtime.json
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Web APIs.exe
 E:\Development\Repositories\Security-Guard\Web APIs\bin\Debug\net8.0\Web APIs.deps.json
