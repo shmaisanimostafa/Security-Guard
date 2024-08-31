@@ -3,11 +3,24 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\clients\\wheatherclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\clients\\wheatherclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\models\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\models\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\sidebars\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\user.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\user.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,8 +30,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Models\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "BlazorFrontEnd\\Models\\WeatherForecast.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Models\\WeatherForecast.cs",
+              "RelativeToolTip": "BlazorFrontEnd\\Models\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T12:46:20.766Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\Weather.razor",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\Weather.razor",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T12:43:04.659Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -33,26 +73,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "WheatherClient.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Clients\\WheatherClient.cs",
+              "RelativeDocumentMoniker": "BlazorFrontEnd\\Clients\\WheatherClient.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Clients\\WheatherClient.cs",
+              "RelativeToolTip": "BlazorFrontEnd\\Clients\\WheatherClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T12:43:00.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.razor",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\User.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T12:36:31.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADwAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-29T15:33:12.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\sidebars\\index.html",
-              "ToolTip": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\sidebars\\index.html",
-              "ViewState": "AgIAANAAAAAAAAAAAAAAANwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-29T15:27:27.327Z",
               "EditorCaption": ""
             }
           ]

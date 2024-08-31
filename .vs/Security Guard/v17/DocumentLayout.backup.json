@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\sidebars\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\dashboard\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +17,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,26 +33,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\dashboard\\index.html",
+              "ToolTip": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\dashboard\\index.html",
+              "ViewState": "AgIAANoAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-30T06:24:47.714Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "BlazorFrontEnd\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwDQAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADUAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-29T15:33:12.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\sidebars\\index.html",
-              "ToolTip": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\sidebars\\index.html",
-              "ViewState": "AgIAANAAAAAAAAAAAAAAANwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-29T15:27:27.327Z",
               "EditorCaption": ""
             }
           ]

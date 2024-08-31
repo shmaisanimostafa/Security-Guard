@@ -6,8 +6,11 @@
 
 <h1>Links Management</h1>
 
-@if (links == null)
+@if (links == null) 
 {
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
     <p><em>Loading...</em></p>
 }
 else if (errorMessage != null)
@@ -29,7 +32,7 @@ else
 
     <!-- Display Links -->
     <h2>Links</h2>
-    <table class="table">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>ID</th>
@@ -45,7 +48,7 @@ else
                 <tr>
                     <td>@link.Id</td>
                     <td>@link.URL</td>
-                    <td>@link.Status</td>
+                    <td class="@GetStatusClass(link.Status)">@link.Status</td>
                     <td>@link.StatusMessage</td>
                     <td>
                         <button class="btn btn-outline-danger" @onclick="() => DeleteLink(link.Id.Value)">Delete</button>
@@ -54,10 +57,10 @@ else
             }
         </tbody>
     </table>
-
+    <br />
     <!-- Add Link Form -->
     <h2>Add Link</h2>
-    <EditForm Model="newLink" OnValidSubmit="AddLink">
+    <EditForm Model="newLink" FormName="AddLink" OnValidSubmit="AddLink"> 
         <DataAnnotationsValidator />
         <ValidationSummary />
         <div class="form-group">
@@ -66,7 +69,12 @@ else
         </div>
         <div class="form-group">
             <label for="status">Status:</label>
-            <InputText id="status" class="form-control" @bind-Value="newLink.Status" />
+            <InputSelect id="status" class="form-select" @bind-Value="newLink.Status" >
+                <option  value="">Select the Status of the link</option>
+                <option class="text-danger" value="danger">Danger</option>
+                <option class="text-warning" value="ambigious">Ambiguous</option>
+                <option class="text-success"value="safe">Safe</option>
+            </InputSelect>
         </div>
         <div class="form-group">
             <label for="statusMessage">Status Message:</label>
@@ -77,6 +85,17 @@ else
 }
 
 @code {
+
+    private string GetStatusClass(string status)
+    {
+        return status switch
+        {
+            "safe" => "text-success",
+            "ambiguous" => "text-warning",
+            "danger" => "text-danger",
+            _ => string.Empty // Default case if status does not match any of the above
+        };
+    }
     private List<Shared.Models.Link>? links;
 
     private Shared.Models.Link newLink = new Shared.Models.Link();
@@ -90,6 +109,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         
         await LoadData();
 
@@ -181,5 +201,7 @@ else
         {
             errorMessage = $"Unexpected error: {ex.Message}";
         }
+
+        
     }
 }

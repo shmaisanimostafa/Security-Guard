@@ -27,7 +27,7 @@ else
 
     <!-- Display Files -->
     <h2>Files</h2>
-    <table class="table">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>ID</th>
@@ -45,7 +45,7 @@ else
                     <td>@file.Id</td>
                     <td>@file.FileName</td>
                     <td>@file.URL</td>
-                    <td>@file.Status</td>
+                    <td class="@GetStatusClass(file.Status)">@file.Status</td>
                     <td>@file.StatusMessage</td>
                     <td>
                         <button class="btn btn-outline-danger" @onclick="() => DeleteFile(file.Id.Value)">Delete</button>
@@ -81,6 +81,17 @@ else
 }
 
 @code {
+
+    private string GetStatusClass(string status)
+    {
+        return status switch
+        {
+            "safe" => "text-success",
+            "ambiguous" => "text-warning",
+            "danger" => "text-danger",
+            _ => string.Empty // Default case if status does not match any of the above
+        };
+    }
     private List<Shared.Models.File>? files;
     private Shared.Models.File newFile = new Shared.Models.File();
     private string? errorMessage;
