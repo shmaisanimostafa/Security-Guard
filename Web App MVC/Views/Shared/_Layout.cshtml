@@ -67,9 +67,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="Admin" asp-controller="AdminDashboard" asp-action="Index">Manage Data</a>
                             </li>
-                                                        <li class="nav-item">
-                                <a class="nav-link" asp-area="Admin" asp-controller="AdminDashboard" asp-action="Index2">Manage Data2</a>
-                            </li>
+                           <!--                              <li class="nav-item">
+                                 <a class="nav-link" asp-area="Admin" asp-controller="AdminDashboard" asp-action="Index2">Manage Data2</a>
+                             </li>-->
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="Index">Manage Users</a>
                             </li>
@@ -101,10 +101,10 @@
                         {
                             <div class="nav-item d-inline">
                                 <a class="btn" style="border-radius: 50%" data-bs-toggle="dropdown">
-                                    <img src="@currentUser.ImageURL" style="" alt="User Image" width="30" class="rounded-circle user-image" />
+                                    <img src="@currentUser.ImageURL" style="" alt="User Image" width="30" class="rounded-circle" />
                                 </a>
                                 
-                                    <div style="margin-left: 83%;" class=" dropdown-menu dropdown-menu-right text-center">
+                                    <div style="margin-left: 83%;" class=" dropdown-menu dropdown-menu-right text-center p-3">
                                     <div class="dropdown-header text-center">
                                         <p class="dropdown-user-name">@currentUser.Email</p>
                                         <img src="@currentUser.ImageURL" alt="User Image" width="70" class="rounded-circle user-image-dropdown" />

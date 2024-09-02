@@ -61,40 +61,40 @@ namespace Security_Guard.Controllers
 
             return View(model);
         }
-        public async Task<IActionResult> Index2()
-        {
-            List<User> users = new List<User>();
+        //public async Task<IActionResult> Index2()
+        //{
+        //    List<User> users = new List<User>();
 
-            IQueryable<File> queryFiles = context.Files.OrderBy(f => f.Id);
+        //    IQueryable<File> queryFiles = context.Files.OrderBy(f => f.Id);
 
-            List<File> Files = [.. queryFiles];
+        //    List<File> Files = [.. queryFiles];
 
-            IQueryable<Link> queryLinks = context.Links.OrderBy(l => l.Id);
+        //    IQueryable<Link> queryLinks = context.Links.OrderBy(l => l.Id);
 
-            List<Link> Links = [.. queryLinks];
+        //    List<Link> Links = [.. queryLinks];
 
-            foreach (User user in userManager.Users)
-            {
-                user.RoleNames = await userManager.GetRolesAsync(user);
-                users.Add(user);
-            }
+        //    foreach (User user in userManager.Users)
+        //    {
+        //        user.RoleNames = await userManager.GetRolesAsync(user);
+        //        users.Add(user);
+        //    }
 
-            FullData model = new FullData
-            {
-                UserViews = new List<UserViewModel>
-                {
-                    new UserViewModel
-                    {
-                        Users = users,
-                        Roles = roleManager.Roles
-                    }
-                },
-                Links = Links,
-                Files = Files
-             };
+        //    FullData model = new FullData
+        //    {
+        //        UserViews = new List<UserViewModel>
+        //        {
+        //            new UserViewModel
+        //            {
+        //                Users = users,
+        //                Roles = roleManager.Roles
+        //            }
+        //        },
+        //        Links = Links,
+        //        Files = Files
+        //     };
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         [HttpPost]
         public async Task<IActionResult> DeleteFile(int fileId)
         {

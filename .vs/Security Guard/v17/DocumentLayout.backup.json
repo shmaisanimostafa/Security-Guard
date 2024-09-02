@@ -3,20 +3,26 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\views\\admindashboard\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\views\\admindashboard\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\link.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\link.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\file.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\file.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|e:\\development\\repositories\\security-guard\\blazorfrontend\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5477B6F-B048-46F2-AC9D-5F88899982F5}|BlazorFrontEnd\\BlazorFrontEnd.csproj|solutionrelative:blazorfrontend\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\carousel\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\carousel\\carousel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,53 +49,73 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminDashboard.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\AdminDashboard.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Title": "Index2.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index2.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index2.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index2.cshtml",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index2.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-30T17:21:29.306Z",
+              "WhenOpened": "2024-09-02T12:45:04.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "File.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\File.razor",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-30T17:20:54.256Z",
+              "Title": "AdminDashboardController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
+              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwGAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T12:44:40.283Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "carousel.css",
+              "DocumentMoniker": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\carousel\\carousel.css",
+              "ToolTip": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\carousel\\carousel.css",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-31T15:42:54.568Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Link.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\Link.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAaAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-30T13:09:41.036Z",
+              "WhenOpened": "2024-08-31T15:41:27.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\carousel\\index.html",
+              "ToolTip": "C:\\Users\\Mostafa Shmaisany\\Downloads\\bootstrap-5.3.3-examples\\bootstrap-5.3.3-examples\\carousel\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-31T15:37:15.815Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Weather.razor",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Weather.razor",
-              "RelativeDocumentMoniker": "BlazorFrontEnd\\Components\\Pages\\Weather.razor",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\BlazorFrontEnd\\Components\\Pages\\Weather.razor",
-              "RelativeToolTip": "BlazorFrontEnd\\Components\\Pages\\Weather.razor",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Title": "AboutUs.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Home\\AboutUs.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Home\\AboutUs.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Home\\AboutUs.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Home\\AboutUs.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-30T12:43:04.659Z",
+              "WhenOpened": "2024-08-31T15:36:45.231Z",
               "EditorCaption": ""
             }
           ]
