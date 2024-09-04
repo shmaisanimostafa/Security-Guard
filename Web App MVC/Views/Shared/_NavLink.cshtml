@@ -8,15 +8,16 @@
 }
 
 <form asp-action="AddLink" method="post">
-        <lord-icon src="https://cdn.lordicon.com/kkqzqltd.json"
-                   trigger="hover"
-                   stroke="bold"
-                   colors="primary:#121331,secondary:#ffffff,tertiary:#e8e230"
-                   style="width:150px;height:150px">
-        </lord-icon>
+
+    <lord-icon src="https://cdn.lordicon.com/cbigqefp.json"
+               trigger="hover"
+               stroke="bold"
+               colors="primary:#000000,secondary:#e8e230"
+               style="width:150px;height:150px">
+    </lord-icon>
     <div asp-validation-summary="All" class="text-danger"></div>
         <div class="w-50 mx-auto my-2">
-            <input type="url" asp-for="URL" class="form-control"  placeholder="www.Google.com">
+            <input type="url" asp-for="URL" class="form-control"  placeholder="http://www.Google.com">
         </div>
 <br />
     <input type="hidden" asp-for="Id" />

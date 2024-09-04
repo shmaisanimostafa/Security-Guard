@@ -10,7 +10,7 @@
                 <a class="nav-link tablinks text-warning" id="defaultOpen" onclick="openCity(event, 'Link')" aria-current="true" href="#linkTab" data-toggle="tab">Link</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link tablinks text-warning" onclick="openCity(event, 'Contact Us')" href="#defaultTab" data-toggle="tab">Contact Us</a>
+                <a class="nav-link tablinks text-warning" onclick="openCity(event, 'Phishing')" href="#defaultTab" data-toggle="tab">Phishing</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link tablinks text-warning" onclick="openCity(event, 'File')" href="#fileTab" data-toggle="tab">File</a>
@@ -23,15 +23,12 @@
             @await Html.PartialAsync("_NavLink", new Link())
         </div>
 
-    <div id="Contact Us" class="tabcontent">
-        <lord-icon src="https://cdn.lordicon.com/kiynvdns.json"
-                   trigger="hover"
-                   colors="primary:#121331,secondary:#b4b4b4,tertiary:#ffc738,quaternary:#e8e230,quinary:#ebe6ef"
-                   style="width:200px;height:200px">
-        </lord-icon>
-        <p class="card-text">Ask us a security question</p>
-        <a  href="mailto:Shmaisanimostafa@gmail.com" class="btn btn-info mb-3">Contact Us</a>
-    </div>
+    <div id="Phishing" class="tabcontent">
+
+            @await Html.PartialAsync("_NavPhishing", new Shared.Models.File())
+      <!--  <p class="card-text">Ask us a security question</p>
+               <a  href="mailto:Shmaisanimostafa@gmail.com" class="btn btn-info mb-3">Contact Us</a>-->
+        </div>
 
     <div id="File" class="tabcontent">
 
