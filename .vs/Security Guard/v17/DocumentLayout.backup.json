@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\download\\index3.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\download\\index3.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\download\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\download\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,54 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T16:13:59.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index3.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Download\\Index3.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Download\\Index3.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Download\\Index3.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Download\\Index3.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T15:55:28.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Title": "Index2.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index2.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index2.cshtml",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAANcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T15:48:32.524Z",
+              "WhenOpened": "2024-09-04T16:46:57.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Download\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Download\\Index.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Download\\Index.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Download\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAALAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T15:45:54.908Z",
+              "DocumentIndex": 0,
+              "Title": "ArticlesController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ArticlesController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\ArticlesController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ArticlesController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\ArticlesController.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAUwNYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T16:43:49.424Z",
               "EditorCaption": ""
             }
           ]

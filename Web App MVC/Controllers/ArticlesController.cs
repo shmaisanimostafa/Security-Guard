@@ -212,11 +212,12 @@ namespace Security_Guard.Controllers
             return html;
         }
 
-        [Authorize]
+
         [HttpPost]
         public async Task<IActionResult> Subscribe()
         {
             var user = await _userManager.GetUserAsync(User);
+
 
             // Toggle the IsSubscribed property
             user.IsSubscribed = !user.IsSubscribed;

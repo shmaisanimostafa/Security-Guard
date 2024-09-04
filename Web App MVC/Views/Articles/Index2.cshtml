@@ -208,8 +208,9 @@
         <div class="col-4 pt-1">
           @if (currentUser != null && authorizationResult)
           {
-            <a class="btn btn-sm btn-outline-warning" role="button" asp-action="Subscribe"
-              asp-controller="Articles">@SubscribeStatus</a>
+                        <form asp-controller="Articles" asp-action="Subscribe" method="post">
+                            <button type="submit" class="btn btn-sm btn-outline-warning">@SubscribeStatus</button>
+                        </form>
           }
         </div>
         <div class="col-4 text-center">
