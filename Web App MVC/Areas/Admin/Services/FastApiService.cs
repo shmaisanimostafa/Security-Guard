@@ -22,7 +22,7 @@ public class FastApiService
     public async Task<string> PredictNewModelAsync(string text)
     {
         var requestContent = new { text = text };
-        return await PostRequestAsync("/predict-new-model", requestContent);
+        return await PostRequestAsync("/predict-spam", requestContent);
     }
 
     public async Task<string> PredictPhishingNewAsync(string text)

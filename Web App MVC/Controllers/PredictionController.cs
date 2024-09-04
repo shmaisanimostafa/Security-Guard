@@ -38,23 +38,23 @@ public class PredictionController : Controller
                 confidence_score = bertResult["confidence_score"]
             };
 
-            // Predict using New Model (currently commented out)
-            // var newModelResultJson = await _fastApiService.PredictNewModelAsync(text);
-            // var newModelResult = JObject.Parse(newModelResultJson);
-            // ViewBag.NewModelResult = new
-            // {
-            //     predicted_class = newModelResult["predicted_class"],
-            //     confidence_score = newModelResult["confidence_score"]
-            // };
+            //Predict using New Model (currently commented out)
+             var newModelResultJson = await _fastApiService.PredictNewModelAsync(text);
+            var newModelResult = JObject.Parse(newModelResultJson);
+            ViewBag.NewModelResult = new
+            {
+                predicted_class = newModelResult["predicted_class"],
+                confidence_score = newModelResult["confidence_score"]
+            };
 
-            // Predict using Phishing New Model (currently commented out)
-            // var phishingNewResultJson = await _fastApiService.PredictPhishingNewAsync(text);
-            // var phishingNewResult = JObject.Parse(phishingNewResultJson);
-            // ViewBag.PhishingNewResult = new
-            // {
-            //     predicted_class = phishingNewResult["predicted_class"],
-            //     confidence_score = phishingNewResult["confidence_score"]
-            // };
+            //Predict using Phishing New Model(currently commented out)
+             var phishingNewResultJson = await _fastApiService.PredictPhishingNewAsync(text);
+            var phishingNewResult = JObject.Parse(phishingNewResultJson);
+            ViewBag.PhishingNewResult = new
+            {
+                predicted_class = phishingNewResult["predicted_class"],
+                confidence_score = phishingNewResult["confidence_score"]
+            };
         }
         catch (Exception ex)
         {
