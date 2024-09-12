@@ -11,6 +11,7 @@ var configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
 // Add Roles 
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddHttpClient<FastApiService>();

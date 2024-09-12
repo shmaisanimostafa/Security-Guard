@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\migrations\\20240909154736_phishingemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\migrations\\20240909154736_phishingemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\index2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\phishingemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\phishingemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\apismodels\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\apismodels\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\dataaccess\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\dataaccess\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,29 +50,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index2.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Articles\\Index2.cshtml",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAAANcAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T16:46:57.62Z",
+              "DocumentIndex": 0,
+              "Title": "20240909154736_phishingEmail.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Migrations\\20240909154736_phishingEmail.cs",
+              "RelativeDocumentMoniker": "Shared\\Migrations\\20240909154736_phishingEmail.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Migrations\\20240909154736_phishingEmail.cs",
+              "RelativeToolTip": "Shared\\Migrations\\20240909154736_phishingEmail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T15:47:36.429Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ArticlesController.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ArticlesController.cs",
-              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\ArticlesController.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ArticlesController.cs",
-              "RelativeToolTip": "Web App MVC\\Controllers\\ArticlesController.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAAUwNYAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "dbContext.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\APIsModels\\dbContext.cs",
+              "RelativeDocumentMoniker": "Shared\\APIsModels\\dbContext.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\APIsModels\\dbContext.cs",
+              "RelativeToolTip": "Shared\\APIsModels\\dbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwBAAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T16:43:49.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-09T11:33:39.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbContext.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\DataAccess\\dbContext.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\DataAccess\\dbContext.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\DataAccess\\dbContext.cs",
+              "RelativeToolTip": "Shared\\Models\\DataAccess\\dbContext.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwBEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T11:29:32.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PhishingEmail.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\PhishingEmail.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\PhishingEmail.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\PhishingEmail.cs",
+              "RelativeToolTip": "Shared\\Models\\PhishingEmail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T11:17:24.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Link.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Link.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Link.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Link.cs",
+              "RelativeToolTip": "Shared\\Models\\Link.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T11:16:48.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-09T08:33:29.902Z"
             }
           ]
         }

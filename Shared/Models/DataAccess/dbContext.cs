@@ -13,6 +13,7 @@ public class DBContext : IdentityDbContext<User>
         public DbSet<Article> Articles { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<Link> Links { get; set; }
+        public DbSet<PhishingEmail> PhishingEmails { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Comment> Comments { get; set; }
