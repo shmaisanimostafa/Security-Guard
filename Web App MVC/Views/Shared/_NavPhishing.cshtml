@@ -7,12 +7,25 @@
 </lord-icon>
 <form method="post" action="/Prediction/Predict">
     <div class="form-group">
-        <!-- <label for="text">Enter text to analyze:</label>-->
+        <!-- Text input for the email/message to analyze -->
         <div class="w-50 mx-auto my-2">
-        <input type="text" id="text" name="text" class="form-control" placeholder="Enter text here" />
+            <input type="text" id="text" name="text" class="form-control" placeholder="Enter text here" required />
         </div>
-        <br />
     </div>
-    <button class="btn btn-info" type="submit">Analyse Text using AI</button>
-</form>
 
+    <div class="form-group">
+        <!-- Input for the username of the person performing the scan -->
+        <div class="w-50 mx-auto my-2">
+            <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter your username" required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <!-- Input for additional feedback on the prediction -->
+        <div class="w-50 mx-auto my-2">
+            <textarea id="userFeedback" name="userFeedback" class="form-control" placeholder="Enter any feedback" rows="3"></textarea>
+        </div>
+    </div>
+
+    <button class="btn btn-info" type="submit">Analyze Text using AI</button>
+</form>

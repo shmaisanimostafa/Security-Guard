@@ -1,14 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq; // Ensure Newtonsoft.Json is installed via NuGet
+using Newtonsoft.Json.Linq;
+using Shared.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity; // Ensure Newtonsoft.Json is installed via NuGet
 
 public class PredictionController : Controller
 {
     private readonly FastApiService _fastApiService;
+    private readonly DBContext _context;
 
-    public PredictionController(FastApiService fastApiService)
+    public PredictionController(FastApiService fastApiService, DBContext context)
     {
         _fastApiService = fastApiService;
+        _context = context;
     }
 
     // Display the form
@@ -19,17 +24,17 @@ public class PredictionController : Controller
 
     // Handle form submission and show predictions
     [HttpPost]
-    public async Task<IActionResult> Predict(string text)
+    public async Task<IActionResult> Predict(string text, string userName, string userFeedback)
     {
-        if (string.IsNullOrWhiteSpace(text))
+        if (string.IsNullOrWhiteSpace(text) || string.IsNullOrWhiteSpace(userName))
         {
-            ViewBag.Error = "Text cannot be empty.";
+            ViewBag.Error = "Text and username cannot be empty.";
             return View("Index");
         }
 
         try
         {
-            // Predict using BERT model
+            // Predict using various models
             var bertResultJson = await _fastApiService.PredictPhishingBertAsync(text);
             var bertResult = JObject.Parse(bertResultJson);
             ViewBag.BertResult = new
@@ -38,8 +43,7 @@ public class PredictionController : Controller
                 confidence_score = bertResult["confidence_score"]
             };
 
-            //Predict using New Model (currently commented out)
-             var newModelResultJson = await _fastApiService.PredictNewModelAsync(text);
+            var newModelResultJson = await _fastApiService.PredictNewModelAsync(text);
             var newModelResult = JObject.Parse(newModelResultJson);
             ViewBag.NewModelResult = new
             {
@@ -47,14 +51,39 @@ public class PredictionController : Controller
                 confidence_score = newModelResult["confidence_score"]
             };
 
-            //Predict using Phishing New Model(currently commented out)
-             var phishingNewResultJson = await _fastApiService.PredictPhishingNewAsync(text);
+            var phishingNewResultJson = await _fastApiService.PredictPhishingNewAsync(text);
             var phishingNewResult = JObject.Parse(phishingNewResultJson);
             ViewBag.PhishingNewResult = new
             {
                 predicted_class = phishingNewResult["predicted_class"],
                 confidence_score = phishingNewResult["confidence_score"]
             };
+
+            // Retrieve user information (replace with actual user retrieval logic)
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == userName);
+            if (user == null)
+            {
+                ViewBag.Error = "User not found.";
+                return View("Index");
+            }
+
+            // Create and save PhishingEmail instance
+            var phishingEmail = new PhishingEmail
+            {
+                User = user,
+                UserName = userName,
+                EmailMessage = text,
+                PredictedClass = (int)phishingNewResult["predicted_class"],
+                ConfidenceScore = (float)phishingNewResult["confidence_score"],
+                DateTime = DateTime.UtcNow,
+                IPAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                ModelVersion = "v1.0",
+                UserFeedback = userFeedback,
+                ReClassification = null
+            };
+
+            _context.PhishingEmails.Add(phishingEmail);
+            await _context.SaveChangesAsync();
         }
         catch (Exception ex)
         {
@@ -63,4 +92,5 @@ public class PredictionController : Controller
 
         return View("Index");
     }
+
 }
