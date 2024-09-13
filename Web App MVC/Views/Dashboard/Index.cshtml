@@ -1,8 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @model FileLink
 @{
+
     var Files = Model.files;
     var Links = Model.links;
+
+    var PhishingEmails = Model.phishingEmails;
 }
 @inject UserManager<User> userManager
 
@@ -90,6 +93,12 @@
                             <a class="nav-link  d-flex align-items-center gap-2" onclick="openCity(event, 'Links' )" href="#">
                                 <i class="bi bi-link-45deg"></i>
                                 Link Scans
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  d-flex align-items-center gap-2" onclick="openCity(event, 'Emails' )" href="#">
+                                <i class="bi bi-link-45deg"></i>
+                                Emails Scans
                             </a>
                         </li>
 
@@ -236,6 +245,42 @@
                                 <p>No links available.</p>
                     }
                 }
+                               <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">UserName</th>
+                            <th scope="col">DateTime</th>
+                            <th scope="col">EmailMessage</th>
+                            <th scope="col">PredictedClass</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var email in PhishingEmails)
+
+                            {
+
+
+
+                                if (email.UserName == user.UserName)
+
+
+
+                                {
+                                    <tr>
+                                        <td>@email.Id</td>
+                                        <td>@email.UserName</td>
+                                        <td>@email.DateTime</td>
+                                        <td>@email.EmailMessage</td>
+                                        <td>@email.PredictedClass</td>
+                                    </tr>
+                                }
+
+                            }
+                        }
+                    </tbody>
+                </table>
             </div>
             <div id="Links" class="table-responsive small tabcontent">
                 <table class="table table-striped table-hover table-sm">
@@ -262,6 +307,44 @@
                                                     <td>@link.URL</td>
                                                 </tr>
                                 }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="Emails" class="table-responsive small tabcontent">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">UserName</th>
+                            <th scope="col">DateTime</th>
+                            <th scope="col">EmailMessage</th>
+                            <th scope="col">PredictedClass</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var email in PhishingEmails)
+
+                            {
+
+
+
+                                if (email.UserName == user.UserName)
+
+
+
+                                {
+                                    <tr>
+                                        <td>@email.Id</td>
+                                        <td>@email.UserName</td>
+                                        <td>@email.DateTime</td>
+                                        <td>@email.EmailMessage</td>
+                                        <td>@email.PredictedClass</td>
+                                    </tr>
+                                }
+
                             }
                         }
                     </tbody>

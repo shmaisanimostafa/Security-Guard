@@ -6,6 +6,8 @@ namespace Shared.Models {
 {
     public List<Link> links { get; set; }
     public List<File> files { get; set; }
+
+    public List<PhishingEmail> phishingEmails { get; set; }
 }
 
 }

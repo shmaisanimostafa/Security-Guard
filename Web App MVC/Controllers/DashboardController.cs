@@ -28,11 +28,15 @@ namespace Security_Guard.Controllers
 
             List<Link> Links = [.. queryLinks];
 
+            IQueryable<PhishingEmail> queryPhishingEmails = Context.PhishingEmails.OrderBy(p => p.Id);
+
+            List<PhishingEmail> PhishingEmails = [.. queryPhishingEmails];
 
             FileLink fileLink = new FileLink
             {
                 files = Files,
-                links = Links
+                links = Links,
+                phishingEmails = PhishingEmails
             };
 
             return View(fileLink);
