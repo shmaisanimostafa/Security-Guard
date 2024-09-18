@@ -1,0 +1,137 @@
+﻿
+@{
+    String getStatus(int prediction, float confidence)
+    {
+        if(confidence >= 6.5)
+        {
+            return "ambigious";
+        }
+        else
+        {
+            if(prediction == 1)
+            {
+                return "Phishing";
+            }
+            else
+            {
+                return "Safe";
+            }
+        }
+    }
+}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- /.card-header -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">DataTable of Files & Links</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Type</th>
+                                    <th>UserName</th>
+                                    <th>FileName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @{
+                                    foreach (var file in Model.Files)
+                                    {
+                                        <tr>
+                                            <td>@file.Id</td>
+                                            <td>File</td>
+                                            <td>@file.UserName</td>
+                                            <td>@file.FileName</td>
+                                            <td>@file.DateTime</td>
+                                            <td>@file.Status</td>
+                                            <td>@file.URL</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteFile"
+                                                      asp-route-id="@file.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete File
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                    foreach (var email in Model.PhishingEmails)
+
+                                    {
+                                        <tr>
+                                            <td>@email.Id</td>
+                                            <td>Email</td>
+                                            <td>@email.UserName</td>
+                                            <td>@email.UserFeedback</td>
+                                            <td>@email.DateTime</td>
+                                            <td>@getStatus(email.PredictedClass, email.ConfidenceScore)</td>
+                                            <td>@email.EmailMessage</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteEmail"
+                                                      asp-route-emailId="@email.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete Email
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                    foreach (var link in Model.Links)
+                                    {
+                                        <tr>
+                                            <td>@link.Id</td>
+                                            <td>Link</td>
+                                            <td>@link.UserName</td>
+                                            <td></td>
+                                            <td>@link.DateTime</td>
+                                            <td>@link.Status</td>
+                                            <td>@link.URL</td>
+                                            <td>
+                                                <form method="post" asp-controller="AdminDashboard" asp-action="DeleteLink"
+                                                      asp-route-id="@link.Id">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete Link
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Type</th>
+                                    <th>UserName</th>
+                                    <th>FileName</th>
+                                    <th>DateTime</th>
+                                    <th>Status</th>
+                                    <th>URL</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>

@@ -127,6 +127,11 @@
                         Add Link
                     </a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link text-info" asp-action="AddEmail" asp-controller="AdminDashboard" asp-area="Admin">
+                        Add Email
+                    </a>
+                </li>
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -180,7 +185,7 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link" onclick="openDataset(event, 'All')">
                                 <i class="bi bi-database"></i>
-                                <p>Files & Links</p>
+                                <p>Full Dataset</p>
                             </a>
                         </li>
 
@@ -196,28 +201,35 @@
                                 <p>Files</p>
                             </a>
                         </li>
-                        <li class="nav-header">Filters</li>
                         <li class="nav-item">
-                            <div class="row">
-                                <i class="nav-icon bi bi-shield-check text-success"></i>
-                                <p class="text-success">Safe</p>
-                            </div>
-                            <p class="text-light">Type safe in the search bar!</p>
+                            <a href="#" class="nav-link" onclick="openDataset(event, 'Emails')">
+                                <i class="nav-icon bi bi-envelope"></i>
+                                <p>Emails</p>
+                            </a>
                         </li>
-                        <li class="nav-item">
+                        <!--
+                         <li class="nav-header">Filters</li>
+                         <li class="nav-item">
+                             <div class="row">
+                                 <i class="nav-icon bi bi-shield-check text-success"></i>
+                                 <p class="text-success">Safe</p>
+                             </div>
+                             <p class="text-light">Type safe in the search bar!</p>
+                         </li>
+                         <li class="nav-item">
                             
-                                <i class="nav-icon text-danger bi bi-shield-x"></i>
-                            <p class="text-danger">Danger</p>
+                                 <i class="nav-icon text-danger bi bi-shield-x"></i>
+                             <p class="text-danger">Danger</p>
                             
-                            <p class="text-light">Type danger in the search bar!</p>
-                        </li>
-                        <li class="nav-item">
+                             <p class="text-light">Type danger in the search bar!</p>
+                         </li>
+                         <li class="nav-item">
                             
-                                <i class="nav-icon text-warning bi bi-shield-exclamation"></i>
-                            <p class="text-warning">Ambigious</p>
+                                 <i class="nav-icon text-warning bi bi-shield-exclamation"></i>
+                             <p class="text-warning">Ambigious</p>
                             
-                            <p class="text-light">Type ambigious in the search bar!</p>
-                        </li>
+                             <p class="text-light">Type ambigious in the search bar!</p>
+                         </li>-->
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -318,13 +330,16 @@
                     <!-- /.row -->
                     <div id="All" class="tabcontent">
                         <!-- Main content -->
-                        @await Html.PartialAsync("_FilesLinksDataTable")
+                        @await Html.PartialAsync("_FullDatasetTable")
                     </div>
                     <div id="Links" class="tabcontent">
                         @await Html.PartialAsync("_LinksDataTable");
                     </div>
                     <div id="Files" class="tabcontent">
                         @await Html.PartialAsync("_FilesDataTable");
+                    </div>
+                    <div id="Emails" class="tabcontent">
+                        @await Html.PartialAsync("_EmailsDataTable");
                     </div>
                 </div><!-- /.container-fluid -->
             </section>

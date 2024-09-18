@@ -9,5 +9,7 @@ namespace Security_Guard.Areas.Admin.Models
         public List<UserViewModel> UserViews { get; set; }
         public List<Link> Links { get; set; }
         public List<File> Files { get; set; }
+
+        public List<PhishingEmail> PhishingEmails { get; set; }
     }
 }

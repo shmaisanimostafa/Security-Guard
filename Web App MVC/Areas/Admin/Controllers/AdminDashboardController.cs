@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Security_Guard.Areas.Admin.Models;
 using File = Shared.Models.File;
 using Shared.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 //using Security_Guard.Data;
 
 namespace Security_Guard.Controllers
@@ -29,15 +31,23 @@ namespace Security_Guard.Controllers
 
         public async Task<IActionResult> Index()
         {
+            // Get the list of users
             List<User> users = new List<User>();
 
+            // Get the list of files
             IQueryable<File> queryFiles = context.Files.OrderBy(f => f.Id);
 
             List<File> Files = [.. queryFiles];
 
+            // Get the list of links
             IQueryable<Link> queryLinks = context.Links.OrderBy(l => l.Id);
 
             List<Link> Links = [.. queryLinks];
+
+            // Get the list of phishing emails
+            IQueryable<PhishingEmail> queryEmails = context.PhishingEmails.OrderBy(l => l.Id);
+
+            List<PhishingEmail> PhishingEmails = [.. queryEmails];
 
             foreach (User user in userManager.Users)
             {
@@ -45,6 +55,7 @@ namespace Security_Guard.Controllers
                 users.Add(user);
             }
 
+            // Combine all the data in one model to share them to the view
             FullData model = new FullData
             {
                 UserViews = new List<UserViewModel>
@@ -56,45 +67,13 @@ namespace Security_Guard.Controllers
                     }
                 },
                 Links = Links,
-                Files = Files
-             };
+                Files = Files,
+                PhishingEmails = PhishingEmails
+            };
 
             return View(model);
         }
-        //public async Task<IActionResult> Index2()
-        //{
-        //    List<User> users = new List<User>();
 
-        //    IQueryable<File> queryFiles = context.Files.OrderBy(f => f.Id);
-
-        //    List<File> Files = [.. queryFiles];
-
-        //    IQueryable<Link> queryLinks = context.Links.OrderBy(l => l.Id);
-
-        //    List<Link> Links = [.. queryLinks];
-
-        //    foreach (User user in userManager.Users)
-        //    {
-        //        user.RoleNames = await userManager.GetRolesAsync(user);
-        //        users.Add(user);
-        //    }
-
-        //    FullData model = new FullData
-        //    {
-        //        UserViews = new List<UserViewModel>
-        //        {
-        //            new UserViewModel
-        //            {
-        //                Users = users,
-        //                Roles = roleManager.Roles
-        //            }
-        //        },
-        //        Links = Links,
-        //        Files = Files
-        //     };
-
-        //    return View(model);
-        //}
         [HttpPost]
         public async Task<IActionResult> DeleteFile(int fileId)
         {
@@ -113,6 +92,35 @@ namespace Security_Guard.Controllers
             else
             {
                 TempData["message"] = "File not found.";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteEmail(int emailId)
+
+        {
+
+            // Debug Email Id
+            Debug.WriteLine("EmailId is :");
+            Debug.WriteLine(emailId);
+
+            // Assuming you have a method to get the file by its ID
+            PhishingEmail emailToDelete = await context.PhishingEmails.FindAsync(emailId);
+
+            if (emailToDelete != null)
+            {
+                // Delete the file from the database
+                context.PhishingEmails.Remove(emailToDelete);
+                await context.SaveChangesAsync();
+
+                TempData["message"] = "Email deleted successfully.";
+                TempData["state"] = "danger";
+            }
+            else
+            {
+                TempData["message"] = "Email not found.";
             }
 
             return RedirectToAction("Index");
@@ -146,6 +154,10 @@ namespace Security_Guard.Controllers
             return View();
         }
         public IActionResult AddFile()
+        {
+            return View();
+        }
+        public IActionResult AddEmail()
         {
             return View();
         }
@@ -183,6 +195,42 @@ namespace Security_Guard.Controllers
             return View(newLink);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddEmail(PhishingEmail model, string userName)
+        {
+            var user = await context.Users.FirstOrDefaultAsync(u => u.UserName == model.UserName);
+
+            // Create a new File instance
+            PhishingEmail newEmail = new PhishingEmail
+            {
+                UserName = model.UserName,
+                User = user,
+                EmailMessage = model.EmailMessage,
+                PredictedClass = model.PredictedClass,
+                ConfidenceScore = model.ConfidenceScore,
+                DateTime = DateTime.UtcNow,
+                IPAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                ModelVersion = "v1.0",
+                UserFeedback = model.UserFeedback,
+                ReClassification = null
+
+            };
+
+            // Validate the model
+            if (ModelState.IsValid)
+            {
+                // Add the new file to the database
+                context.PhishingEmails.Add(newEmail);
+                await context.SaveChangesAsync();
+
+                return RedirectToAction("Result");
+
+            }
+            else
+            {
+                return View(newEmail);
+            }
+        }
 
         [HttpPost]
         public async Task<IActionResult> AddFile(string fileName, string url, string status, string statusMessage)
