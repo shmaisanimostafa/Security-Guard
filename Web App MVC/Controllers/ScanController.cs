@@ -1,5 +1,6 @@
 ﻿//using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Shared.Models;
 
 //using Security_Guard.Data;
@@ -74,6 +75,42 @@ namespace Security_Guard.Controllers
 
                 return RedirectToAction("Result");
                 
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddEmail(PhishingEmail model, string userName)
+        {
+            var user = await Context.Users.FirstOrDefaultAsync(u => u.UserName == model.UserName);
+
+            // Create a new File instance
+            PhishingEmail newEmail = new PhishingEmail
+            {
+                UserName = model.UserName,
+                User = user,
+                EmailMessage = model.EmailMessage,
+                PredictedClass = model.PredictedClass,
+                ConfidenceScore = model.ConfidenceScore,
+                DateTime = DateTime.UtcNow,
+                IPAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                ModelVersion = "v1.0",
+                UserFeedback = model.UserFeedback,
+                ReClassification = null
+
+            };
+
+            // Validate the model
+            if (ModelState.IsValid)
+            {
+                // Add the new file to the database
+                Context.PhishingEmails.Add(newEmail);
+                await Context.SaveChangesAsync();
+
+                return RedirectToAction("Result");
+
             }
             else
             {

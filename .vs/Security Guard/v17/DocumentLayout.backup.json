@@ -45,47 +45,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FileLink.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\FileLink.cs",
-              "RelativeDocumentMoniker": "Shared\\Models\\FileLink.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\FileLink.cs",
-              "RelativeToolTip": "Shared\\Models\\FileLink.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T06:51:05.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\DashboardController.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Web App MVC\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAEwCQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T06:49:43.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "Web App MVC\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAANQAAAAAAAAAAAAAAGEBAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-13T06:30:54.335Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -100,13 +61,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "dbo.PhishingEmails [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/WebProject/True/SqlTable/dbo.PhishingEmails.sql",
-              "ToolTip": "dbo.PhishingEmails [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-13T06:20:40.391Z",
+              "DocumentIndex": 3,
+              "Title": "FileLink.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\FileLink.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\FileLink.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\FileLink.cs",
+              "RelativeToolTip": "Shared\\Models\\FileLink.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T06:51:05.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\DashboardController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAEwCQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T06:49:43.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAgBAAAAAAAAAAAkwA8BAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-13T06:30:54.335Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.PhishingEmails.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/WebProject/True/SqlTable/dbo.PhishingEmails.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/WebProject/True/SqlTable/dbo.PhishingEmails.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-13T06:20:40.391Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Web App MVC\\Views\\Shared\\_NavFile.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-13T06:14:10.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T06:14:10.601Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Web App MVC\\Controllers\\PredictionController.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAUwEsAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T06:09:54.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T06:09:54.802Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Web App MVC\\Controllers\\ScanController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T06:04:38.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T06:04:38.113Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "Web App MVC\\Views\\Shared\\_NavPhishing.cshtml",
               "ViewState": "AgIAAAIAAAAAAAAAAAAgwBEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-12T03:08:42.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T03:08:42.97Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "Shared\\Models\\PhishingEmail.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAA4wBgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T11:17:24.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-09T11:17:24.544Z"
             }
           ]
         }

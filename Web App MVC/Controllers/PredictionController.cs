@@ -69,7 +69,7 @@ public class PredictionController : Controller
 
             // Create and save PhishingEmail instance
             var phishingEmail = new PhishingEmail
-            {
+            { 
                 User = user,
                 UserName = userName,
                 EmailMessage = text,
