@@ -47,11 +47,12 @@
 
                     <!-- Like/Dislike buttons -->
                     <div class="interaction-counts mt-2">
-                        <span class="text-success">Likes: @ViewBag.LikesCount</span> |
-                        <span class="text-danger">Dislikes: @ViewBag.DislikesCount</span>
+                        <span class="text-success"><i class="bi bi-hand-thumbs-up"></i> @ViewBag.LikesCount</span> |
+                        <span class="text-danger"><i class="bi bi-file-arrow-down"></i> @ViewBag.DislikesCount</span>
                     </div>
 
                     @Html.Raw(HtmlContent)
+                    <hr />
 
                     <!-- Display Comments Section -->
                     <div class="comments-section mt-4">
@@ -63,6 +64,18 @@
                                 <li>
                                     <strong>@comment.Author</strong> <span>@comment.CreatedDate.ToString("g")</span>
                                     <p>@comment.Content</p>
+
+                                    @if (currentUser != null && (currentUser.UserName == comment.Author || await userManager.IsInRoleAsync(currentUser, "Admin")))
+
+                                    {
+                                        <!-- Edit Button -->
+                                        <a href="@Url.Action("EditComment", new { id = comment.Id })" class="btn btn-sm btn-outline-info">Edit</a>
+
+                                        <!-- Delete Button -->
+                                        <form method="post" action="@Url.Action("DeleteComment", new { id = comment.Id })" class="d-inline">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                        </form>
+                                    }
                                 </li>
                             }
                         </ul>
@@ -78,6 +91,7 @@
                             <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
                         </form>
                     </div>
+
                 </article>
             </div>
         </div>

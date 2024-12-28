@@ -1,0 +1,12 @@
+﻿@model Comment
+
+<h2>Edit Comment</h2>
+
+<form method="post" asp-action="EditComment" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label for="content">Comment Content</label>
+        <textarea class="form-control" id="content" name="content" rows="4">@Model.Content</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save Changes</button>
+    <a href="@Url.Action("ViewArticle2", new { id = Model.ArticleId })" class="btn btn-secondary mt-2">Cancel</a>
+</form>

@@ -215,6 +215,54 @@ namespace Security_Guard.Controllers
             // Redirect back to the article view with the updated comments
             return RedirectToAction("ViewArticle2", new { id = articleId });
         }
+        // GET: Edit Comment
+        [HttpGet]
+        public IActionResult EditComment(int id)
+        {
+            var comment = Context.Comments.FirstOrDefault(c => c.Id == id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            return View(comment); // Pass the comment to the Edit view
+        }
+
+        // POST: Edit Comment
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditComment(int id, string content)
+        {
+            var comment = Context.Comments.FirstOrDefault(c => c.Id == id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            // Update the comment content
+            comment.Content = content;
+            Context.SaveChanges(); // Save changes to the database
+
+            return RedirectToAction("ViewArticle2", new { id = comment.ArticleId }); // Redirect to the article page
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteComment(int id)
+        {
+            var comment = Context.Comments.FirstOrDefault(c => c.Id == id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            Context.Comments.Remove(comment); // Remove the comment
+            Context.SaveChanges(); // Save changes to the database
+
+            return RedirectToAction("ViewArticle2", new { id = comment.ArticleId }); // Redirect to the article page
+        }
+
 
         [HttpGet]
         public IActionResult ViewArticle2(int id)
