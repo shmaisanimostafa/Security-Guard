@@ -36,19 +36,52 @@
             </button>
         </form>
 
- 
 
-    <article class="blog-post">
-      <h2 class="display-5 link-body-emphasis mb-1">@Article.Title</h2>
-      <p class="blog-post-meta">@DateTime.Now by <a href="#">Mostafa Shmaisany</a></p>
-            <img src="@Url.Content(Article.ImageURL)" class="img-fluid border rounded-3 shadow-lg mb-4"  height="50" >
-            <!-- Display Like/Dislike counts -->
-            <div class="interaction-counts mt-2">
-                <span class="text-success">Likes: @ViewBag.LikesCount</span> |
-                <span class="text-danger">Dislikes: @ViewBag.DislikesCount</span>
+
+        <div class="row">
+            <div class="col-md-8">
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1">@Article.Title</h2>
+                    <p class="blog-post-meta">@DateTime.Now by <a href="#">Mostafa Shmaisany</a></p>
+                    <img src="@Url.Content(Article.ImageURL)" class="img-fluid border rounded-3 shadow-lg mb-4" height="50" />
+
+                    <!-- Like/Dislike buttons -->
+                    <div class="interaction-counts mt-2">
+                        <span class="text-success">Likes: @ViewBag.LikesCount</span> |
+                        <span class="text-danger">Dislikes: @ViewBag.DislikesCount</span>
+                    </div>
+
+                    @Html.Raw(HtmlContent)
+
+                    <!-- Display Comments Section -->
+                    <div class="comments-section mt-4">
+                        <h3>Comments</h3>
+                        <ul class="list-unstyled">
+                            @foreach (var comment in Article.Comments)
+
+                            {
+                                <li>
+                                    <strong>@comment.Author</strong> <span>@comment.CreatedDate.ToString("g")</span>
+                                    <p>@comment.Content</p>
+                                </li>
+                            }
+                        </ul>
+
+                        <!-- Comment Form -->
+                        <h4>Add a Comment</h4>
+                        <form method="post" action="@Url.Action("AddComment", "Articles")">
+                            <input type="hidden" name="articleId" value="@Article.Id" />
+                            <div class="form-group">
+                                <label for="content">Your Comment</label>
+                                <textarea name="content" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+                        </form>
+                    </div>
+                </article>
             </div>
+        </div>
 
-      @Html.Raw(HtmlContent)
       @* using Microsoft.EntityFrameworkCore.Metadata.Internal; *@
       @*
 

@@ -180,45 +180,77 @@ namespace Security_Guard.Controllers
             ViewBag.Article = article;
             return View();
         }
+        // Action to handle comment submission
+        [HttpPost]
+        public IActionResult AddComment(int articleId, string content)
+        {
+            if (string.IsNullOrEmpty(content))
+            {
+                ModelState.AddModelError("Content", "Comment cannot be empty.");
+                return RedirectToAction("ViewArticle2", new { id = articleId });
+            }
+
+            var article = Context.Articles.FirstOrDefault(a => a.Id == articleId);
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            // Get current user (assuming you have user management set up)
+            var currentUser = _userManager.GetUserAsync(User).Result;
+
+            // Create the comment
+            var comment = new Comment
+            {
+                ArticleId = articleId,
+                Author = currentUser?.UserName ?? "Anonymous", // Default to Anonymous if no user is logged in
+                Content = content,
+                CreatedDate = DateTime.Now
+            };
+
+            // Add the comment to the database
+            Context.Comments.Add(comment);
+            Context.SaveChanges();
+
+            // Redirect back to the article view with the updated comments
+            return RedirectToAction("ViewArticle2", new { id = articleId });
+        }
 
         [HttpGet]
         public IActionResult ViewArticle2(int id)
         {
-            var articles = Context.Articles
-                .Include(a => a.ArticleTags)
-                .ThenInclude(at => at.Tag) // Include tags
-                .OrderBy(n => n.Id)
-                .Take(3)
-                .ToList();
-
+            // Get the article with its associated comments
             var article = Context.Articles
+                .Include(a => a.Comments) // Include comments
                 .Include(a => a.ArticleTags)
-                .ThenInclude(at => at.Tag) // Include tags
+                    .ThenInclude(at => at.Tag)
                 .FirstOrDefault(h => h.Id == id);
+
+            if (article == null) return NotFound();
 
             var user = _userManager.GetUserAsync(User).Result;
             var userInteraction = Context.UserArticleInteractions
                 .FirstOrDefault(ua => ua.UserId.ToString() == user.Id && ua.ArticleId == id);
 
-            if (article == null) return NotFound();
-
-            var htmlContent = ConvertMarkdownToHtml(article?.Content);
+            // Process article content (e.g., convert markdown to HTML)
+            var htmlContent = ConvertMarkdownToHtml(article.Content);
 
             // Count likes and dislikes
             var likesCount = Context.UserArticleInteractions.Count(ua => ua.ArticleId == id && ua.Interaction == "Like");
             var dislikesCount = Context.UserArticleInteractions.Count(ua => ua.ArticleId == id && ua.Interaction == "Dislike");
 
-            // Pass the like and dislike counts to the view
+            // Pass data to the view
             ViewBag.LikesCount = likesCount;
             ViewBag.DislikesCount = dislikesCount;
+            ViewBag.UserInteraction = userInteraction?.Interaction ?? "Neutral";
+            ViewBag.Articles = Context.Articles.Take(3).ToList(); // Recent articles
 
-            ViewBag.Articles = articles;
             ViewBag.Article = article;
             ViewBag.HtmlContent = htmlContent;
-            ViewBag.UserInteraction = userInteraction?.Interaction ?? "Neutral";  // Default to Neutral if no interaction
 
             return View();
         }
+
 
 
         public string ConvertMarkdownToHtml(string markdown)
