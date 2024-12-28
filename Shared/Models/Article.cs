@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Shared.Models
 {
-
+     
     public class Article
     {
         public int Id { get; set; }

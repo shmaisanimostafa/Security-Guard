@@ -196,14 +196,30 @@ namespace Security_Guard.Controllers
                 .ThenInclude(at => at.Tag) // Include tags
                 .FirstOrDefault(h => h.Id == id);
 
+            var user = _userManager.GetUserAsync(User).Result;
+            var userInteraction = Context.UserArticleInteractions
+                .FirstOrDefault(ua => ua.UserId.ToString() == user.Id && ua.ArticleId == id);
+
+            if (article == null) return NotFound();
+
             var htmlContent = ConvertMarkdownToHtml(article?.Content);
+
+            // Count likes and dislikes
+            var likesCount = Context.UserArticleInteractions.Count(ua => ua.ArticleId == id && ua.Interaction == "Like");
+            var dislikesCount = Context.UserArticleInteractions.Count(ua => ua.ArticleId == id && ua.Interaction == "Dislike");
+
+            // Pass the like and dislike counts to the view
+            ViewBag.LikesCount = likesCount;
+            ViewBag.DislikesCount = dislikesCount;
 
             ViewBag.Articles = articles;
             ViewBag.Article = article;
             ViewBag.HtmlContent = htmlContent;
+            ViewBag.UserInteraction = userInteraction?.Interaction ?? "Neutral";  // Default to Neutral if no interaction
 
             return View();
         }
+
 
         public string ConvertMarkdownToHtml(string markdown)
         {
@@ -270,6 +286,59 @@ namespace Security_Guard.Controllers
 
             return View("FilterByTag"); // Use the new FilterByTag view
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ToggleLikeDislike(int articleId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();  // Ensure the user is logged in
+
+            var article = await Context.Articles.FirstOrDefaultAsync(a => a.Id == articleId);
+            if (article == null) return NotFound();  // Ensure the article exists
+
+            // Track the user's previous interaction
+            var userInteraction = await Context.UserArticleInteractions
+                .FirstOrDefaultAsync(ua => ua.UserId.ToString() == user.Id && ua.ArticleId == articleId);
+
+            if (userInteraction != null)
+            {
+                // If the user interacted before, toggle their interaction
+                if (userInteraction.Interaction == "Like")
+                {
+                    article.LikeCount--;  // Decrease the like count
+                    article.DisLikeCount++;  // Increase the dislike count
+                    userInteraction.Interaction = "Dislike";  // Change to dislike
+                }
+                else if (userInteraction.Interaction == "Dislike")
+                {
+                    article.DisLikeCount--;  // Decrease the dislike count
+                    article.LikeCount++;  // Increase the like count
+                    userInteraction.Interaction = "Like";  // Change to like
+                }
+                else
+                {
+                    // Neutral, so change to like
+                    article.LikeCount++;  // Increase like count
+                    userInteraction.Interaction = "Like";  // Change to like
+                }
+            }
+            else
+            {
+                // If the user has not interacted, initialize with "like"
+                article.LikeCount++;
+                Context.UserArticleInteractions.Add(new UserArticleInteraction
+                {
+                    UserId = user.Id,
+                    ArticleId = articleId,
+                    Interaction = "Like"
+                });
+            }
+
+            await Context.SaveChangesAsync();
+
+            return RedirectToAction("ViewArticle2", new { id = articleId });
+        }
+
 
 
     }

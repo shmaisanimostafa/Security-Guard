@@ -28,12 +28,25 @@
                 Delete Article
             </a>
     }
+        <form method="post" asp-action="ToggleLikeDislike" asp-route-articleId="@ViewBag.Article.Id">
+            <button type="submit" class="btn btn-sm mt-2"
+                    style="background-color:@(ViewBag.UserInteraction == "Like" ? "green" : (ViewBag.UserInteraction == "Dislike" ? "red" : "gray"));">
+                <i class="bi bi-hand-thumbs-@(ViewBag.UserInteraction == "Like" ? "up" : (ViewBag.UserInteraction == "Dislike" ? "down" : "hand-thumbs-up"))"></i>
+                @(ViewBag.UserInteraction == "Like" ? "Liked" : (ViewBag.UserInteraction == "Dislike" ? "Disliked" : "Neutral"))
+            </button>
+        </form>
+
+ 
 
     <article class="blog-post">
       <h2 class="display-5 link-body-emphasis mb-1">@Article.Title</h2>
       <p class="blog-post-meta">@DateTime.Now by <a href="#">Mostafa Shmaisany</a></p>
             <img src="@Url.Content(Article.ImageURL)" class="img-fluid border rounded-3 shadow-lg mb-4"  height="50" >
-
+            <!-- Display Like/Dislike counts -->
+            <div class="interaction-counts mt-2">
+                <span class="text-success">Likes: @ViewBag.LikesCount</span> |
+                <span class="text-danger">Dislikes: @ViewBag.DislikesCount</span>
+            </div>
 
       @Html.Raw(HtmlContent)
       @* using Microsoft.EntityFrameworkCore.Metadata.Internal; *@

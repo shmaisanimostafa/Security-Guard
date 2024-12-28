@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "E:\\Development\\Repositories\\Security-Guard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\views\\shared\\_fulldatasettable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\views\\shared\\_fulldatasettable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Development\\Repositories\\Security-Guard\\Shared\\Migrations\\20241228120515_UpdateUserIdToGuid222.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Migrations\\20241228120515_UpdateUserIdToGuid222.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\scancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\scancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\controllers\\articlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\userarticleinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\userarticleinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\areas\\admin\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\areas\\admin\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|e:\\development\\repositories\\security-guard\\shared\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BBD1C92-63FE-4C76-BA31-7CB00A17987D}|Shared\\Shared.csproj|solutionrelative:shared\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\web app mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\web app mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|e:\\development\\repositories\\security-guard\\web app mvc\\views\\articles\\viewarticle2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E17EE02C-9ACB-4613-AD51-7071D732C7A7}|Web App MVC\\Web App MVC.csproj|solutionrelative:web app mvc\\views\\articles\\viewarticle2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_FullDatasetTable.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\Shared\\_FullDatasetTable.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Views\\Shared\\_FullDatasetTable.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\Shared\\_FullDatasetTable.cshtml",
-              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Views\\Shared\\_FullDatasetTable.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEoAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T12:23:14.599Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -55,41 +50,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index.cshtml",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index.cshtml",
-              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Views\\AdminDashboard\\Index.cshtml",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAAAEsBAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T09:29:56.163Z",
+              "DocumentIndex": 0,
+              "Title": "20241228120515_UpdateUserIdToGuid222.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Migrations\\20241228120515_UpdateUserIdToGuid222.cs",
+              "RelativeDocumentMoniker": "Shared\\Migrations\\20241228120515_UpdateUserIdToGuid222.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Migrations\\20241228120515_UpdateUserIdToGuid222.cs",
+              "RelativeToolTip": "Shared\\Migrations\\20241228120515_UpdateUserIdToGuid222.cs",
+              "ViewState": "AgIAACsBAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T12:05:16.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Web App MVC.csproj",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Web App MVC.csproj",
+              "RelativeDocumentMoniker": "Web App MVC\\Web App MVC.csproj",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Web App MVC.csproj",
+              "RelativeToolTip": "Web App MVC\\Web App MVC.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-28T09:59:19.462Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AdminDashboardController.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
-              "RelativeDocumentMoniker": "Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
-              "RelativeToolTip": "Web App MVC\\Areas\\Admin\\Controllers\\AdminDashboardController.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAwwGUAAAAAAAAAAAAAAA==",
+              "Title": "UserArticleInteraction.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\UserArticleInteraction.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\UserArticleInteraction.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\UserArticleInteraction.cs",
+              "RelativeToolTip": "Shared\\Models\\UserArticleInteraction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T09:18:13.738Z",
+              "WhenOpened": "2024-12-25T05:58:32.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ScanController.cs",
-              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ScanController.cs",
-              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\ScanController.cs",
-              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ScanController.cs",
-              "RelativeToolTip": "Web App MVC\\Controllers\\ScanController.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAAAGMAAAAxAAAAAAAAAA==",
+              "Title": "ArticlesController.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ArticlesController.cs",
+              "RelativeDocumentMoniker": "Web App MVC\\Controllers\\ArticlesController.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Controllers\\ArticlesController.cs",
+              "RelativeToolTip": "Web App MVC\\Controllers\\ArticlesController.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAYwMEAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T09:11:32.794Z",
+              "WhenOpened": "2024-12-24T05:31:04.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ViewArticle2.cshtml",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
+              "RelativeDocumentMoniker": "Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
+              "RelativeToolTip": "Web App MVC\\Views\\Articles\\ViewArticle2.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T18:58:15.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Article.cs",
+              "DocumentMoniker": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Article.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Article.cs",
+              "ToolTip": "E:\\Development\\Repositories\\Security-Guard\\Shared\\Models\\Article.cs",
+              "RelativeToolTip": "Shared\\Models\\Article.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T18:48:37.197Z",
               "EditorCaption": ""
             }
           ]
