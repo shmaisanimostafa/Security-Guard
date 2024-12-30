@@ -162,6 +162,10 @@ namespace Security_Guard.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AuthorId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -202,18 +206,21 @@ namespace Security_Guard.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorId");
+
                     b.ToTable("Articles");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            AuthorId = "283f0143-db7d-4602-986e-3797bcba4f69",
                             Content = "Do you want to see the sea? This your best Hotel",
                             DisLikeCount = 0,
                             ImageURL = "https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1-1500x1000.jpg",
                             IsFeatured = false,
                             LikeCount = 0,
-                            PublishDate = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8696),
+                            PublishDate = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7588),
                             Rating = 3,
                             ReadCount = 0,
                             SourceURL = "https://www.bitdefender.com/",
@@ -223,12 +230,13 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
+                            AuthorId = "283f0143-db7d-4602-986e-3797bcba4f69",
                             Content = "---\n__Advertisement :)__\n\n- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image\n  resize in browser.\n- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly\n  i18n with plurals support and easy syntax.\n\nYou will like those projects!\n\n---\n\n# h1 Heading 8-)\n## h2 Heading\n### h3 Heading\n#### h4 Heading\n##### h5 Heading\n###### h6 Heading\n\n\n## Horizontal Rules\n\n___\n\n---\n\n***\n\n\n## Typographic replacements\n\nEnable typographer option to see result.\n\n(c) (C) (r) (R) (tm) (TM) (p) (P) +-\n\ntest.. test... test..... test?..... test!....\n\n!!!!!! ???? ,,  -- ---\n\n\"Smartypants, double quotes\" and 'single quotes'\n\n\n## Emphasis\n\n**This is bold text**\n\n__This is bold text__\n\n*This is italic text*\n\n_This is italic text_\n\n~~Strikethrough~~\n\n\n## Blockquotes\n\n\n> Blockquotes can also be nested...\n>> ...by using additional greater-than signs right next to each other...\n> > > ...or with spaces between arrows.\n\n\n## Lists\n\nUnordered\n\n+ Create a list by starting a line with `+`, `-`, or `*`\n+ Sub-lists are made by indenting 2 spaces:\n  - Marker character change forces new list start:\n    * Ac tristique libero volutpat at\n    + Facilisis in pretium nisl aliquet\n    - Nulla volutpat aliquam velit\n+ Very easy!\n\nOrdered\n\n1. Lorem ipsum dolor sit amet\n2. Consectetur adipiscing elit\n3. Integer molestie lorem at massa\n\n\n1. You can use sequential numbers...\n1. ...or keep all the numbers as `1.`\n\nStart numbering with offset:\n\n57. foo\n1. bar\n\n\n## Code\n\nInline `code`\n\nIndented code\n\n    // Some comments\n    line 1 of code\n    line 2 of code\n    line 3 of code\n\n\nBlock code \"fences\"\n\n```\nSample text here...\n```\n\nSyntax highlighting\n\n``` js\nvar foo = function (bar) {\n  return bar++;\n};\n\nconsole.log(foo(5));\n```\n\n## Tables\n\n| Option | Description |\n| ------ | ----------- |\n| data   | path to data files to supply the data that will be passed into templates. |\n| engine | engine to be used for processing templates. Handlebars is the default. |\n| ext    | extension to be used for dest files. |\n\nRight aligned columns\n\n| Option | Description |\n| ------:| -----------:|\n| data   | path to data files to supply the data that will be passed into templates. |\n| engine | engine to be used for processing templates. Handlebars is the default. |\n| ext    | extension to be used for dest files. |\n\n\n## Links\n\n[link text](http://dev.nodeca.com)\n\n[link with title](http://nodeca.github.io/pica/demo/ \"title text!\")\n\nAutoconverted link https://github.com/nodeca/pica (enable linkify to see)\n\n\n## Images\n\n![Minion](https://octodex.github.com/images/minion.png)\n![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg \"The Stormtroopocat\")\n\nLike links, Images also have a footnote style syntax\n\n![Alt text][id]\n\nWith a reference later in the document defining the URL location:\n\n[id]: https://octodex.github.com/images/dojocat.jpg  \"The Dojocat\"\n\n\n## Plugins\n\nThe killer feature of `markdown-it` is very effective support of\n[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).\n\n\n### [Emojies](https://github.com/markdown-it/markdown-it-emoji)\n\n> Classic markup: :wink: :cry: :laughing: :yum:\n>\n> Shortcuts (emoticons): :-) :-( 8-) ;)\n\nsee [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.\n\n\n### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)\n\n- 19^th^\n- H~2~O\n\n\n### [\\<ins>](https://github.com/markdown-it/markdown-it-ins)\n\n++Inserted text++\n\n\n### [\\<mark>](https://github.com/markdown-it/markdown-it-mark)\n\n==Marked text==\n\n\n### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)\n\nFootnote 1 link[^first].\n\nFootnote 2 link[^second].\n\nInline footnote^[Text of inline footnote] definition.\n\nDuplicated footnote reference[^second].\n\n[^first]: Footnote **can have markup**\n\n    and multiple paragraphs.\n\n[^second]: Footnote text.\n\n\n### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)\n\nTerm 1\n\n:   Definition 1\nwith lazy continuation.\n\nTerm 2 with *inline markup*\n\n:   Definition 2\n\n        { some code, part of Definition 2 }\n\n    Third paragraph of definition 2.\n\n_Compact style:_\n\nTerm 1\n  ~ Definition 1\n\nTerm 2\n  ~ Definition 2a\n  ~ Definition 2b\n\n\n### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)\n\nThis is HTML abbreviation example.\n\nIt converts \"HTML\", but keep intact partial entries like \"xxxHTMLyyy\" and so on.\n\n*[HTML]: Hyper Text Markup Language\n\n### [Custom containers](https://github.com/markdown-it/markdown-it-container)\n\n::: warning\n*here be dragons*\n:::\n",
                             DisLikeCount = 0,
                             ImageURL = "https://media.licdn.com/dms/image/v2/D4D12AQF6mW4EuB-99Q/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692951785182?e=1729728000&v=beta&t=6M80wcow6ABDFfa9fKJFkU6ddeLYd5RwVkJnNC44A7w",
                             IsFeatured = false,
                             LikeCount = 0,
-                            PublishDate = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8713),
+                            PublishDate = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7596),
                             Rating = 5,
                             ReadCount = 0,
                             SourceURL = "https://www.drweb.com/",
@@ -238,12 +246,13 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 3,
+                            AuthorId = "283f0143-db7d-4602-986e-3797bcba4f69",
                             Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             DisLikeCount = 0,
                             ImageURL = "https://andrewlock.net/content/images/2018/02/asp.net-core-mvc.png",
                             IsFeatured = false,
                             LikeCount = 0,
-                            PublishDate = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8720),
+                            PublishDate = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7600),
                             Rating = 4,
                             ReadCount = 0,
                             SourceURL = "https://www.eset.com/",
@@ -253,12 +262,13 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 4,
+                            AuthorId = "283f0143-db7d-4602-986e-3797bcba4f69",
                             Content = "Do you want to see the sea? This your best Hotel",
                             DisLikeCount = 0,
                             ImageURL = "https://miro.medium.com/v2/resize:fit:1400/1*dC6yYmAkwVq2UeF8HngSVw.jpeg",
                             IsFeatured = false,
                             LikeCount = 0,
-                            PublishDate = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8726),
+                            PublishDate = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7604),
                             Rating = 3,
                             ReadCount = 0,
                             SourceURL = "https://me-en.kaspersky.com/",
@@ -268,12 +278,13 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 5,
+                            AuthorId = "283f0143-db7d-4602-986e-3797bcba4f69",
                             Content = "The best for the best. The place where you can exercise your hiking and other sports.",
                             DisLikeCount = 0,
                             ImageURL = "https://aag-it.com/wp-content/uploads/2022/10/shutterstock_1766138084-1024x768.jpg",
                             IsFeatured = false,
                             LikeCount = 0,
-                            PublishDate = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8731),
+                            PublishDate = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7608),
                             Rating = 1,
                             ReadCount = 0,
                             SourceURL = "https://phishtank.org/",
@@ -283,12 +294,13 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 6,
+                            AuthorId = "283f0143-db7d-4602-986e-3797bcba4f69",
                             Content = "Sleep for cheap. Cheapest Hotel you may ever found",
                             DisLikeCount = 0,
                             ImageURL = "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png",
                             IsFeatured = false,
                             LikeCount = 0,
-                            PublishDate = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8737),
+                            PublishDate = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7611),
                             Rating = 2,
                             ReadCount = 0,
                             SourceURL = "https://www.virustotal.com/gui/home/upload",
@@ -413,7 +425,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(7653),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7082),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -422,7 +434,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(7716),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7132),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -431,7 +443,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(7824),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7135),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -440,7 +452,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(7832),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7138),
                             FileName = "Virus.pdf",
                             StatusMessage = "",
                             URL = "www.virus.com",
@@ -449,7 +461,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(7838),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7141),
                             FileName = "Malware.pdf",
                             StatusMessage = "",
                             URL = "www.malware.ar",
@@ -458,7 +470,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 5,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(7843),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7144),
                             FileName = "potato.pdf",
                             StatusMessage = "",
                             URL = "www.potato.me",
@@ -501,7 +513,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 0,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8488),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7467),
                             Status = "danger",
                             StatusMessage = "",
                             URL = "www.pdf.com.lb.mu.edu",
@@ -510,7 +522,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8498),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7473),
                             Status = "safe",
                             StatusMessage = "",
                             URL = "www.trojans.ar",
@@ -519,7 +531,7 @@ namespace Security_Guard.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8505),
+                            DateTime = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7479),
                             Status = "ambiguous",
                             StatusMessage = "",
                             URL = "www.malosd.me",
@@ -560,7 +572,7 @@ namespace Security_Guard.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "Hello",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8583)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7522)
                         },
                         new
                         {
@@ -568,7 +580,7 @@ namespace Security_Guard.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "Hi",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8594)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7526)
                         },
                         new
                         {
@@ -576,7 +588,7 @@ namespace Security_Guard.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "How are you?",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8599)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7529)
                         },
                         new
                         {
@@ -584,7 +596,7 @@ namespace Security_Guard.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "I'm fine",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8604)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7533)
                         },
                         new
                         {
@@ -592,7 +604,7 @@ namespace Security_Guard.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "Good",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8610)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7536)
                         },
                         new
                         {
@@ -600,7 +612,7 @@ namespace Security_Guard.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "Bye",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8614)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7539)
                         },
                         new
                         {
@@ -608,7 +620,7 @@ namespace Security_Guard.Migrations
                             IsAi = false,
                             Sender = "Mostafa",
                             Text = "Bye",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8618)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7542)
                         },
                         new
                         {
@@ -616,7 +628,7 @@ namespace Security_Guard.Migrations
                             IsAi = true,
                             Sender = "AI",
                             Text = "Goodbye",
-                            Time = new DateTime(2024, 12, 28, 14, 5, 12, 801, DateTimeKind.Local).AddTicks(8623)
+                            Time = new DateTime(2024, 12, 30, 8, 10, 49, 228, DateTimeKind.Local).AddTicks(7545)
                         });
                 });
 
@@ -894,6 +906,17 @@ namespace Security_Guard.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Shared.Models.Article", b =>
+                {
+                    b.HasOne("Shared.Models.User", "Author")
+                        .WithMany("Articles")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+                });
+
             modelBuilder.Entity("Shared.Models.ArticleTag", b =>
                 {
                     b.HasOne("Shared.Models.Article", "Article")
@@ -962,6 +985,11 @@ namespace Security_Guard.Migrations
             modelBuilder.Entity("Shared.Models.Tag", b =>
                 {
                     b.Navigation("ArticleTags");
+                });
+
+            modelBuilder.Entity("Shared.Models.User", b =>
+                {
+                    b.Navigation("Articles");
                 });
 #pragma warning restore 612, 618
         }

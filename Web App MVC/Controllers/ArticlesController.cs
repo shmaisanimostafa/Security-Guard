@@ -267,12 +267,12 @@ namespace Security_Guard.Controllers
         [HttpGet]
         public IActionResult ViewArticle2(int id)
         {
-            // Get the article with its associated comments
             var article = Context.Articles
                 .Include(a => a.Comments) // Include comments
                 .Include(a => a.ArticleTags)
                     .ThenInclude(at => at.Tag)
-                .FirstOrDefault(h => h.Id == id);
+                .Include(a => a.Author)  // Include the author of the article
+                .FirstOrDefault(a => a.Id == id);
 
             if (article == null) return NotFound();
 
@@ -280,24 +280,21 @@ namespace Security_Guard.Controllers
             var userInteraction = Context.UserArticleInteractions
                 .FirstOrDefault(ua => ua.UserId.ToString() == user.Id && ua.ArticleId == id);
 
-            // Process article content (e.g., convert markdown to HTML)
             var htmlContent = ConvertMarkdownToHtml(article.Content);
 
-            // Count likes and dislikes
             var likesCount = Context.UserArticleInteractions.Count(ua => ua.ArticleId == id && ua.Interaction == "Like");
             var dislikesCount = Context.UserArticleInteractions.Count(ua => ua.ArticleId == id && ua.Interaction == "Dislike");
 
-            // Pass data to the view
             ViewBag.LikesCount = likesCount;
             ViewBag.DislikesCount = dislikesCount;
             ViewBag.UserInteraction = userInteraction?.Interaction ?? "Neutral";
             ViewBag.Articles = Context.Articles.Take(3).ToList(); // Recent articles
-
             ViewBag.Article = article;
             ViewBag.HtmlContent = htmlContent;
 
             return View();
         }
+
 
 
 

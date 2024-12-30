@@ -40,8 +40,15 @@ public class DBContext : IdentityDbContext<User>
                 .WithMany(t => t.ArticleTags)
                 .HasForeignKey(at => at.TagId);
 
-            // Seed initial data if needed
-            modelBuilder.SeedData();
+        // Configuring the relationship between Article and User
+        modelBuilder.Entity<Article>()
+            .HasOne(a => a.Author) // Each article has one Author
+            .WithMany(u => u.Articles) // A User can have many Articles
+            .HasForeignKey(a => a.AuthorId) // AuthorId is the foreign key
+            .OnDelete(DeleteBehavior.NoAction); // Avoid cascade delete
+
+        // Seed initial data if needed
+        modelBuilder.SeedData();
         }
    }
 

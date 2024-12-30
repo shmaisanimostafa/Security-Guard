@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic; // Make sure this is included for the list
 using System.ComponentModel.DataAnnotations.Schema;
-//using System.Collections.Generic;
 
 namespace Shared.Models
 {
@@ -14,5 +14,8 @@ namespace Shared.Models
 
         [NotMapped]
         public IList<string>? RoleNames { get; set; }  // Use for display purposes only
+
+        // Navigation property for Articles written by this User
+        public List<Article> Articles { get; set; } = new List<Article>();
     }
 }
