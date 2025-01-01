@@ -11,6 +11,7 @@ namespace Shared.Models
         public string Name { get; set; } = string.Empty;
         public string ImageURL { get; set; } = string.Empty;
         public bool IsSubscribed { get; set; } = false;
+        public bool IsVerified { get; set; } = false;
 
         [NotMapped]
         public IList<string>? RoleNames { get; set; }  // Use for display purposes only

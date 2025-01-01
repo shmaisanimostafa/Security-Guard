@@ -164,5 +164,39 @@ namespace Security_Guard.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+        // POST: /Admin/User/VerifyUser
+        [HttpPost]
+        public async Task<IActionResult> VerifyUser(string userId)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                user.IsVerified = true;
+                var result = await userManager.UpdateAsync(user);
+                if (!result.Succeeded)
+                {
+                    TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        // POST: /Admin/User/UnverifyUser
+        [HttpPost]
+        public async Task<IActionResult> UnverifyUser(string userId)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                user.IsVerified = false;
+                var result = await userManager.UpdateAsync(user);
+                if (!result.Succeeded)
+                {
+                    TempData["message"] = string.Join(" | ", result.Errors.Select(e => e.Description));
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 }

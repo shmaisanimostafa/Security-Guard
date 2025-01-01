@@ -42,7 +42,7 @@
             <div class="col-md-8">
                 <article class="blog-post">
                     <h2 class="display-5 link-body-emphasis mb-1">@Article.Title</h2>
-                    <p class="blog-post-meta">@DateTime.Now by <a href="#">@Article.Author.UserName</a> <i class="bi bi-patch-check-fill text-info"></i></p>
+                    <p class="blog-post-meta">@DateTime.Now by <a href="#">@Article.Author.UserName</a> @if(Article.Author.IsVerified){ <i class="bi bi-patch-check-fill text-info"></i>}</p>
                     <img src="@Url.Content(Article.ImageURL)" class="img-fluid border rounded-3 shadow-lg mb-4" height="50" />
 
                     <!-- Like/Dislike buttons -->

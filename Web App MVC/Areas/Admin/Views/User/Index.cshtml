@@ -16,6 +16,7 @@
             <th>Delete</th>
             <th>Add Role</th>
             <th>Remove Role</th>
+            <th>Verification</th>
         </tr>
     </thead>
     <tbody>
@@ -75,10 +76,28 @@
                             <button type="submit" class="btn btn-danger mt-2">Remove Role</button>
                         </form>
                     </td>
+                    <td>
+                        @if (user.IsVerified)
+
+                        {
+                            <form method="post" asp-action="UnverifyUser" asp-route-userId="@user.Id">
+                                <button type="submit" class="btn btn-warning">Unverify</button>
+                            </form>
+                        }
+
+                        else
+
+                        {
+                            <form method="post" asp-action="VerifyUser" asp-route-userId="@user.Id">
+                                <button type="submit" class="btn btn-success">Verify</button>
+                            </form>
+                        }
+                    </td>
                 </tr>
             }
         }
     </tbody>
+
 </table>
 
 <h1 class="mb-2">Manage Roles</h1>
